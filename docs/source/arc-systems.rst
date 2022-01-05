@@ -3,25 +3,26 @@ ARC Systems
 
 At the centre of the ARC service are two high performance compute clusters - **arc** and **htc**. 
  
-**arc** is designed for multi-node parallel computation; **htc** is designed for high-thoughput operation (lower core count jobs). **htc** is also a more heterogeneous system offering different types of resources, such as GPGPU computing and high memory systems; nodes on **arc** are uniform. Users get access to both both clusters automatically as part of the process of obtaining an account with ARC, and can use either or both. 
+- **arc** is designed for multi-node parallel computation
+- **htc** is designed for high-thoughput operation (lower core count jobs). 
+
+**htc** is also a more heterogeneous system offering different types of resources, such as GPGPU computing and high memory systems; nodes on **arc** are uniform. Users get access to both both clusters automatically as part of the process of obtaining an account with ARC, and can use either or both. 
 
 For more detailled information on the hardware specifications of these clusters, see the tables below:
 
 
-+---------+---------------------------------+-----------+------------------------------------------------------+-----------------+--------------------------------------------+
-| Cluster | Description                     |Login Node |Compute Nodes                                         |Minimum Job Size |Notes:                                      |
-+=========+=================================+===========+======================================================+=================+============================================+
-| arc     | Our largest compute cluster.    | arc-login | CPU: 48 core Cascade Lake (2.90GHz)                  | 1 core	         | Non-blocking island size is 2212 cores     |
-|         | Optimised for large parallel    |           | Memory: 392GB                                        |                 |                                            |
-|         | Scheduler prefers large jobs.   |           |                                                      |                 |                                            |
-|         | Offers low-latency interconnect |           |                                                      |                 |                                            |
-+---------+---------------------------------+-----------+------------------------------------------------------+-----------------+--------------------------------------------+
-| htc     | Optimised for single core jobs  | htc-login | CPUs: mix of Broadwell, Haswell, Cascade Lake        | 1 core          | Jobs will only be scheduled onto a GPU     |
-|         | and SMP jobs up to one node     |           | GPU: P100, V100, A100, RTX                           |                 |                                            |
-|         | Scheduler prefers small jobs.   |           |                                                      |                 |                                            |
-|         | Supports jobs requiring GPUs.   |           |                                                      |                 |                                            |
-+---------+---------------------------------+-----------+------------------------------------------------------+-----------------+--------------------------------------------+
- 
++---------+------------------------------------------------------------------------------+------------+--------------------------------------------------------------------+------------------+---------------------------------------------------------------------------+
+| Cluster | Description                                                                  | Login Node | Compute Nodes                                                      | Minimum Job Size | Notes:                                                                    |
++=========+==============================================================================+============+====================================================================+==================+===========================================================================+
+| arc     | Our largest compute cluster.                                                 |            | CPU: 48 core Cascade Lake (Intel Xeon Platinum 8268 CPU @ 2.90GHz) |                  | Non-blocking island size is 2212 cores                                    |
+|         | Optimised for large parallel jobs spanning multiple nodes.                   | arc-login  | Memory: 392GB                                                      | 1 core           |                                                                           |
+|         | Scheduler prefers large jobs.                                                |            |                                                                    |                  |                                                                           |
+|         | Offers low-latency interconnect (Mellanox HDR 100).                          |            |                                                                    |                  |                                                                           |
++---------+------------------------------------------------------------------------------+------------+--------------------------------------------------------------------+------------------+---------------------------------------------------------------------------+
+| htc     | Optimised for single core jobs, and SMP jobs up to one node in size.         |            | CPUs: mix of Broadwell, Haswell, Cacade Lake                       |                  | Jobs will only be scheduled onto a GPU node if requesting a GPU resource. |
+|         | Scheduler prefers small jobs.                                                | htc-login  | GPU: P100, V100, A100, RTX                                         | 1 core           |                                                                           |
+|         | Also catering for jobs requiring resources other than CPU cores (e.g. GPUs). |            |                                                                    |                  |                                                                           |
++---------+------------------------------------------------------------------------------+------------+--------------------------------------------------------------------+------------------+---------------------------------------------------------------------------+
 
 Operating system
 ================
