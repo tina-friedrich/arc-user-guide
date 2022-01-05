@@ -20,5 +20,6 @@ Contents
 
 .. toctree::
 
+   arc-systems
    usage
    api
