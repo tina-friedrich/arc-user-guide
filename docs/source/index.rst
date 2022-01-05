@@ -1,5 +1,7 @@
-Welcome to Lumache's documentation!
-===================================
+ARC User Guide
+==============
+
+This is a placeholder main page for the ARC User Guide. The content below is from the Read The Docs template to help with further population of content. 
 
 **Lumache** (/lu'make/) is a Python library for cooks and food lovers
 that creates recipes mixing random ingredients.
