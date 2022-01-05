@@ -29,18 +29,21 @@ Operating system
 
 The ARC systems use the Linux Operating System (specifically CentOS 8) which is commonly used in HPC. We do not have any HPC systems running Windows (or MacOS). If you are unfamiliar with using Linux, please consider:
 
-Finding introduction to Linux resources online (through Google/Bing/Yahoo etc).
-Working through our brief Introduction to Linux course.
-Attending our Introduction to ARC training course (this does not teach you how to use Linux but the examples will help you gain a greater understanding).
+- Finding introduction to Linux resources online (through Google/Bing/Yahoo etc).
+- Working through our brief Introduction to Linux course.
+- Attending our Introduction to ARC training course (this does not teach you how to use Linux but the examples will help you gain a greater understanding).
+
 Capability cluster (arc)
+========================
+
 The capability system - cluster name arc - has a total of 305 48 core worker nodes, some of which are co-investment hardware. It offers a total of 14,640 CPU cores.
 
 All nodes have the following:
 
-2x Intel Platinum 8628 CPU. The Platinum 8628 is a 24 core 2.90GHz Cascade Lake CPU. Thus all nodes have 48 CPU cores per node.
-384GB memory
-HDR 100 infiniband interconnect. The fabric has a 3:1 blocking factor with non-blocking islands of 44 nodes (2112 cores).
-OS is CentOS Linux 8.1. Scheduler is SLURM.
+- 2x Intel Platinum 8628 CPU. The Platinum 8628 is a 24 core 2.90GHz Cascade Lake CPU. Thus all nodes have 48 CPU cores per node.
+- 384GB memory
+- HDR 100 infiniband interconnect. The fabric has a 3:1 blocking factor with non-blocking islands of 44 nodes (2112 cores).
+- OS is CentOS Linux 8.1. Scheduler is SLURM.
 
 Login node for the system is 'arc-login.arc.ox.ac.uk', which allows logins from the University network range (including VPN).
 
@@ -55,6 +58,8 @@ available for general use for short jobs (<12hrs)
  
 
 Throughput cluster (htc)
+========================
+
 The throughput system - cluster name htc  - currently has 25 worker nodes, some of which are co-investment hardware. Note that additional nodes will migrate into this system in the coming weeks. Please note: Co-investment machines have been purchased by specific departments/groups and are hosted by the ARC team (see Stakeholder column for details). These machines are available for general use, but may be subject to job time limits and/or may occasionally be reserved for exclusive use of the entity that purchased them.
 
 19 of the nodes are GPGPU nodes. More information on how to access GPU nodes is available.
@@ -119,7 +124,11 @@ typical GROMACS benchmark results between the DGX1V and DGX Max-Qbenchmark resul
  
 
 Storage
+=======
+
 Our clusters systems share 2PB of high-performance GPFS storage.
 
 Software
+========
+
 Users may find the application they are interested in running is already been installed on at least one of the systems.  Users are welcome to request the installation of new applications and libraries or updates to already installed applications via our software request form.
