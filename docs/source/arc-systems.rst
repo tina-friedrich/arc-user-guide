@@ -1,27 +1,21 @@
 ARC Systems 
 ===========
 
-At the centre of the ARC service are two high performance compute clusters - arc and htc. 
+At the centre of the ARC service are two high performance compute clusters - **arc** and **htc**. 
  
-arc is designed for multi-node parallel computation; htc is designed for high-thoughput operation (lower core count jobs). htc is also a more heterogeneous system offering different types of resources, such as GPGPU computing and high memory systems; nodes on arc are uniform. Users get access to both both clusters automatically as part of the process of obtaining an account with ARC, and can use either or both. 
+**arc** is designed for multi-node parallel computation; **htc** is designed for high-thoughput operation (lower core count jobs). **htc** is also a more heterogeneous system offering different types of resources, such as GPGPU computing and high memory systems; nodes on **arc** are uniform. Users get access to both both clusters automatically as part of the process of obtaining an account with ARC, and can use either or both. 
 
 For more detailled information on the hardware specifications of these clusters, see the tables below:
 
-Cluster	Description	Login Node	Compute Nodes	Minimum Job Size	Notes:
-arc	
-Our largest compute cluster. Optimised for large parallel jobs spanning multiple nodes. Scheduler prefers large jobs.
++=======+===========+==========+=============+================+======+
+|Cluster|Description|Login Node|Compute Nodes|Minimum Job Size|Notes:|
++-------+-----------+----------+-------------+----------------+------+
+|arc    |Our largest compute cluster.                               | arc-login | CPU: 48 core Cascade Lake (Intel Xeon Platinum 8268 CPU @ 2.90GHz) | 1 core	| Non-blocking island size is 2212 cores |
+|       |Optimised for large parallel jobs spanning multiple nodes. |           | Memory: 392GB | | |
+|       |Scheduler prefers large jobs.                              |           |               | | |
+|       |Offers low-latency interconnect (Mellanox HDR 100).        |           |               | | |
++-------+-----------------------------------------------------------+-----------+---------------+-+-+
 
-Offers low-latency interconnect (Mellanox HDR 100).
-
-arc-login	
-CPU: 48 core Cascade Lake (Intel Xeon Platinum 8268 CPU @ 2.90GHz)
-
-Memory: 392GB
-
- 
-
-1 core	
-Non-blocking island size is 2212 cores
 
 htc	
 Optimised for single core jobs, and SMP jobs up to one node in size. Scheduler prefers small jobs.
