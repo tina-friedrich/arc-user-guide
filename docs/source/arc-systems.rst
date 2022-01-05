@@ -8,19 +8,19 @@ At the centre of the ARC service are two high performance compute clusters - **a
 For more detailled information on the hardware specifications of these clusters, see the tables below:
 
 
-+--------+---------------------------------+-----------+------------------------------------------------------+-----------------+--------------------------------------------+
-|Cluster | Description                     |Login Node |Compute Nodes                                         |Minimum Job Size |Notes:                                      |
-+========+=================================+===========+======================================================+=================+============================================+
-| arc    | Our largest compute cluster.    | arc-login | CPU: 48 core Cascade Lake (2.90GHz)                  | 1 core	         | Non-blocking island size is 2212 cores     |
-|        | Optimised for large parallel    |           | Memory: 392GB                                        |                 |                                            |
-|        | Scheduler prefers large jobs.   |           |                                                      |                 |                                            |
-|        | Offers low-latency interconnect |           |                                                      |                 |                                            |
-+--------+---------------------------------+-----------+------------------------------------------------------+-----------------+--------------------------------------------+
-| htc    | Optimised for single core jobs  | htc-login | CPUs: mix of Broadwell, Haswell, Cascade Lake        | 1 core          | Jobs will only be scheduled onto a GPU     |
-|        | and SMP jobs up to one node     |           | GPU: P100, V100, A100, RTX                           |                 |                                            |
-|        | Scheduler prefers small jobs.   |           |                                                      |                 |                                            |
-|        | Supports jobs requiring GPUs.   |           |                                                      |                 |                                            |
-+--------+---------------------------------+-----------+------------------------------------------------------+-----------------+--------------------------------------------+
++---------+---------------------------------+-----------+------------------------------------------------------+-----------------+--------------------------------------------+
+| Cluster | Description                     |Login Node |Compute Nodes                                         |Minimum Job Size |Notes:                                      |
++=========+=================================+===========+======================================================+=================+============================================+
+| arc     | Our largest compute cluster.    | arc-login | CPU: 48 core Cascade Lake (2.90GHz)                  | 1 core	         | Non-blocking island size is 2212 cores     |
+|         | Optimised for large parallel    |           | Memory: 392GB                                        |                 |                                            |
+|         | Scheduler prefers large jobs.   |           |                                                      |                 |                                            |
+|         | Offers low-latency interconnect |           |                                                      |                 |                                            |
++---------+---------------------------------+-----------+------------------------------------------------------+-----------------+--------------------------------------------+
+| htc     | Optimised for single core jobs  | htc-login | CPUs: mix of Broadwell, Haswell, Cascade Lake        | 1 core          | Jobs will only be scheduled onto a GPU     |
+|         | and SMP jobs up to one node     |           | GPU: P100, V100, A100, RTX                           |                 |                                            |
+|         | Scheduler prefers small jobs.   |           |                                                      |                 |                                            |
+|         | Supports jobs requiring GPUs.   |           |                                                      |                 |                                            |
++---------+---------------------------------+-----------+------------------------------------------------------+-----------------+--------------------------------------------+
  
 
 Operating system
