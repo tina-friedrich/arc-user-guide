@@ -7,34 +7,26 @@ At the centre of the ARC service are two high performance compute clusters - **a
 
 For more detailled information on the hardware specifications of these clusters, see the tables below:
 
-+=======+===========+==========+=============+================+======+
-|Cluster|Description|Login Node|Compute Nodes|Minimum Job Size|Notes:|
-+-------+-----------+----------+-------------+----------------+------+
-|arc    |Our largest compute cluster.                               | arc-login | CPU: 48 core Cascade Lake (Intel Xeon Platinum 8268 CPU @ 2.90GHz) | 1 core	| Non-blocking island size is 2212 cores |
-|       |Optimised for large parallel jobs spanning multiple nodes. |           | Memory: 392GB | | |
-|       |Scheduler prefers large jobs.                              |           |               | | |
-|       |Offers low-latency interconnect (Mellanox HDR 100).        |           |               | | |
-+-------+-----------------------------------------------------------+-----------+---------------+-+-+
 
-
-htc	
-Optimised for single core jobs, and SMP jobs up to one node in size. Scheduler prefers small jobs.
-
-Also catering for jobs requiring resources other than CPU cores (e.g. GPUs).
-
-htc-login	
-CPUs: mix of Broadwell, Haswell, Cacade Lake
-
-GPU: P100, V100, A100, RTX
-
-1 core	
-Jobs will only be scheduled onto a GPU node if requesting a GPU resource.
-
- 
-
++-------+-------------------------------+-----------+---------------------------------------------------------+----------------+--------------------------------------------+
+|Cluster|Description                    |Login Node |Compute Nodes                                            |Minimum Job Size|Notes:                                      |
++=======+===============================+===========+=========================================================+================+============================================+
+|arc    |Our largest compute cluster.   | arc-login | CPU: 48 core Cascade Lake (2.90GHz)                     | 1 core	        | Non-blocking island size is 2212 cores     |
+|       |Optimised for large parallel   |           | Memory: 392GB                                           |                |                                            |
+|       |Scheduler prefers large jobs.  |           |                                                         |                |                                            |
+|       |Offers low-latency interconnect|           |                                                         |                |                                            |
++-------+-------------------------------+-----------+---------------------------------------------------------+----------------+--------------------------------------------+
+|htc    |Optimised for single core jobs | htc-login | CPUs: mix of Broadwell, Haswell, Cascade Lake           | 1 core         | Jobs will only be scheduled onto a GPU     |
+|       |and SMP jobs up to one node    |           | GPU: P100, V100, A100, RTX                              |                |                                            |
+|       |Scheduler prefers small jobs.  |           |                                                         |                |                                            |
+|       |Supports jobs requiring GPUs.  |           |                                                         |                |                                            |
++-------+-------------------------------+-----------+---------------------------------------------------------+----------------+--------------------------------------------+
  
 
 Operating system
+================
+
+
 The ARC systems use the Linux Operating System (specifically CentOS 8) which is commonly used in HPC. We do not have any HPC systems running Windows (or MacOS). If you are unfamiliar with using Linux, please consider:
 
 Finding introduction to Linux resources online (through Google/Bing/Yahoo etc).
