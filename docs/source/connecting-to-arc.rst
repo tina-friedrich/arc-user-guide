@@ -33,11 +33,9 @@ You can then SSH to arc-login or htc-login as required.
 Connecting from Windows
 -----------------------
 
-SSH is available as a command in PowerShell from Windows 10. Users of Windows 10 or newer should be able to connect to ARC from PowerShell with the commands given above. However, users of older Windows version, or those requiring X11 forwarding, will need to download and install an application that allows them to connect - a great example is MobaXterm.
+SSH is available as a command in PowerShell from Windows 10. Users of Windows 10 or newer should be able to connect to ARC from PowerShell with the commands given above. However, users of older Windows versions, or those requiring X11 forwarding, will need to download and install an application that allows them to connect - a popular example is MobaXterm.
 
-Download MobaXterm here.
-
-mobaxterm
+MobaXterm for Windows can be found at `https://mobaxterm.mobatek.net/ <https://mobaxterm.mobatek.net/>`_
 
 Copying data to/from ARC
 ------------------------
