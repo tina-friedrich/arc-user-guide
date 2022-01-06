@@ -51,7 +51,7 @@ For a hybrid MPI/OpenMP job, where an MPI tasks spawns multiple CPU threads, the
 
 The default number of CPUs per task is 1.
 
-It is possible to request exclusive access to a node by adding ```--exclusive``` to your ``sbatch`` command or the following line to your submit script::
+It is possible to request exclusive access to a node by adding ``--exclusive`` to your ``sbatch`` command or the following line to your submit script::
 
     #SBATCH --exclusive
     
