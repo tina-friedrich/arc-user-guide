@@ -21,5 +21,6 @@ Contents
 .. toctree::
 
    arc-systems
+   connecting-to-arc
    usage
    api
