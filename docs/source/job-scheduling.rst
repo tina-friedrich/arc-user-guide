@@ -19,7 +19,7 @@ These nodes should be used for pre/post processing of data and for building soft
 Compute nodes
 ^^^^^^^^^^^^^
 
-Typical ARC compute nodes typically have 48 cores. The HTC nodes typically have 16, 20 or 48 cores.
+Typical **arc** compute nodes have 48 cores. The **htc** compute nodes typically have 16, 20 or 48 cores.
 
 The Job Scheduler
 -----------------
