@@ -25,7 +25,7 @@ For more detailled information on the hardware specifications of these clusters,
 +---------+------------------------------------------------------------------------------+------------+--------------------------------------------------------------------+------------------+---------------------------------------------------------------------------+
 
 Operating system
-================
+----------------
 
 
 The ARC systems use the Linux Operating System (specifically CentOS 8) which is commonly used in HPC. We do not have any HPC systems running Windows (or MacOS). If you are unfamiliar with using Linux, please consider:
@@ -35,7 +35,7 @@ The ARC systems use the Linux Operating System (specifically CentOS 8) which is 
 - Attending our Introduction to ARC training course (this does not teach you how to use Linux but the examples will help you gain a greater understanding).
 
 Capability cluster (arc)
-========================
+------------------------
 
 The capability system - cluster name arc - has a total of 305 48 core worker nodes, some of which are co-investment hardware. It offers a total of 14,640 CPU cores.
 
@@ -61,7 +61,7 @@ Login node for the system is 'arc-login.arc.ox.ac.uk', which allows logins from 
  
 
 Throughput cluster (htc)
-========================
+------------------------
 
 The throughput system - cluster name htc  - currently has 25 worker nodes, some of which are co-investment hardware. Note that additional nodes will migrate into this system in the coming weeks. Please note: Co-investment machines have been purchased by specific departments/groups and are hosted by the ARC team (see Stakeholder column for details). These machines are available for general use, but may be subject to job time limits and/or may occasionally be reserved for exclusive use of the entity that purchased them.
 
@@ -115,6 +115,8 @@ Details on the nodes are:
 
 
 GPU Resources
+-------------
+
 ARC has a number of GPU nodes in the "htc" cluster.
 
 The following table (containing data from http://www.nvidia.com/object/tesla-servers.html and https://developer.nvidia.com/cuda-gpus) describes the characteristics of each GPU card.
@@ -150,17 +152,17 @@ The following table (containing data from http://www.nvidia.com/object/tesla-ser
  
 
 NVidia DGX Max-Q
-================
+^^^^^^^^^^^^^^^^
 
 These nodes are a version of the NVIDIA Volta DGX-1 32GB V100 Server (offering 8x NVLinked Tesla V100 32GB GPUs) using the slightly lower clock speed V100-SXM2-32GB-LS version of the Volta cards. The systems have 40 CPU cores (E5-2698 v4 @ 2.20GHz CPUs) and 512GB of system memory.
  
 
 Storage
-=======
+-------
 
 Our clusters systems share 2PB of high-performance GPFS storage.
 
 Software
-========
+--------
 
 Users may find the application they are interested in running is already been installed on at least one of the systems.  Users are welcome to request the installation of new applications and libraries or updates to already installed applications via our software request form.
