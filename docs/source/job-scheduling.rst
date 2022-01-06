@@ -24,11 +24,11 @@ Typical ARC compute nodes typically have 48 cores. The HTC nodes typically have 
 The Job Scheduler
 -----------------
 
-The ARC/HTC system uses SLURM as its resource manager (or scheduler). This is the same system used for ARCUS-B and ARCUS-HTC so users will be familiar with its commands and submission script syntax.
+The **arc**/**htc** clusters use SLURM as their resource manager (or scheduler). This is the same system used for the ARC's previous clusters (ARCUS-B and ARCUS-HTC) so existing ARC users will be familiar with its commands and submission script syntax.
  
-As a reminder, to do work on ARC's clusters, you will need to submit a job to the job scheduler; the login nodes are for preparing and submitting scheduler jobs and should not be used for performing computational work. If you need to run interactive computational work such as pre/post processing data or building your own code - this must be performed on interactive nodes.
+As a reminder, to work with ARC's clusters, you will need to submit a job to the job scheduler; the login nodes are for preparing and submitting scheduler jobs and should not be used for performing computational work. If you need to run interactive computational work such as pre/post processing data or building your own code - this must be performed on interactive nodes.
 
-Nodes on ARC/HTC are not allocated exclusively to jobs; jobs are allocated the requested number of cores and may share nodes with other jobs. The default number of cores allocated is 1 (as is the default number of nodes). Default amount memory per CPU is 8000MB. You will not be able to use resources you have not requested in your job submission; this includes memory and CPU cores.
+Nodes on **arc**/**htc** are not allocated exclusively to jobs; jobs are allocated the requested number of cores and may share nodes with other jobs. The default number of cores allocated is 1 (as is the default number of nodes). Default amount memory per CPU is 8000MB. You will not be able to use resources you have not requested in your job submission; this includes memory and CPU cores.
 
 Thus if you need more than 1 CPU core, you will need to explicitly ask for them. At its simplest this can be specified by requesting a specific number of tasks, e.g.::
 
@@ -71,13 +71,17 @@ Both clusters have the following time-based scheduling partitions available:
 - devel (maximum run time 10 minutes - for batch job testing only) 
 - interactive (maximum run time 24hrs, can oversubscribe, for pre/post-processing and building software)
 
-Jobs in the short and medium partitions are scheduled with higher priority than those in the long partition; however, they will not be able to run for longer than the time allowed on those partitions.
+Jobs in the **short** and **medium** partitions are scheduled with higher priority than those in the **long** partition; however, they will not be able to run for longer than the time allowed on those partitions.
 
-On the previous clusters (Arcus-B, Arcus-HTC), users who wanted to submit long running jobs needed to submit the jobs to the scheduler specifying an acceptable timelimit, then once the job had started running, would request that the job's walltime be extended. One the new ARC/HTC clusters, this is no longer required; users can submit jobs with long time limits to the long partition. Note: the default time limit on long partition is 1 day; users must specify a time limit if a longer runtime is required.
+On the previous clusters (Arcus-B, Arcus-HTC), users who wanted to submit long running jobs needed to submit the jobs to the scheduler specifying an acceptable timelimit, then once the job had started running, would request that the job's walltime be extended. One the new ARC/HTC clusters, this is no longer required; users can now submit jobs with longer time limits to the **long** partition. 
 
-We will no longer extend jobs.
+.. note::
 
-The htc cluster has an additional partition available named legacy. This partition contains a number of nodes which have CentOS 7.7 installed in order to maintain compatibility with some legacy commercial applications. Access to the legacy partition is restricted to users with a requirement to use legacy software and will be enabled by the ARC team for specific users when it has been demonstrated that using a more recent version of the software application is not possible.
+    The default time limit on long partition is 1 day; users must specify a time limit if a longer runtime is required.
+
+    We will no longer extend jobs.
+
+The **htc** cluster has an additional partition available named legacy. This partition contains a number of nodes which have CentOS 7.7 installed in order to maintain compatibility with some legacy commercial applications. Access to the legacy partition is restricted to users with a requirement to use legacy software and will be enabled by the ARC team for specific users when it has been demonstrated that using a more recent version of the software application is not possible.
 
 Cluster selection
 ^^^^^^^^^^^^^^^^^
