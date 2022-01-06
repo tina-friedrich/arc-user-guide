@@ -42,7 +42,11 @@ mobaxterm
 Copying data to/from ARC
 ------------------------
 
-MacOS/Linux users (and other Unix like operating systems) can use rsync, sftp, or scp. Please note: $HOME and $DATA are shared between the ARC and HTC systems, so the instructions below will work for both systems.
+MacOS/Linux users (and other Unix like operating systems) can use rsync, sftp, or scp. 
+
+.. note::
+
+    $HOME and $DATA are shared between the ARC and HTC systems, so the instructions below will work for both systems.
 
 Copying to the ARC systems
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -66,7 +70,9 @@ Continuing with the above example -  to copy all the files in /local/scripts thi
 
     scp /local/scripts/* ouit0578@gateway.arc.ox.ac.uk:/home/ouit0578/myscripts/
 
-To copy an entire directory hierarchy use the recurse option, -r For example::
+To copy an entire directory hierarchy use the recurse option, -r 
+
+For example::
 
     scp -r /local/scripts/* ouit0578@gateway.arc.ox.ac.uk:/home/ouit0578/myscripts/
 
@@ -83,7 +89,7 @@ Local PC directory: /local/datafromarc
 Copying data from Mac or Linux PC
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  
- To copy files from your local PC::
+To copy files from your local PC::
  
     scp ouit0578@gateway.arc.ox.ac.uk:/home/ouit0578/mydata/* /local/datafromarc/
     
@@ -103,7 +109,9 @@ Changing your password
 
 Passwords can be changed by running the "passwd" command from a terminal::
 
-    user@arc-login~$ passwd Enter login(LDAP) password:
+    user@arc-login~$ passwd 
+    
+    Enter login(LDAP) password:
     Enter new passwd:
     Re-enter new passwd:
 
