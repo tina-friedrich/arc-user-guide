@@ -51,13 +51,13 @@ For a hybrid MPI/OpenMP job, where an MPI tasks spawns multiple CPU threads, the
 
 The default number of CPUs per task is 1.
 
-It is possible to request exclusive access to a node by adding "--exclusive" to your sbatch command or the following line to your submit script::
+It is possible to request exclusive access to a node by adding ```--exclusive``` to your ``sbatch`` command or the following line to your submit script::
 
     #SBATCH --exclusive
     
 However, we strongly advise being specific about required resources rather than using exclusive node access; homogenity of resources (or CPU features) can not be assumed. This is especially true on the HPC system, or when submitting to multiple clusters (see section Job Scheduling).
 
-This is a very short overview; SLURM offers various ways to specify resource requirements; please see 'man sbatch' for details.
+This is a very short overview; SLURM offers various ways to specify resource requirements; please see ``man sbatch`` for details.
 
 
 Partitions
@@ -73,7 +73,7 @@ Both clusters have the following time-based scheduling partitions available:
 
 Jobs in the **short** and **medium** partitions are scheduled with higher priority than those in the **long** partition; however, they will not be able to run for longer than the time allowed on those partitions.
 
-On the previous clusters (Arcus-B, Arcus-HTC), users who wanted to submit long running jobs needed to submit the jobs to the scheduler specifying an acceptable timelimit, then once the job had started running, would request that the job's walltime be extended. One the new ARC/HTC clusters, this is no longer required; users can now submit jobs with longer time limits to the **long** partition. 
+On the previous ARC clusters (ARCUS-B & ARCUS-HTC), users who wanted to submit long running jobs needed to submit the jobs to the scheduler specifying an acceptable timelimit, then once the job had started running, would request that the job's walltime be extended. One the new **arc**/**htc** clusters, this is no longer required; users can now submit jobs with longer time limits to the **long** partition. 
 
 .. note::
 
@@ -88,7 +88,8 @@ Cluster selection
 
 By default jobs will be scheduled based upon the login node you using - if you are logged into **arc-login** jobs you submit will be queued to the **arc** cluster. If you are logged into **htc-login** jobs will be queued to the **htc** cluster.
 
-However, The clusters are accessible from either login nodes and can be specified by passing ``--clusters=arc`` or ``--clusters=htc`` SLURM options.  Additionally, ``squeue`` can report the status of jobs on either cluster (or both using the option ``--clusters=all``). 
+However, The clusters are accessible from either login nodes and can be specified by passing ``--clusters=arc`` or ``--clusters=htc`` SLURM options.  
+Additionally, ``squeue`` can report the status of jobs on either cluster (or both using the option ``--clusters=all``). 
 
 It is possible for  jobs to target either cluster or both clusters using the --cluster specification in job scripts, for example::
 
