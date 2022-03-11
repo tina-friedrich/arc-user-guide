@@ -147,22 +147,22 @@ Supposing no input needs to be specified, the following submission script runs t
 In large part, the script above is similar to the one for a single node job except in this example, ``#SBATCH --ntasks-per-node=m`` is used to reserve m cores per node and to
 prepare the environment for a MPI parallel run with m processes per each compute node.
 
-Slurm partitions
+SLURM partitions
 ----------------
 
-Slurm partitions are essentially different queues that point to collections of nodes.
+SLURM partitions are essentially different queues that point to collections of nodes.
 
-You can specify the Slurm partition by adding the #SBATCH --partition= directive to the top of your submission script so adding::
+You can specify the SLURM partition by adding the ``#SBATCH --partition=`` directive to the top of your submission script so adding::
 
   #SBATCH --partition=devel 
 
-will send your job to the devel partition. Alternatively, the partition can be supplied with the sbatch command like this::
+will send your job to the **devel** partition. Alternatively, the partition can be supplied with the **sbatch** command like this::
 
   sbatch --partition=devel JOBSCRIPT.sh
   
-Defining a partition on the sbatch command line takes precedence over the definition in the jobscript.
+Defining a partition on the **sbatch** command line takes precedence over the definition in the jobscript.
 
-You can see the current state of the partitions with the sinfo command. 
+You can see the current state of the partitions with the **sinfo** command. 
 
 All Slurm commands have extensive help through their man pages; try for example::
 
