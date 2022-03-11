@@ -193,7 +193,7 @@ The command squeue prints the list of current jobs.  The list looks something li
 
   JOBID	  PARTITION   NAME      USER    ST    TIME    Nodes NODELIST(REASON)
   2497	  short       test1.14  bob     R     0.07    1     arc-c252
-  2499	  long        test1.35	mary    R     0.22    4     arc(200-203)
+  2499	  long        test1.35	mary    R     0.22    4     arc-c(200-203)
   2511	  devel       ask.for.	steve   PD    0.00    1     (Resources)
 
 The first column gives the job ID, the second the partition (or queue) where the job was submitted, the third the name of the job (specified by the user
