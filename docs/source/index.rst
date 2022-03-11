@@ -23,7 +23,8 @@ Contents
    arc-systems
    connecting-to-arc
    job-scheduling
-   arc-storage
    arc-priority-jobs
+   arc-storage
+   
    
    
