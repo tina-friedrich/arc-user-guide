@@ -14,7 +14,7 @@ module is a Linux utility, which is used to manage of working environment in pre
 By loading the module for a certain installed application, the environment variables that are relevant for that application are automatically defined or modified.
 
 The ARC/HTC software environment comprises a mixture of commercial applications, software built using the EasyBuild framework and software built using our own local
-build recipes. As with ARCUS-B/HTC we use the environment modules system (via the module command) to load applications into the environment on ARC/HTC.
+build recipes. We use the environment modules system (via the **module** command) to load applications into the environment on ARC/HTC.
 
 However. because the EasyBuild framework adds many new module components into the module list - the best way to search for an application you require
 is by using the module spider command. For example, to search for the GROMACS application::
