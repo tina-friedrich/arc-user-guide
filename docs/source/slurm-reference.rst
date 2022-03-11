@@ -95,11 +95,11 @@ Supposing the application is called myCode and takes no command line arguments, 
     
 The script starts with #!/bin/bash (also called a shebang), which makes the submission script a Linux bash script.
 
-The script continues with a series of lines starting with #, which represent bash script comments.  For Slurm, the lines starting with #SBATCH are directives that request job scheduling resources.  (Note: it's very important that you put all the directives at the top of a script, before any other commands; any #SBATCH directive coming after a bash script command is ignored!)
+The script continues with a series of lines starting with #, which represent bash script comments.  For SLURM, the lines starting with **#SBATCH** are directives that request job scheduling resources.  (Note: it's very important that you put all the directives at the top of a script, before any other commands; any **#SBATCH** directive coming after a bash script command is ignored!)
 
-The resource request #SBATCH --nodes=n determines how many compute nodes a job are allocated by the scheduler; only 1 node is allocated for this job.  A note of caution is on threaded single process applications (e.g. Matlab).  These applications cannot run on more than a single compute node; allocating more (e.g. #SBATCH --nodes=2) will end up with the first node being busy and the rest idle.
+The resource request **#SBATCH --nodes=n** determines how many compute nodes a job are allocated by the scheduler; only 1 node is allocated for this job.  A note of caution is on threaded single process applications (e.g. Matlab).  These applications cannot run on more than a single compute node; allocating more (e.g. **#SBATCH --nodes=2**) will end up with the first node being busy and the rest idle.
 
-The maximum walltime is specified by #SBATCH --time=T, where T has format hh:mm:ss.  Normally, a job is expected to finish before the specified maximum walltime.  After the walltime reaches the maximum, the job terminates regardless whether the job processes are still running or not. 
+The maximum walltime is specified by **#SBATCH --time=T**, where T has format hh:mm:ss.  Normally, a job is expected to finish before the specified maximum walltime.  After the walltime reaches the maximum, the job terminates regardless whether the job processes are still running or not. 
 
 The name of the job can be specified too with #SBATCH --job-name="name"
 
