@@ -11,7 +11,7 @@ from 384GB to 3TB; however, there are some nodes with more (or fewer) cores and/
 Introduction
 ------------
 
-Jobs are run as batch jobs, i.e. in an unattended manner. Typically a user logs in to the login nodes (e.g. arcus-b.arc.ox.ac.uk), prepares a job (which contains details of the work to carry out and the computer resources needed) and submits it to the job queue. The user can then log out (if she/he wishes) until their job has run, to collect the output data.
+Jobs are run as batch jobs, i.e. in an unattended manner. Typically a user logs in to a login node (e.g. arc-login.arc.ox.ac.uk), prepares a job (which contains details of the work to carry out and the computer resources needed) and submits it to the job queue. The user can then log out (if she/he wishes) until their job has run, to collect the output data.
 
 Jobs are managed by SLURM , which is in charge of:
 
@@ -93,17 +93,17 @@ Supposing the application is called myCode and takes no command line arguments, 
     # run the application
     myCode
     
-The script starts with #!/bin/bash (also called a shebang), which makes the submission script a Linux bash script.
+The script starts with ``#!/bin/bash`` (also called a shebang), which makes the submission script a Linux bash script.
 
 The script continues with a series of lines starting with #, which represent bash script comments.  For SLURM, the lines starting with **#SBATCH** are directives that request job scheduling resources.  (Note: it's very important that you put all the directives at the top of a script, before any other commands; any **#SBATCH** directive coming after a bash script command is ignored!)
 
-The resource request **#SBATCH --nodes=n** determines how many compute nodes a job are allocated by the scheduler; only 1 node is allocated for this job.  A note of caution is on threaded single process applications (e.g. Matlab).  These applications cannot run on more than a single compute node; allocating more (e.g. **#SBATCH --nodes=2**) will end up with the first node being busy and the rest idle.
+The resource request ``#SBATCH --nodes=n`` determines how many compute nodes a job are allocated by the scheduler; only 1 node is allocated for this job.  A note of caution is on threaded single process applications (e.g. Matlab).  These applications cannot run on more than a single compute node; allocating more (e.g. **#SBATCH --nodes=2**) will end up with the first node being busy and the rest idle.
 
-The maximum walltime is specified by **#SBATCH --time=T**, where T has format hh:mm:ss.  Normally, a job is expected to finish before the specified maximum walltime.  After the walltime reaches the maximum, the job terminates regardless whether the job processes are still running or not. 
+The maximum walltime is specified by ``#SBATCH --time=T`` where T has format hh:mm:ss.  Normally, a job is expected to finish before the specified maximum walltime.  After the walltime reaches the maximum, the job terminates regardless whether the job processes are still running or not. 
 
-The name of the job can be specified too with #SBATCH --job-name="name"
+The name of the job can be specified too with ``#SBATCH --job-name="name"``
 
-Lastly, an email notification is sent if an address is specified with #SBATCH --mail-user=<email_address>.  The notification options can be set with #SBATCH --mail-type=<type>, where <type> may be BEGIN, END, FAIL, REQUEUE or ALL (for any change of job state).
+Lastly, an email notification is sent if an address is specified with ``#SBATCH --mail-user=<email_address>``  The notification options can be set with ``#SBATCH --mail-type=<type>`` where <type> may be BEGIN, END, FAIL, REQUEUE or ALL (for any change of job state).
 
 The final part of a script is normal Linux bash script and describes the set of operations to follow as part of the job.  The job starts in the same folder where it was submitted (unless an alternative path is specified), and with the same environment variables (modules, etc.) that the user had at the time of the submission.  In this example, this final part only involves invoking the myCode application executable.
 
@@ -135,7 +135,7 @@ Supposing no input needs to be specified, the following submission script runs t
     
     mpirun $MPI_HOSTS myMPICode
 
-In large part, the script above is similar to the one for a single node job except in this example, #SBATCH --ntasks-per-node=m is used to reserve m cores per node and to
+In large part, the script above is similar to the one for a single node job except in this example, ``#SBATCH --ntasks-per-node=m`` is used to reserve m cores per node and to
 prepare the environment for a MPI parallel run with m processes per each compute node.
 
 Slurm partitions
@@ -198,7 +198,7 @@ Some other useful squeue features include::
   -l for showing more of the  available information;
   --start to report  the  expected  start  time  of pending jobs.
  
-Read all the options for squeue on the Linux manual using the command **man squeue**, including how to personalize the information to be displayed.
+Read all the options for squeue on the Linux manual using the command ``man squeue`` including how to personalize the information to be displayed.
 
 Deleting jobs with the command scancel
 --------------------------------------
@@ -289,8 +289,7 @@ For clarity, the input and output files for the above script, if submited as job
   1802055_3	arrayJob_1802055_3.out	arrayJob_1802055_3.err	input_3.txt
   1802055_4	arrayJob_1802055_4.out	arrayJob_1802055_4.err	input_4.txt
 
-Note: You can specifiy the --array option on the sbatch command line instead of inside the submission script. For example if the --array option was removed from the above
-script and the script was named jobArray.sh the command would be::
+Note: You can specifiy the ``--array`` option on the ``sbatch`` command line instead of inside the submission script. For example if the ``--array`` option was removed from the above script and the script was named **jobArray.sh** the command would be::
 
   sbatch --array=1-4 jobArray.sh
 
