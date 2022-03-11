@@ -106,7 +106,7 @@ The script starts with ``#!/bin/bash`` (also called a shebang), which makes the 
 
 The script continues with a series of lines starting with #, which represent bash script comments.  For SLURM, the lines starting with **#SBATCH** are directives that request job scheduling resources.  (Note: it's very important that you put all the directives at the top of a script, before any other commands; any **#SBATCH** directive coming after a bash script command is ignored!)
 
-The resource request ``#SBATCH --nodes=n`` determines how many compute nodes a job are allocated by the scheduler; only 1 node is allocated for this job.  A note of caution is on threaded single process applications (e.g. Matlab).  These applications cannot run on more than a single compute node; allocating more (e.g. **#SBATCH --nodes=2**) will end up with the first node being busy and the rest idle.
+The resource request ``#SBATCH --nodes=n`` determines how many compute nodes a job are allocated by the scheduler; only 1 node is allocated for this job.  A note of caution is on threaded single process applications (e.g. Matlab).  These applications cannot run on more than a single compute node; allocating more (e.g. ``#SBATCH --nodes=2``) will end up with the first node being busy and the rest idle.
 
 The maximum walltime is specified by ``#SBATCH --time=T`` where T has format hh:mm:ss.  Normally, a job is expected to finish before the specified maximum walltime.  After the walltime reaches the maximum, the job terminates regardless whether the job processes are still running or not. 
 
@@ -156,13 +156,13 @@ You can specify the SLURM partition by adding the ``#SBATCH --partition=`` direc
 
   #SBATCH --partition=devel 
 
-will send your job to the **devel** partition. Alternatively, the partition can be supplied with the **sbatch** command like this::
+will send your job to the **devel** partition. Alternatively, the partition can be supplied with the ``sbatch`` command like this::
 
   sbatch --partition=devel JOBSCRIPT.sh
   
-Defining a partition on the **sbatch** command line takes precedence over the definition in the jobscript.
+Defining a partition on the ``sbatch`` command line takes precedence over the definition in the jobscript.
 
-You can see the current state of the partitions with the **sinfo** command. 
+You can see the current state of the partitions with the ``sinfo`` command. 
 
 All Slurm commands have extensive help through their man pages; try for example::
 
@@ -230,13 +230,13 @@ define the correct workflow of the job.  The most useful of these environment va
   SLURM_JOB_NODELIST, which returns the list of nodes allocated to the job;
   SLURM_JOB_ID, which is a unique number Slurm assigns to a job.
 
-In most cases, SLURM_SUBMIT_DIR does not have to be used, as the job goes by default to the directory where the slurm command was issued.  This behaviour of Slurm is in contrast with other schedulers, such as Torque, which goes to the home directory of the user account.  SLURM_SUBMIT_DIR can be useful in a submission script when files must be copied to/from a specific directory that is different from the directory where the slurm command was issued.
+In most cases,``SLURM_SUBMIT_DIR`` does not have to be used, as the job goes by default to the directory where the slurm command was issued.  This behaviour of SLURM is in contrast with other schedulers, such as Torque, which goes to the home directory of the user account.  ``SLURM_SUBMIT_DIR`` can be useful in a submission script when files must be copied to/from a specific directory that is different from the directory where the slurm command was issued.
 
-SLURM_JOB_ID is useful to tag job specific files and directories, typically output files or run directories.  For instance, the submission script line::
+``SLURM_JOB_ID`` is useful to tag job specific files and directories, typically output files or run directories.  For instance, the submission script line::
 
   myApp > $SLURM_JOB_ID.out
   
-runs the application myApp and redirects the standard output to a file whose name is given by the job ID.  The job ID is a number assigned by Slurm and differs from
+runs the application myApp and redirects the standard output to a file whose name is given by the job ID.  The job ID is a number assigned by SLURM and differs from
 the character string name given to the job in the submission script by the user.
 
 Job Dependencies
@@ -261,7 +261,7 @@ For example::
   1802051
   sbatch --dependency=afterok:1802051 job2.sh
   
-In the above example, job script job1.sh is submitted and is given a JobID of 1802051. We then submit job2.sh with a dependency that it only run
+In the above example, job script **job1.sh** is submitted and is given a JobID of 1802051. We then submit **job2.sh** with a dependency that it only run
 when job 1802051 has completed.
 
 Job Arrays
@@ -286,9 +286,9 @@ For example::
     # Run "application" using input filename modified by SLURM_ARRAY_TASK_ID
     ./application input_$SLURM_ARRAY_TASK_ID.txt
     
-The above example uses the --array=1-4 specification to create four array tasks which run the command "application" on different input files, the filename of each being modified by the SLURM_ARRAY_TASK_ID variable. 
+The above example uses the ``--array=1-4`` specification to create four array tasks which run the command "application" on different input files, the filename of each being modified by the ``SLURM_ARRAY_TASK_ID`` variable. 
 
-The %A_%a construct in the output and error file names is used to generate unique output and error files based on the master job ID (%A) and the array-task's ID (%a). In this fashion, each array-task will be able to write to its own output and error file.
+The ``%A_%a`` construct in the output and error file names is used to generate unique output and error files based on the master job ID (%A) and the array-task's ID (%a). In this fashion, each array-task will be able to write to its own output and error file.
 
 For clarity, the input and output files for the above script, if submited as jobID 1802055 would be::
 
