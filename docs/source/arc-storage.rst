@@ -3,19 +3,19 @@ ARC Storage
 
 Once your account has been created, you will immediately have access to two persistent storage areas:
 
-$HOME (/home/username) with a 15GB quota
+**$HOME** (/home/username) with a 15GB quota
 
-$DATA (/data/projectname/username)  sharing a 5TB quota with your project colleagues
+**$DATA** (/data/projectname/username)  sharing a 5TB quota with your project colleagues
 
-Additionally, when you run a SLURM job, a per-job $SCRATCH and $TMPDIR for temporary data/workfiles is created. 
+Additionally, when you run a SLURM job, a per-job **$SCRATCH** and **$TMPDIR** for temporary data/workfiles is created. 
 
-$TMPDIR is local to a compute node
+**$TMPDIR** is local to a compute node
 
-$SCRATCH is on a shared file system and available to all nodes in a job, if a job spans multiple nodes.
+**$SCRATCH** is on a shared file system and available to all nodes in a job, if a job spans multiple nodes.
 
-Note: Both $SCRATCH and $TMPDIR are not persistent; they will be automatically removed on job exit. It is important that your job copies all files into your $DATA area before it exits; we will not be able to recover your data if you left it on $SCRATCH or $TMPDIR once a job finished.
+Note: Both **$SCRATCH** and **$TMPDIR** are not persistent; they will be automatically removed on job exit. It is important that your job copies all files into your $DATA area before it exits; we will not be able to recover your data if you left it on **$SCRATCH** or **$TMPDIR** once a job finished.
 
-As a rule we recommend that you use your $DATA area to store your data, but utilise the per job $SCRATCH or $TMPDIR area - especially for intermediate or temporary files. Generally you would copy all required input data at the start of your job and then copying results back to your $DATA area.
+As a rule we recommend that you use your **$DATA** area to store your data, but utilise the per job **$SCRATCH** or **$TMPDIR** area - especially for intermediate or temporary files. Generally you would copy all required input data at the start of your job and then copying results back to your **$DATA** area.
 
 A simple example of how to do this would be::
 
@@ -38,7 +38,7 @@ If you are unable to access either of these directories, please let us know.
 Quota
 -----
 
-By default your $HOME area will have a 15GB quota while the $DATA area will have a 5TB quota that is shared between yourself and the other members of your project.
+By default your **$HOME** area will have a 15GB quota while the **$DATA** area will have a 5TB quota that is shared between yourself and the other members of your project.
 
 To check your quota use the command::
 
