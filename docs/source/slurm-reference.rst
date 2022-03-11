@@ -39,19 +39,28 @@ This guide describes basic job submission and monitoring for SLURM.  The topics 
 Commands
 --------
 
-The table below gives a short description of the most used Slurm commands.
+The table below gives a short description of the most used SLURM commands.
 
-command	description
-sacct	report job accounting information about active or completed jobs
-salloc	allocate resources for a job in real time (typically used to allocate resources and spawn a shell, in which the srun command is used to launch parallel tasks)
-sbatch	submit a job script for later execution (the script typically contains one or more srun commands to launch parallel tasks)
-scancel	cancel a pending or running job
-sinfo	reports the state of partitions and nodes managed by Slurm (it has a variety of filtering, sorting, and formatting options)
-squeue	reports the state of jobs (it has a variety of filtering, sorting, and formatting options), by default, reports the running jobs in priority order followed by the pending jobs in priority order
-srun	
-used to submit a job for execution in real time
++---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Command | Description                                                                                                                                                                                       |
++=========+===================================================================================================================================================================================================+
+| sacct   | Report job accounting information about active or completed jobs                                                                                                                                  |
++---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| salloc  | Allocate resources for a job in real time (typically used to allocate resources and spawn a shell, in which the srun command is used to launch parallel tasks                                     |
++---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sbatch  | Submit a job script for later execution (the script typically contains one or more srun commands to launch parallel tasks)                                                                        |
++---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| scancel | Cancel a pending or running job                                                                                                                                                                   |
++---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sinfo   | Reports the state of partitions and nodes managed by Slurm (it has a variety of filtering, sorting, and formatting options)                                                                       |
++---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| squeue  | Reports the state of jobs (it has a variety of filtering, sorting, and formatting options), by default, reports the running jobs in priority order followed by the pending jobs in priority order |
++---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| srun    | Used to submit a job for execution in real time                                                                                                                                                   |
++---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-All Slurm commands have extensive help through their man pages, for example::
+
+All SLURM commands have extensive help through their man pages, for example::
 
   man sbatch
   
