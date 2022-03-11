@@ -24,5 +24,6 @@ Contents
    connecting-to-arc
    job-scheduling
    arc-storage
+   arc-priority-jobs
    
    
