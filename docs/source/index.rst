@@ -26,6 +26,7 @@ Contents
    arc-priority-jobs
    arc-storage
    arc-software
+   slurm-reference
    
    
    
