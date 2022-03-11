@@ -1,8 +1,8 @@
 Accessing Installed Software Applications
 =========================================
 
-Introduction
-------------
+Environment Modules
+-------------------
 
 The Linux operating system makes extensive use of the "working environment", which is a collection of individual environment variables.  
 An environment variable is a named object in the Linux shell that contains information used by one or more applications; two of the most used such variables are **$HOME**, 
