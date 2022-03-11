@@ -142,7 +142,7 @@ Supposing no input needs to be specified, the following submission script runs t
     # send mail to this address
     #SBATCH --mail-user=john.brown@gmail.com
     
-    mpirun $MPI_HOSTS myMPICode
+    mpirun myMPICode
 
 In large part, the script above is similar to the one for a single node job except in this example, ``#SBATCH --ntasks-per-node=m`` is used to reserve m cores per node and to
 prepare the environment for a MPI parallel run with m processes per each compute node.
