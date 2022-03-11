@@ -1,7 +1,7 @@
 SLURM Reference Guide
 =====================
 
-Using the Slurm job scheduler
+Using the SLURM job scheduler
 -----------------------------
 
 **Important note**
@@ -26,9 +26,9 @@ Running a job involves, at the minimum, the following steps:
 
 This guide describes basic job submission and monitoring for SLURM.  The topics in the guide are:
 
-- the main Slurm commands,
+- the main SLURM commands,
 - preparing a submission script,
-- slurm partitions,
+- SLURM partitions,
 - submitting a job to the queue,
 - monitoring a job execution,
 - deleting a job from the queue and
@@ -52,7 +52,7 @@ The table below gives a short description of the most used SLURM commands.
 +---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | scancel | Cancel a pending or running job                                                                                                                                                                   |
 +---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| sinfo   | Reports the state of partitions and nodes managed by Slurm (it has a variety of filtering, sorting, and formatting options)                                                                       |
+| sinfo   | Reports the state of partitions and nodes managed by SLURM (it has a variety of filtering, sorting, and formatting options)                                                                       |
 +---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | squeue  | Reports the state of jobs (it has a variety of filtering, sorting, and formatting options), by default, reports the running jobs in priority order followed by the pending jobs in priority order |
 +---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
