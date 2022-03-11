@@ -4,8 +4,8 @@ SLURM Reference Guide
 Using the SLURM job scheduler
 -----------------------------
 
-**Important note**
-This guide is an introduction to the Slurm job scheduler and its use on the ARC clusters. ARC compute nodes typically have two 24 core processors and a range of memory sizes,
+**Important note**:
+This guide is an introduction to the SLURM job scheduler and its use on the ARC clusters. ARC compute nodes typically have two 24 core processors and a range of memory sizes,
 from 384GB to 3TB; however, there are some nodes with more (or fewer) cores and/or memory. In addition, some nodes in the HTC cluster have NVidia Tesla GPGPU cards. 
 
 Introduction
