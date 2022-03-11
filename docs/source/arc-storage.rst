@@ -44,7 +44,7 @@ To check your quota use the command::
 
   myquota
 
-This command will list a your home and the shared project data area usage.
+This command will list both your home quota and the quota of shared project data areas that you are a member of.
 
 We can provide more detailed statements of data area quota usage to project leaders on request.
 
