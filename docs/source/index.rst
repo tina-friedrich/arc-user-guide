@@ -2,18 +2,9 @@ ARC User Guide
 ==============
 
 
-
-
-
-.. note::
-
-   This documentation is under active development.
-
-Contents
---------
-
 .. toctree::
 
+   introduction
    arc-systems
    connecting-to-arc
    job-scheduling
