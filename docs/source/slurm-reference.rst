@@ -302,4 +302,4 @@ Note: You can specifiy the ``--array`` option on the ``sbatch`` command line ins
 
   sbatch --array=1-4 jobArray.sh
 
-More information about Slurm job arrays can be found in the Slurm Job Array Documentation
+More information about SLURM job arrays can be found in the `Slurm Job Array Documentation <https://slurm.schedmd.com/job_array.html>`_
