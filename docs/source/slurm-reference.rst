@@ -164,7 +164,7 @@ Submitting jobs with the command sbatch
 
 Once you have a submission script ready (e.g submit.sh), the job is submitted to the execution queue with the command::
 
-  sbatch submit.sh.  
+  sbatch submit.sh
 
 The queueing system prints a number (the job id) almost immediately and returns control to the linux prompt.  At this point the job is in the submission queue.
 
@@ -281,13 +281,14 @@ The above example uses the --array=1-4 specification to create four array tasks 
 
 The %A_%a construct in the output and error file names is used to generate unique output and error files based on the master job ID (%A) and the array-task's ID (%a). In this fashion, each array-task will be able to write to its own output and error file.
 
-For clarity, the input and output files for the above script, if submited as jobID 1802055 would be:
+For clarity, the input and output files for the above script, if submited as jobID 1802055 would be::
 
-JobID	--output	--error	Application Input filename
-1802055_1	arrayJob_1802055_1.out	arrayJob_1802055_1.err	input_1.txt
-1802055_2	arrayJob_1802055_2.out	arrayJob_1802055_2.err	input_2.txt
-1802055_3	arrayJob_1802055_3.out	arrayJob_1802055_3.err	input_3.txt
-1802055_4	arrayJob_1802055_4.out	arrayJob_1802055_4.err	input_4.txt
+  JobID     --output                --error	                Application Input filename
+  1802055_1	arrayJob_1802055_1.out  arrayJob_1802055_1.err  input_1.txt
+  1802055_2	arrayJob_1802055_2.out  arrayJob_1802055_2.err  input_2.txt
+  1802055_3	arrayJob_1802055_3.out	arrayJob_1802055_3.err	input_3.txt
+  1802055_4	arrayJob_1802055_4.out	arrayJob_1802055_4.err	input_4.txt
+
 Note: You can specifiy the --array option on the sbatch command line instead of inside the submission script. For example if the --array option was removed from the above
 script and the script was named jobArray.sh the command would be::
 
