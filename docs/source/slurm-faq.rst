@@ -1,18 +1,9 @@
 SLURM FAQs
 ==========
 
-:ref:`How do I submit, check the status, and/or delete a batch job?`
-:ref:`Why does my queued job not start?`
-:ref:`Why does my job fail with the error "/bin/bash^M: bad interpreter: No such file or directory"?`
-:ref:`Why does my job fail/die after running for just a few seconds?`
-:ref:`Why does my job fail/die after running for a few hours/days?`
-:ref:`How can I increase the walltime of a running job?`
-:ref:`How can I get an email notification when a job begins/finishes?`
-:ref:`How can I check the availability of free compute nodes?`
- 
- 
- 
+
 How do I submit, check the status, and/or delete a batch job?
+-------------------------------------------------------------
 
 Use the SLURM commands : ``sbatch``, ``squeue`` , ``scancel``
 
@@ -30,6 +21,7 @@ To delete a batch job, you need to know the job ID and then use the scancel comm
 
 
 Why does my queued job not start?
+---------------------------------
 
 Jobs may be queued for various reasons. A job may be waiting for resources to become available. Or you might have hit a limit for the maximum number of jobs that can be
 running on the system. One way to determine why a job is queuing is to use the ``scontrol show job`` command. For example, if the job ID is 12345::
@@ -75,6 +67,7 @@ Your job is waiting for enough compute resource to become available.
  
 
 Why does my job fail with the error "/bin/bash^M: bad interpreter: No such file or directory"
+---------------------------------------------------------------------------------------------
 
 You have edited your submission script using a Windows editor (such as notepad).  Windows has extra characters at the end of a line,
 which are not needed under Linux and which cause the Torque qsub command to fail.
@@ -84,6 +77,7 @@ Eliminate the extra characters by using the following command::
   dos2unix myScript.sh
  
 Why does my job fail/die after running for just a few seconds?
+--------------------------------------------------------------
 
 There is a problem with the job submission script.  The error output from the job submission should provide some information as to why the job failed.
 If you require help with determining what the problem is, please contact the ARC support team and provide relevant details to help with diagnosis.
@@ -91,12 +85,14 @@ This should include Job ID and batch script details.  Time/date of submission an
 
  
 Why does my job fail/die after running for a few hours/days?
+------------------------------------------------------------
 
 Possibly your job has run out of walltime.  Every job has a walltime limit that is specified in the submission script or by the sbatch command or picked 
 up from the relevant default value.  See next question regarding requesting increase to the walltime of a running job.
 
  
 How can I increase the walltime of a running job?
+-------------------------------------------------
 
 If you submit a job and find that it may not finish within the requested walltime, then to avoid having the job terminated when it reaches its walltime limit,
 please contact the ARC support team with details of the job (Job ID and ARC system the job is running on) requesting that the job walltime be increased. 
@@ -104,6 +100,7 @@ If you are able to estimate the additional walltime required this is helpful.
 
  
 How can I get an email notification when a job begins/finishes?
+---------------------------------------------------------------
 
 Include the ``--mail-type`` and ``--mail-user`` options in the job submission script.  These can be specified at the beginning of the job submission script as
 a line of the form::
@@ -119,5 +116,6 @@ More details about sbatch options can be found in the sbatch man page (man sbatc
 
  
 How can I check the availability of free compute nodes?
+-------------------------------------------------------
 
 Use the command the SLURM command ``sinfo``
