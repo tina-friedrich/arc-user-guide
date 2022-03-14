@@ -30,7 +30,7 @@ running on the system. One way to determine why a job is queuing is to use the `
 
 The Reason field, normally near the top of the scontrol show job output may be helpful. Some common reason messages include:
 
-JobHeldUser
+**JobHeldUser**
 
 This means your job is held because your ARC project has run our out of compute "credit". Please contact support@arc.ox.ac.uk for a top up.
 
@@ -47,20 +47,20 @@ To check your credit balance at any time you can use the command::
 Email us when credit is low and we will add credit so that your jobs are not held.
 
 
-PartitionTimeLimit
+**PartitionTimeLimit**
 
 The walltime you have requested is in excess of the time allowed in the partition you have submitted to.
  
 
-ReqNodeNotAvail
+**ReqNodeNotAvail**
 
 The most common reason for this message is that the nodes are reserved. This may be for systems maintenance or in the case of co-investment nodes, reserved by the stakeholder.
 
-Priority
+**Priority**
 
 Your job is waiting because jobs of higher priority are being scheduled first. The main reason for this will be your recent usage of the ARC systems; as more and more of your submitted jobs run on the clusters the successful running of those jobs will gradually erode the level of priority accorded by the scheduler to your next upcoming job. This is to ensure that all users of ARC's systems get a "fair share" of the resource and than no single individual or project can dominate usage of the clusters e.g. by submitting thousands of jobs. Fair-share is decided by the scheduler's fair-share algorithm and your job will run once the higher priority jobs have been scheduled and/or your job's priority increases due to its time in the queue. Please note fair-share priority is not linked to number of jobs you submitted and are queued, only the number of jobs you have sucessfully run on the systems. 
 
-Resources
+**Resources**
 
 Your job is waiting for enough compute resource to become available.
 
