@@ -12,6 +12,7 @@ ARC User Guide
    arc-storage
    arc-software
    slurm-reference
+   slurm-faq
    
    
    
