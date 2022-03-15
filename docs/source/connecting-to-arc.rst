@@ -49,16 +49,12 @@ MacOS/Linux users (and other Unix like operating systems) can use rsync, sftp, o
 Copying to the ARC systems
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1) Make sure you know the path to the destination directory. Login to ARC and create a directory in $DATA. Change to that directory and run the command 'pwd'; this will show you the full path to the destination directory. 
-
-For example if you have created a directory myscripts in $DATA, 'pwd' will show output like::
+1) Make sure you know the path to the destination directory. Login to ARC and create a directory in $DATA. Change to that directory and run the command 'pwd'; this will show you the full path to the destination directory. For example if you have created a directory myscripts in $DATA, 'pwd' will show output like::
 
     [ouit0578@gateway Scripts]$ pwd
     /data/system/ouit0578/myscripts
 
-2) On your Mac or Linux PC open a terminal use the command 'cd directoryname' to get to the source directory where the file(s) you want to copy are located. The command pwd will show the full path to this directory, take note of this path. 
-
-For example if you have a directory scripts the path might be something like::
+2) On your Mac or Linux PC open a terminal use the command 'cd directoryname' to get to the source directory where the file(s) you want to copy are located. The command pwd will show the full path to this directory, take note of this path. For example if you have a directory scripts the path might be something like::
 
     Scripts$ pwd
     /local/scripts
