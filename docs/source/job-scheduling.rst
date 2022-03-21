@@ -143,7 +143,7 @@ To request a single core for 10 minutes, with one task on the node (and one CPU 
 Interactive Jobs
 ----------------
 
-An interactive job gives you a login session on a compute node and gives you a shell. This allows users to interact with the node it in real time, much like one would interact with a desktop PC, or the login nodes. We now expect users to use interactive jobs in order to run pre/post processing and software build activities - and there are nodes dedicated to these tasks.
+An interactive job gives you a login session on a compute node and gives you a shell. This allows users to interact with the node in real time, much like one would interact with a desktop PC, or the login nodes. We now expect users to use interactive jobs in order to run pre/post processing and software build activities - and there are nodes dedicated to these tasks.
 
 To start an interactive session, you need to use the srun command, for example::
 
@@ -155,7 +155,7 @@ or for a session that allows graphical interfaces (via X forwarding)::
 
 This would allocate 1 core on one interactive node and log you in to the system (giving you a shell on the system). Multiple cores, memory, or other resources can be requested the same way as for sbatch.
 
-Exiting the the shell ends the job. It will also be aborted once it exceeds the time limit.
+Exiting the shell ends the job. It will also be aborted once it exceeds the time limit.
 
 GPU Resources
 -------------
