@@ -166,7 +166,7 @@ In these cases it is important to try to understand how much memory the applicat
 
 As shown in the above examples you can use the ``--mem`` option to request more memory on a node, the maximum per normal compute node on ARC being ``--mem=380G``. On HTC there are two high memory nodes, so you can use ``--mem=3000G`` to use one of these. 
 
-Where you are getting persistent memory errors we would advise starting an srun session to connect to your job whilst it is running, using the command::
+Where you are getting persistent memory errors we would advise starting an ``srun`` session to connect to your job whilst it is running, using the command::
 
     srun -j <jobid>
 
