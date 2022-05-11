@@ -157,6 +157,30 @@ This would allocate 1 core on one interactive node and log you in to the system 
 
 Exiting the shell ends the job. It will also be aborted once it exceeds the time limit.
 
+Memory Resources
+----------------
+
+It is possible that your job may fail due to an out-of-memory error. These can manifest as explicit "OOM (Out-Of Memory) killed" messages or errors such as "Segmentation fault" which may also indicate a memory issue.
+
+In these cases it is important to try to understand how much memory the application you are running requires. Some MPI code may need to run on more cores in order to distribute the the problem and use less memory per node.
+
+As shown in the above examples you can use the ``--mem`` option to request more memory on a node, the maximum per normal compute node on ARC being ``--mem=380G``. On HTC there are two high memory nodes, so you can use ``--mem=3000G`` to use one of these. 
+
+Where you are getting persistent memory errors we would advise starting an srun session to connect to your job whilst it is running, using the command::
+
+    srun -j <jobid>
+
+You can then use the linux ``top`` command to monitor the memory utilisation (shown in the RES column) over time.
+
+If your job is exceeding the 3TB limit on the HTC nodes, you will have to go back to your application to ascertain how to modify your input data in order to reduce the job size, some options being:
+
+- In the case of large data-sets - splitting these into smaller files with multiple jobs via a job array.
+- Reducing the problem/domain size.
+- Gain a good understanding of your code by profiling where the large data structures are being created and potentially optimising these - there are many profiling solutions for Python code. ARC has Intel VTune available for use with your own C,C++,Fortran code.
+
+
+
+
 GPU Resources
 -------------
 
