@@ -168,7 +168,7 @@ As shown in the above examples you can use the ``--mem`` option to request more 
 
 Where you are getting persistent memory errors we would advise starting an ``srun`` session to connect to your job whilst it is running, using the command::
 
-    srun -j <jobid>
+    srun --jobid <jobid> --pty /bin/bash
 
 You can then use the linux ``top`` command to monitor the memory utilisation (shown in the RES column) over time.
 
