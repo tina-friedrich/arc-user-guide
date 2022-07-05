@@ -1,11 +1,13 @@
 General FAQs
-------------
+============
   
-**How do I become a ARC user?**
+How do I become a ARC user?
+---------------------------
 The supercomputing facility is available to all Oxford University researchers.  You can become a user by registering with the ARC. 
 Start with the `User registration Page <https://www.arc.ox.ac.uk/getting-started-obtaining-an-account>`_
 
-**Where should a new ARC user begin?**
+Where should a new ARC user begin?
+----------------------------------
 Look at information in `this section of the ARC website. <https://www.arc.ox.ac.uk/what-next>`_
 
 **What systems can I access as a user?**
