@@ -23,9 +23,9 @@ from a Linux or Mac terminal, the user bob log on to **system** (**system** coul
 
 We recommend the use of the ``-X`` flag to ``ssh``, which allows users to run graphical applications remotely (such as the emacs editor).  This option allows X11 forwarding using subject to security control.
 
-Windows users should install an application called ``PuTTY``. To connect to one of the ARC machines, PuTTY has to operate in the "ssh"
+Windows users should install an application called ``PuTTY``. To connect to one of the ARC machines, ``PuTTY`` has to operate in the ``ssh``
 mode.  To allow remote applications to display graphics through the link, the X11 tunelling option has to be enabled.  (The best way to learn about how to do this
-is to search the web for "putty x11 tunnelling".)  Additionally, Windows users that wish to use X11 graphics via PuTTY must install a X11 server, and ``xming`` is arguably the best option. 
+is to search the web for "putty x11 tunnelling".)  Additionally, Windows users that wish to use X11 graphics via ``PuTTY`` must install a X11 server, and ``xming`` is arguably the best option. 
 
 Windows users can also use a combined SSH/X-Server client such as `MobaXTerm <https://mobaxterm.mobatek.net/>`_ to connect to ARC systems.
 
@@ -34,22 +34,22 @@ Linux and Mac users should use scp for transfering files.  For example, the comm
 
    scp localfolder/myfile.txt bob@system.arc.ox.ac.uk:/path/to/remote/folder
 
-copies the file myfile.txt from the local host to system in the directory /path/to/remote/folder on the ARC system.  Also::
+copies the file ``myfile.txt`` from the local host to system in the directory ``/path/to/remote/folder`` on the ARC system.  Also::
 
    scp bob@system.arc.ox.ac.uk:/path/to/remote/folder/myfile.txt localfolder/
 
 copies myfile.txt from the remote directory to the local one.  In both cases, the target file is overwritten if it exists.  Study the scp Linux manual (man scp)
 to learn more; for example the -r (recursive) option is useful for transferring entire directories.
 
-Linux and Mac users may also find ```rsync``` very useful, for instance for maintaining directory structures on their workstation in sync with copies on the ARC storage.
+Linux and Mac users may also find ``rsync`` very useful, for instance for maintaining directory structures on their workstation in sync with copies on the ARC storage.
 
 The command::
 
    rsync -avz localfolder bob@system.arc.ox.ac.uk:/path/to/remote/folder
 
-copies the directory localfolder to the directory /path/to/remote/folder on the ARC system. The files are transferred recursively in "archive" mode, which ensures that symbolic links, permissions, ownerships, etc. are preserved.  The example above also uses compression (-z) to reduce the size of the transferred data. Unlike scp, rsync does not simply overwrite existing files but rather updates, transferring only the differences between two files.
+copies the directory ``localfolder`` to the directory ``/path/to/remote/folder`` on the ARC system. The files are transferred recursively in "archive" mode, which ensures that symbolic links, permissions, ownerships, etc. are preserved.  The example above also uses compression ``-z`` to reduce the size of the transferred data. Unlike ``scp``, ``rsync`` does not simply overwrite existing files but rather updates, transferring only the differences between two files.
 
-Windows users can use pscp, usually bundled with PuTTY.  Alternatively, WinSCP is a very easy to use, open source scp client for Windows.
+Windows users can use ``pscp``, usually bundled with ``PuTTY``.  Alternatively, ``WinSCP`` is a very easy to use, open source scp client for Windows.
 
  
 How do I access the ARC systems from outside the University network?
