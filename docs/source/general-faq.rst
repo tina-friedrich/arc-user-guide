@@ -63,7 +63,7 @@ How do I access the ARC systems from outside the University network?
 There are two main ways to access the ARC systems from outside the University network:
 
 By connecting to the University of Oxford virtual private network (VPN) and accessing the ARC systems as though users were on campus
-(see `University VPN Information <http://help.it.ox.ac.uk/network/vpn/index>`_ for more details).
+(see `University VPN Information <https://help.it.ox.ac.uk/vpn>`_ for more details).
 
 By connecting to the ARC external access server, ``gateway.arc.ox.ac.uk`` gateway has a firewall in place and only permits access from known locations.
 Thus, users need to provide the ARC (static) IP addresses from the location that they need to connect from.  This should be an IP address from an identifiable institution. 
