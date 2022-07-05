@@ -10,7 +10,7 @@ To submit jobs with higher priority, you need to add the ``--qos=priority`` opti
 
   sbatch --qos=priority ...
 
-where "..." is replaced by whatever other options you might normally include on your sbatch commands.
+where "..." is replaced by whatever other options you might normally include on your ``sbatch`` commands.
 
 Or you can include an ``#SBATCH`` directive comment at the beginning of your submission script::
 
