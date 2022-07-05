@@ -13,6 +13,7 @@ ARC User Guide
    arc-software
    slurm-reference
    slurm-faq
+   general-faq
    
    
    
