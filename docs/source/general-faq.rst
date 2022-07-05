@@ -73,7 +73,7 @@ The first method is the preferred form for any users who have University SSO pas
  
 How do I acknowledge ARC in my publications?
 --------------------------------------------
-Please see the Acknowledgements section on the `ARC Policies page<https://www.arc.ox.ac.uk/policies>`_.
+Please see the Acknowledgements section on the `ARC Policies page <https://www.arc.ox.ac.uk/policies>`_
 
  
 Will application X run on the ARC supercomputers faster than on my workstation?
