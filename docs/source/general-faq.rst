@@ -10,13 +10,16 @@ Where should a new ARC user begin?
 ----------------------------------
 Look at information in `this section of the ARC website. <https://www.arc.ox.ac.uk/what-next>`_
 
-**What systems can I access as a user?**
+What systems can I access as a user?
+------------------------------------
 All registered users have access to all the ARC systems.
 
-**How much disk space do I have?**
+How much disk space do I have?
+------------------------------
 Default quota on ``$HOME`` is 15 gigabytes (GB) per user and on ``$DATA`` is 5 terabytes (TB) per project/group.  Larger quotas limits are available on request.
 
-**How do I log on to the ARC systems?**
+How do I log on to the ARC systems?
+-----------------------------------
 Linux and Mac users should use ``ssh`` to connect to the ARC systems.  For example, issuing the following command:: 
 
   ssh -X bob@system.arc.ox.ac.uk
@@ -31,8 +34,9 @@ is to search the web for "putty x11 tunnelling".)  Additionally, Windows users t
 
 Windows users can also use a combined SSH/X-Server client such as `MobaXTerm <https://mobaxterm.mobatek.net/>`_ to connect to ARC systems.
 
-**How do I transfer files to/from the ARC systems?**
-Linux and Mac users should use scp for transfering files.  For example, the command::
+How do I transfer files to/from the ARC systems?
+------------------------------------------------
+Linux and Mac users should use ``scp`` for transfering files.  For example, the command::
 
    scp localfolder/myfile.txt bob@system.arc.ox.ac.uk:/path/to/remote/folder
 
@@ -55,37 +59,45 @@ Windows users can use ``pscp``, usually bundled with ``PuTTY``.  Alternatively, 
 
  
 How do I access the ARC systems from outside the University network?
+--------------------------------------------------------------------
 There are two main ways to access the ARC systems from outside the University network:
 
 By connecting to the University of Oxford virtual private network (VPN) and accessing the ARC systems as though users were on campus
-(see http://help.it.ox.ac.uk/network/vpn/index for more details).
+(see `University VPN Information<http://help.it.ox.ac.uk/network/vpn/index>`_ for more details).
 
-By connecting to the ARC external access server, gateway.arc.ox.ac.uk. gateway has a firewall in place and only permits access from known locations.
-Thus, users need to provide the ARC (static) IP addresses from the location that they need to connect from.  This should ideally be an easily identifiable institution.
+By connecting to the ARC external access server, ``gateway.arc.ox.ac.uk`` gateway has a firewall in place and only permits access from known locations.
+Thus, users need to provide the ARC (static) IP addresses from the location that they need to connect from.  This should be an IP address from an identifiable institution. 
+
 The first method is the preferred form for any users who have University SSO passwords.  The second method is useful for users who are external collaborators.
 
  
-**How do I acknowledge ARC in my publications?**
+How do I acknowledge ARC in my publications?
+--------------------------------------------
 Please see the acknowledgements section on the ARC Terms and Conditions page.
 
  
-**Will application X run on the ARC supercomputers faster than on my workstation?**
-We hope so.  If you wish to investigate whether you can achieve speed up on your application, then please contact us.
+Will application X run on the ARC supercomputers faster than on my workstation?
+-------------------------------------------------------------------------------
+We hope so, but it may not for many reasons.  If you wish to investigate whether you can achieve speed up on your application, then please contact us.
 
  
-**How many credits do I have left?**
+How many credits do I have left?
+--------------------------------
 Use the ``mybalance`` command on ARC or HTC to find out how many credits you have left.
 
  
-**How do I change my password?**
+How do I change my password?
+----------------------------
 Use the ``passwd`` command on the login nodes to change your password.
 
  
-**I have forgotten my password. How do I reset my password?**
+I have forgotten my password. How do I reset my password?
+---------------------------------------------------------
 If you have forgotten your password or your password has expired and you can no longer access ARC to change it yourself, you will need to contact us using
 the support email address.  We will then issue a temporary password via email.
 
  
-**I accidentally deleted files, how do I get them back?**
+I accidentally deleted files, how do I get them back?
+-----------------------------------------------------
 Unfortunately ARC does not keep dedicated backups of its storage resources.  We recommend that users store data at sites other than the ARC, for example, on
 departmental resources.
