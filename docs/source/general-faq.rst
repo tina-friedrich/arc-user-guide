@@ -1,26 +1,6 @@
 General FAQs
 ============
 
-**Contents**
-
-`How do I become a ARC user? <https://arc-user-guide.readthedocs.io/en/latest/general-faq.html#id1>`_
-
-`Where should a new ARC user begin? <https://arc-user-guide.readthedocs.io/en/latest/general-faq.html#id2>`_
-
-`What systems can I access as a user? <https://arc-user-guide.readthedocs.io/en/latest/general-faq.html#id3>`_
-
-`How much disk space do I have? <https://arc-user-guide.readthedocs.io/en/latest/general-faq.html#id4>`_
-
-`How do I log on to the ARC systems? <https://arc-user-guide.readthedocs.io/en/latest/general-faq.html#id5>`_
-
-`How do I transfer files to/from the ARC systems? <https://arc-user-guide.readthedocs.io/en/latest/general-faq.html#id6>`_
-
-`How do I access the ARC systems from outside the University network? <https://arc-user-guide.readthedocs.io/en/latest/general-faq.html#id7>`_
-
-`How do I acknowledge ARC in my publications? <https://arc-user-guide.readthedocs.io/en/latest/general-faq.html#id8>`_
-
-
-
   
 How do I become a ARC user?
 ---------------------------
