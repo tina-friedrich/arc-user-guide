@@ -3,21 +3,21 @@ General FAQs
 
 **Contents**
 
-`How do I become a ARC user? <https://arc-user-guide.readthedocs.io/en/latest/general-faq.html#how-do-i-become-a-arc-user>`_
+`How do I become a ARC user? <https://arc-user-guide.readthedocs.io/en/latest/general-faq.html#id1>`_
 
-`Where should a new ARC user begin? <https://arc-user-guide.readthedocs.io/en/latest/general-faq.html#where-should-a-new-arc-user-begin>`_
+`Where should a new ARC user begin? <https://arc-user-guide.readthedocs.io/en/latest/general-faq.html#id2>`_
 
-`What systems can I access as a user? <https://arc-user-guide.readthedocs.io/en/latest/general-faq.html#what-systems-can-i-access-as-a-user>`_
+`What systems can I access as a user? <https://arc-user-guide.readthedocs.io/en/latest/general-faq.html#id3>`_
 
-`How much disk space do I have? <https://arc-user-guide.readthedocs.io/en/latest/general-faq.html#how-much-disk-space-do-i-have>`_
+`How much disk space do I have? <https://arc-user-guide.readthedocs.io/en/latest/general-faq.html#id4>`_
 
-`How do I log on to the ARC systems? <https://arc-user-guide.readthedocs.io/en/latest/general-faq.html#how-do-i-log-on-to-the-arc-systems>`_
+`How do I log on to the ARC systems? <https://arc-user-guide.readthedocs.io/en/latest/general-faq.html#id5>`_
 
-`How do I transfer files to/from the ARC systems? <https://arc-user-guide.readthedocs.io/en/latest/general-faq.html#how-do-i-transfer-files-to-from-the-arc-systems>`_
+`How do I transfer files to/from the ARC systems? <https://arc-user-guide.readthedocs.io/en/latest/general-faq.html#id6>`_
 
-`How do I access the ARC systems from outside the University network? <https://arc-user-guide.readthedocs.io/en/latest/general-faq.html#how-do-i-access-the-arc-systems-from-outside-the-university-network>`_
+`How do I access the ARC systems from outside the University network? <https://arc-user-guide.readthedocs.io/en/latest/general-faq.html#id7>`_
 
-`How do I acknowledge ARC in my publications? <https://arc-user-guide.readthedocs.io/en/latest/general-faq.html#how-do-i-acknowledge-arc-in-my-publications>`_
+`How do I acknowledge ARC in my publications? <https://arc-user-guide.readthedocs.io/en/latest/general-faq.html#id8>`_
 
 
 
