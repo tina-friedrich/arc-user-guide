@@ -26,10 +26,10 @@ The Job Scheduler
 
 The **arc**/**htc** clusters use SLURM as their resource manager (or scheduler). This is the same system used for the ARC's previous clusters (ARCUS-B and ARCUS-HTC) so existing ARC users will be familiar with its commands and submission script syntax.
  
-As a reminder, to work with ARC's clusters, you will need to submit a job to the job scheduler; the login nodes are for preparing and submitting scheduler jobs and should not be used for performing computational work. Most users choose to create a submission script in order to request resources and run their job commands. In this case resources such as the number of CPUS, Nodes etc. are specified using #SBATCH directives in the script.
+As a reminder, to work with ARC's clusters, you will need to submit a job to the job scheduler; the login nodes are for preparing and submitting scheduler jobs and should not be used for performing computational work. Most users choose to create a submission script in order to request resources and run their job commands. In this case resources such as the number of CPUs, nodes etc. are specified using ``#SBATCH`` directives in the script.
 
 .. Note::
-  You cannot use ``#SBATCH`` directives from the command line, these can only be specified in SLURM submission scripts. 
+  You cannot use ``#SBATCH`` directives directly on the command line, these can only be specified in SLURM submission scripts. There are options to the ``sbatch`` and ``srun`` commands which can emulate these resource requests on the command line. For example `sbatch command help <https://slurm.schedmd.com/sbatch.html>`_
 
 If you need to run interactive computational work such as pre/post processing data or building your own code - this must be performed on interactive nodes - see the section on `Interactive Jobs <https://arc-user-guide.readthedocs.io/en/latest/job-scheduling.html#interactive-jobs>`_   
 
