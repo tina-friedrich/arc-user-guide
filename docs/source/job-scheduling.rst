@@ -26,7 +26,7 @@ The Job Scheduler
 
 The **arc**/**htc** clusters use SLURM as their resource manager (or scheduler). This is the same system used for the ARC's previous clusters (ARCUS-B and ARCUS-HTC) so existing ARC users will be familiar with its commands and submission script syntax.
  
-As a reminder, to work with ARC's clusters, you will need to submit a job to the job scheduler; the login nodes are for preparing and submitting scheduler jobs and should not be used for performing computational work. If you need to run interactive computational work such as pre/post processing data or building your own code - this must be performed on interactive nodes.
+As a reminder, to work with ARC's clusters, you will need to submit a job to the job scheduler; the login nodes are for preparing and submitting scheduler jobs and should not be used for performing computational work. If you need to run interactive computational work such as pre/post processing data or building your own code - this must be performed on interactive nodes - see the section on `Interactive Jobs <https://arc-user-guide.readthedocs.io/en/latest/job-scheduling.html#interactive-jobs>`_   
 
 Nodes on **arc**/**htc** are not allocated exclusively to jobs; jobs are allocated the requested number of cores and may share nodes with other jobs. The default number of cores allocated is 1 (as is the default number of nodes). Default amount memory per CPU is 8000MB. You will not be able to use resources you have not requested in your job submission; this includes memory and CPU cores.
 
