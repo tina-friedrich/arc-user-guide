@@ -29,15 +29,40 @@ This command will start the Linux ``nano`` editor. You can use this to add the f
 
   #! /bin/bash
   #SBATCH --nodes=1
-  #SBATCH --ntasks-per-node=48
+  #SBATCH --ntasks-per-node=8
   #SBATCH --time=00:10:00
+  #SBATCH --partition=devel
   
   module load mpitest
   
   mpirun mpisize
 
-..note::
+.. note::
   Ensure the ``#! /bin/bash`` line is the first line of the script and the ``#SBATCH`` lines start at the beginning of the line.
 
 To exit ``nano`` hold ``CTRL-X`` then answer ``Y`` to the question ``Save Modified buffer?`` then hit ``enter`` when asked ``File Name to Write: submit.sh``
+
+**The anatomy of the script**
+
+The first line ``#! /bin/bash`` tells Linux that this file is a script which can be run by the BASH shell interpreter. 
+
+The following ``#SBATCH`` lines request specific cluster resources: 
+
+``--nodes=1`` requests one ARC node
+``--ntasks-per-node=48`` requests 8 cores
+``--time=00:10:00`` requests a run time of 10 minutes (the maximum for the ``devel`` partition)
+``--partition=devel`` requests that this job runs on the ``devel`` partition, which is reserved for testing
+
+**Submitting the job**
+
+Now that you have a submission script, you can submit it to the SLURM resource manager. To do this type the following at the command line::
+
+  sbatch submit.sh
+  
+SLURM will respond with::
+
+  sbatch: CPU resource required, checking settings/requirements...
+  Submitted batch job nnnnnnnnn
+  
+Where ``nnnnnnnnn`` is your job number.
 
