@@ -45,11 +45,15 @@ The first line ``#! /bin/bash`` tells Linux that this file is a script which can
 The following ``#SBATCH`` lines request specific cluster resources: 
 
 ``--nodes=2`` requests two ARC nodes
+
 ``--ntasks-per-node=4`` requests 4 cores per node (a total of 8)
+
 ``--time=00:10:00`` requests a run time of 10 minutes (the maximum for the ``devel`` partition)
+
 ``--partition=devel`` requests that this job runs on the ``devel`` partition, which is reserved for testing
 
 ``module load mpihello`` The **module load** command is used to make an application environment available to use in your job, in this case the ``mpitest`` application.
+
 ``mpirun mpihello`` This line runs the ``mpihello`` command using the special ``mpirun`` wrapper. MPI is only required for multi-process operation across nodes, and may not be appropriate for all applications.
 
 **Submitting the job**
