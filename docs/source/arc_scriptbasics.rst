@@ -17,7 +17,7 @@ In this example we are going to create a submission script to run a test applica
   mkdir example
   cd example
   
-We now have a directory named ``example`` in your ``$DATA`` area. Now we need to create the submission script to describe your job to SLURM. First use the ``nano`` editor to create the file::
+We now have a directory named ``example`` in your ``$DATA`` area. The next step is to create the submission script to describe your job to SLURM. First use the ``nano`` editor to create the file::
 
   nano submit.sh
 
