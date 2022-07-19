@@ -11,17 +11,19 @@ The script needs to be created using a Linux text editor such as ``nano`` or ``v
 
 **Submission Script Example**
 
-In this example we are going to create a submission script to run a test application on the cluster. To begin with we change directory to your $DATA area and make a new directory named ``example`` to work in::
+In this example we are going to create a submission script to run a test application on the cluster. To begin with we change directory to your ``$DATA`` area and make a new directory named ``example`` to work in::
 
   cd $DATA
   mkdir example
   cd example
   
-We now have a directory named ``example`` in your ``$DATA`` area. The next step is to create the submission script to describe your job to SLURM. First use the ``nano`` editor to create the file::
+The next step is to create the submission script to describe your job to SLURM. 
+
+First we use the ``nano`` editor to create the file::
 
   nano submit.sh
 
-This command will start the Linux ``nano`` editor. You can use this to add the following lines, which will be explained as we go on::
+This command will start the Linux ``nano`` editor. You can use ``nano`` to add the following lines::
 
   #! /bin/bash
   #SBATCH --nodes=2
