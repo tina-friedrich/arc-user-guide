@@ -5,11 +5,9 @@ Submission Script Basics
 
 **What is a submission script**
 
-A ``submission script`` describes the resources you wish the resource manager ``SLURM`` to allocate to your job, and also what commands you wish to run, including any set-up
-these commands may need.
+A ``submission script`` describes the resources you wish the resource manager ``SLURM`` to allocate to your job, and also the application you wish to run, including any set-up this application may need.
 
-The script needs to be created using a Linux text editor such as ``nano`` or ``vi`` - we recommend creating and editing submission scripts on the cluster rather than editing
-them on a Windows machine, as this can cause problems.
+The script needs to be created using a Linux text editor such as ``nano`` or ``vi`` - we recommend creating and editing submission scripts on the cluster rather than editing them on a Windows machine, as this can cause problems.
 
 **Submission Script Example**
 
