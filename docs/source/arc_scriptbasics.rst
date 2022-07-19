@@ -66,3 +66,24 @@ SLURM will respond with::
   
 Where ``nnnnnnnnn`` is your job number.
 
+This job should run very quickly, but you may be able to find it in the job queue by typing::
+
+   squeue -u $USER
+ 
+If it is running, you will see something like::
+
+     JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+   nnnnnnn     devel submit.s ouit0554  R       0:07      1 arc-c302
+ 
+If the job is waiting to run (because another user is using the ``devel`` nodes) you will see::
+
+     JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+   nnnnnnn     devel submit.s ouit0554 PD       0:00      1 (None)
+ 
+The difference being that in the first case you can see the job state is ``R`` for **RUNNING** and in the second it is ``PD`` for **PENDING** and it has not been allocated a node in the ``NODELIST``
+
+
+**Job Output**
+
+
+  
