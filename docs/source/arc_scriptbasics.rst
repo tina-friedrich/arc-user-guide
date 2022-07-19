@@ -5,21 +5,19 @@ Submission Script Basics
 
 **What is a submission script**
 
-A ``submission script`` describes the resources you wish the resource manager ``SLURM`` to allocate to your job, and also the application you wish to run, including any set-up this application may need.
+A ``submission script`` describes the resources you need the resource manager ``SLURM`` to allocate to your job, and also the application you wish to run, including any set-up this application may need.
 
 The script needs to be created using a Linux text editor such as ``nano`` or ``vi`` - we recommend creating and editing submission scripts on the cluster rather than editing them on a Windows machine, as this can cause problems.
 
 **Submission Script Example**
 
-In this example we are going to create a submission script to run a test application on the cluster. To begin with we change directory to your $DATA area and make a new directory
-to work in::
+In this example we are going to create a submission script to run a test application on the cluster. To begin with we change directory to your $DATA area and make a new directoryto work in::
 
   cd $DATA
   mkdir example
   cd example
   
-We now have a directory named ``example`` in your ``$DATA`` area. Now we need to create the submission script to describe your job to SLURM. First use the ``nano`` editor 
-to create the file::
+We now have a directory named ``example`` in your ``$DATA`` area. Now we need to create the submission script to describe your job to SLURM. First use the ``nano`` editor to create the file::
 
   nano submit.sh
 
