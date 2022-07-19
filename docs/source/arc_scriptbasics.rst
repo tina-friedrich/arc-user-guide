@@ -62,9 +62,9 @@ Now that you have a submission script, you can submit it to the SLURM resource m
 SLURM will respond with::
 
   sbatch: CPU resource required, checking settings/requirements...
-  Submitted batch job nnnnnnnnn
+  Submitted batch job nnnnnnn
   
-Where ``nnnnnnnnn`` is your job number.
+Where ``nnnnnnn`` is your job ID number.
 
 This job should run very quickly, but you may be able to find it in the job queue by typing::
 
@@ -84,6 +84,27 @@ The difference being that in the first case you can see the job state is ``R`` f
 
 
 **Job Output**
+
+When your job completes, i.e. it is no longer showing in the job queue, you should find the SLURM output in a file named ``slurm-nnnnnnn.out`` where ``nnnnnnn`` is the
+job ID of your completed job.
+
+To view this output you can use the Linux ``cat`` command, so if our job ID was 2227191, we would use the command::
+
+    cat slurm-2227191.out
+    
+This would give the output::
+
+    Hello world from processor arc-c302, rank 4 out of 8 processors
+    Hello world from processor arc-c302, rank 5 out of 8 processors
+    Hello world from processor arc-c302, rank 6 out of 8 processors
+    Hello world from processor arc-c302, rank 7 out of 8 processors
+    Hello world from processor arc-c302, rank 0 out of 8 processors
+    Hello world from processor arc-c302, rank 2 out of 8 processors
+    Hello world from processor arc-c302, rank 3 out of 8 processors
+    Hello world from processor arc-c302, rank 1 out of 8 processors
+    
+The above being the output from running the ``mpihello`` application on the 8 CPUs that we requested.
+
 
 
   
