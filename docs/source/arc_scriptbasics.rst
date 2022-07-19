@@ -35,7 +35,7 @@ This command will start the Linux ``nano`` editor. You can use this to add the f
   
   module load mpitest
   
-  mpirun mpisize
+  mpirun mpihello
 
 .. note::
   Ensure the ``#! /bin/bash`` line is the first line of the script and the ``#SBATCH`` lines start at the beginning of the line.
@@ -48,10 +48,13 @@ The first line ``#! /bin/bash`` tells Linux that this file is a script which can
 
 The following ``#SBATCH`` lines request specific cluster resources: 
 
-``--nodes=1`` requests one ARC node
-``--ntasks-per-node=48`` requests 8 cores
+``--nodes=2`` requests two ARC nodes
+``--ntasks-per-node=4`` requests 4 cores per node (a total of 8)
 ``--time=00:10:00`` requests a run time of 10 minutes (the maximum for the ``devel`` partition)
 ``--partition=devel`` requests that this job runs on the ``devel`` partition, which is reserved for testing
+
+``module load mpihello`` The **module load** command is used to make an application environment available to use in your job, in this case the ``mpitest`` application.
+``mpirun mpihello`` This line runs the ``mpihello`` command using the special ``mpirun`` wrapper. MPI is only required for multi-process operation across nodes, and may not be appropriate for all applications.
 
 **Submitting the job**
 
@@ -73,14 +76,14 @@ This job should run very quickly, but you may be able to find it in the job queu
 If it is running, you will see something like::
 
      JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
-   nnnnnnn     devel submit.s ouit0554  R       0:07      1 arc-c302
+   nnnnnnn     devel submit.s ouit0554  R       0:07      2 arc-c[302-303]
  
 If the job is waiting to run (because another user is using the ``devel`` nodes) you will see::
 
      JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
-   nnnnnnn     devel submit.s ouit0554 PD       0:00      1 (None)
+   nnnnnnn     devel submit.s ouit0554 PD       0:00      2 (None)
  
-The difference being that in the first case you can see the job state is ``R`` for **RUNNING** and in the second it is ``PD`` for **PENDING** and it has not been allocated a node in the ``NODELIST``
+The difference being that in the first case you can see the job state is ``R`` for **RUNNING** and in the second it is ``PD`` for **PENDING** and it has not been allocated nodes in the ``NODELIST``
 
 
 **Job Output**
@@ -94,16 +97,16 @@ To view this output you can use the Linux ``cat`` command, so if our job ID was 
     
 This would give the output::
 
-    Hello world from processor arc-c302, rank 4 out of 8 processors
-    Hello world from processor arc-c302, rank 5 out of 8 processors
-    Hello world from processor arc-c302, rank 6 out of 8 processors
-    Hello world from processor arc-c302, rank 7 out of 8 processors
     Hello world from processor arc-c302, rank 0 out of 8 processors
+    Hello world from processor arc-c302, rank 1 out of 8 processors
     Hello world from processor arc-c302, rank 2 out of 8 processors
     Hello world from processor arc-c302, rank 3 out of 8 processors
-    Hello world from processor arc-c302, rank 1 out of 8 processors
+    Hello world from processor arc-c303, rank 4 out of 8 processors
+    Hello world from processor arc-c303, rank 5 out of 8 processors
+    Hello world from processor arc-c303, rank 6 out of 8 processors
+    Hello world from processor arc-c303, rank 7 out of 8 processors
     
-The above being the output from running the ``mpihello`` application on the 8 CPUs that we requested.
+The above being the output from running the ``mpihello`` application on the 8 CPUs that we requested, and you can see it ran with 4 processes on ``arc-c302`` and 4 on ``arc-c303``
 
 
 
