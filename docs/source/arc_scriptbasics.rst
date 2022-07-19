@@ -24,8 +24,8 @@ We now have a directory named ``example`` in your ``$DATA`` area. The next step 
 This command will start the Linux ``nano`` editor. You can use this to add the following lines, which will be explained as we go on::
 
   #! /bin/bash
-  #SBATCH --nodes=1
-  #SBATCH --ntasks-per-node=8
+  #SBATCH --nodes=2
+  #SBATCH --ntasks-per-node=4
   #SBATCH --time=00:10:00
   #SBATCH --partition=devel
   
