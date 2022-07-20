@@ -9,7 +9,7 @@ A ``submission script`` describes the resources you need the resource manager (S
 
 The script needs to be created using a Linux text editor such as ``nano`` or ``vi`` - we recommend creating and editing submission scripts on the cluster rather than editing them on a Windows machine, as this can cause problems.
 
-**Submission Script Example**
+**Simple submission script example**
 
 In this example we are going to create a submission script to run a test application on the cluster. To begin with we change directory to your ``$DATA`` area and make a new directory named ``example`` to work in::
 
@@ -91,7 +91,7 @@ If the job is waiting to run (because another user is using the ``devel`` nodes)
 The difference being that in the first case you can see the job state is ``R`` for **RUNNING** and in the second it is ``PD`` for **PENDING** and it has not been allocated nodes in the ``NODELIST``
 
 
-**Job Output**
+**Job output**
 
 When your job completes, i.e. it is no longer showing in the job queue, you should find the SLURM output in a file named ``slurm-nnnnnnn.out`` where ``nnnnnnn`` is the
 job ID of your completed job.
