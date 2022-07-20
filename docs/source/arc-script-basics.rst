@@ -11,7 +11,13 @@ The script needs to be created using a Linux text editor such as ``nano`` or ``v
 
 **Simple submission script example**
 
-In this example we are going to create a submission script to run a test application on the cluster. To begin with we change directory to your ``$DATA`` area and make a new directory named ``example`` to work in::
+In this example we are going to create a submission script to run a test application on the cluster. 
+
+.. note::
+   If you are not familiar with typing commands into a Linux shell (or terminal window) we suggest you follow an online Linux tutorial
+   such as the Linux tutorial at `Ryans Tutorials <https://ryanstutorials.net/linuxtutorial/>`_
+
+To begin with we change directory to your ``$DATA`` area and make a new directory named ``example`` to work in::
 
   cd $DATA
   mkdir example
