@@ -1,7 +1,7 @@
 Configuring NoMachine client access
 -----------------------------------
 
-Step 1: After starting the client, click ``Add`` on the first screen to add a new connection. On the next screen give the connection a name, in the example below we have used ``ARC`` you **must** specify the host as ``nx.arc.ox.ac.uk``
+Step 1: After starting the client, click ``Add`` on the first screen to add a new connection. On the next screen give the connection a name, in the example below we have used ``ARC`` you **must** specify the host as ``nx.arc.ox.ac.uk`` and click ``Connect``
 
 .. image:: images/arc-client.png
   :width: 800
