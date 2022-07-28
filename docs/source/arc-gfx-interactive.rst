@@ -57,4 +57,4 @@ Step 4: Use the options on the following screens to configure how you would like
   :width: 800
   :alt: Client Install Stage 6
   
-AFter clicking ``OK`` the connection will be made and you will be presented with the Linux KDE desktop, with the menu bar at the bottom of the window.
+After clicking ``OK`` the connection will be made and you will be presented with the Linux KDE desktop in a window on your machine. The menu bar for accessing applications is at the bottom of this window.
