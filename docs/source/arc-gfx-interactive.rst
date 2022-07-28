@@ -19,7 +19,7 @@ local machine.
 **Configuring NoMachine client access**
 
 
-Step 1: After starting the client click ``Add Connection`` and on the next screen give the connection a name, in the example below we have used ``ARC`` and specify the host as ``nx.arc.ox.ac.uk``
+Step 1: After starting the client click ``Add`` and on the next screen give the connection a name, in the example below we have used ``ARC`` and specify the host as ``nx.arc.ox.ac.uk``
 
 .. image:: images/arc-client.png
   :width: 800
@@ -29,8 +29,6 @@ Step 1: After starting the client click ``Add Connection`` and on the next scree
   :width: 800
   :alt: Client Install Stage 1
   
-
-
 Step 2: enter your ARC username and password:
 
 .. image:: images/arc-client2.png
@@ -49,9 +47,14 @@ Step 3: Either connect to an existing desktop session if you have one, or use th
   :width: 800
   :alt: Client Install Stage 4
   
-Step 4: Use the options to configure how you would like the remote desktop session to be displayed on your machine
+Step 4: Use the options on the following screens to configure how you would like the remote desktop session to be displayed on your local machine:
 
 .. image:: images/arc-client5.png
   :width: 800
   :alt: Client Install Stage 5
   
+.. image:: images/arc-client6.png
+  :width: 800
+  :alt: Client Install Stage 6
+  
+AFter clicking ``OK`` the connection will be made and you will be presented with the Linux KDE desktop, with the menu bar at the bottom of the window.
