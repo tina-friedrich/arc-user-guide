@@ -39,7 +39,7 @@ You can use the menu bar at the bottom of the window to access applications or, 
   shared with other ARC users, and therefore it is very important that you do not run computationally demanding jobs. 
   
   To run jobs that are more demanding than simple GUI application usage, please open a ``Konsole`` window and start an interactive X11 
-  session on an interactive compute node by following the following instructions:
+  session on an interactive compute node by following the instructions below:
               
   To run an interactive session on the ARC cluster::
   
