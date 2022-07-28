@@ -37,6 +37,13 @@ You can use the menu bar at the bottom of the window to access applications or, 
   
   To run jobs that are more demanding than simple GUI application usage, please open a Konsole window and start an interactive X11 session on an interactive compute   
   node using::
-     
+              
+                For ARC:
+                module load cluster/arc
                 srun -p interactive --x11 --pty /bin/bash
     
+                For HTC:
+                module load cluster/htc
+                srun -p interactive --x11 --pty /bin/bash
+                
+                
