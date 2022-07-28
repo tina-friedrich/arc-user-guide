@@ -18,6 +18,7 @@ local machine.
 
 **Configuring NoMachine client access**
 
+
 Step 1: give the connection a name, in the image below we have used ``ARC`` and specify the host as ``nx.arc.ox.ac.uk``
 
 .. image:: images/arc-client1.png
@@ -25,8 +26,18 @@ Step 1: give the connection a name, in the image below we have used ``ARC`` and 
   :alt: Client Install Stage 1
   
 
-Step 2:
+
+Step 2: enter your ARC username and password:
 
 .. image:: images/arc-client2.png
   :width: 800
   :alt: Client Install Stage 2
+  
+Step 3: Either connect to an existing session (if you have one, or create a new session)
+
+.. image:: images/arc-client3.png
+  :width: 800
+  :alt: Client Install Stage 3
+  
+Step 4:
+
