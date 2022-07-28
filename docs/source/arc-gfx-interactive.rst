@@ -16,6 +16,17 @@ visual display).
 Alternatively you can download the `NoMachine Enterprise Client <https://www.nomachine.com/download-enterprise#NoMachine-Enterprise-Client>`_ and install this on your
 local machine.
 
+**Configuring NoMachine client access**
+
+Step 1: give the connection a name, in the image below we have used ``ARC`` and specify the host as ``nx.arc.ox.ac.uk``
+
 .. image:: images/arc-client1.png
   :width: 800
   :alt: Client Install Stage 1
+  
+
+Step 2:
+
+.. image:: images/arc-client2.png
+  :width: 800
+  :alt: Client Install Stage 2
