@@ -17,8 +17,11 @@ Alternatively you can download the `NoMachine Enterprise Client <https://www.nom
 local machine. See `Configuring NoMachine Client <https://arc-user-guide.readthedocs.io/en/latest/arc-nx-client.html>`_
 
 .. note::
-  While it may look like you have your own Linux desktop to work with, the interactive nodes where you are running this desktop is shared with other ARC users, and   
-  therefore it is very important that you not run computationally demanding jobs. To run jobs that are more demanding than simple GUI application usage, please open a     Konsole window and start an interactive X11 session on an interactive compute node using::
-      srun -p interactive --x11 --pty /bin/bash
+  While it may look like you have your own Linux desktop to work with, the interactive nodes where you are running this desktop are shared with other ARC users, and   
+  therefore it is very important that you not run computationally demanding jobs. 
+  
+  To run jobs that are more demanding than simple GUI application usage, please open a     Konsole window and start an interactive X11 session on an interactive compute   node using::
+     
+       srun -p interactive --x11 --pty /bin/bash
   
   
