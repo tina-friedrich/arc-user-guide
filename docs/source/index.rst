@@ -15,6 +15,7 @@ ARC User Guide
    slurm-reference
    slurm-faq
    general-faq
+   arc-gfx-interactive
    
    
    
