@@ -25,3 +25,18 @@ local machine. See `Configuring NoMachine Client <https://arc-user-guide.readthe
        srun -p interactive --x11 --pty /bin/bash
   
   
+**Using the desktop environment**
+
+Once you have connected to the NoMachine server by one of the above methods you will be presented with the ARC desktop environment as shown below:
+
+.. image:: images/arc-desktop.png
+  :width: 800
+  :alt: ARC Desktop
+  
+You can use the menu bar at the bottom of the window to access applications or, as in the example below, open the ``Konsole`` terminal window:
+
+.. image:: images/arc-konsole.png
+  :width: 800
+  :alt: ARC Konsole
+  
+  
