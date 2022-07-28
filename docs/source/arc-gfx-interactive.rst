@@ -35,17 +35,17 @@ You can use the menu bar at the bottom of the window to access applications or, 
   :alt: ARC Konsole
   
 .. note::
-  While it may look like you have your own Linux desktop to work with, the interactive nodes where you are running this desktop are shared with other ARC users, and   
-  therefore it is very important that you not run computationally demanding jobs. 
+  While it may look like you have your own Linux desktop to work with, the interactive nodes where you are running this desktop are 
+  shared with other ARC users, and therefore it is very important that you do not run computationally demanding jobs. 
   
-  To run jobs that are more demanding than simple GUI application usage, please open a Konsole window and start an interactive X11 session on an interactive compute   
-  node using::
+  To run jobs that are more demanding than simple GUI application usage, please open a Konsole window and start an interactive X11 
+  session on an interactive compute node using::
               
-                For ARC:
+                To run an interactive session on the ARC cluster:
                 module load cluster/arc
                 srun -p interactive --x11 --pty /bin/bash
     
-                For HTC:
+                To run an interactive session on the HTC system:
                 module load cluster/htc
                 srun -p interactive --x11 --pty /bin/bash
                 
