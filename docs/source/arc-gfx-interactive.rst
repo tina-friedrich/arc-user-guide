@@ -33,7 +33,7 @@ Step 2: enter your ARC username and password:
   :width: 800
   :alt: Client Install Stage 2
   
-Step 3: Either connect to an existing desktop session if you have one, or use the ``New Desktop`` button to create a new session, and ``Create new virtual desktop`` on the next screen to complete the process.
+Step 3: Either connect to an existing desktop session if you have one, or use the ``New Desktop`` button to create a new session...
 
 .. image:: images/arc-client3.png
   :width: 800
@@ -45,5 +45,9 @@ Step 3: Either connect to an existing desktop session if you have one, or use th
   :width: 800
   :alt: Client Install Stage 4
   
-  Step 4: Use the following two screens to configure how you would like the remote desktop session to be displayed on your machine:
+Step 4: Use the options to configure how you would like the remote desktop session to be displayed on your machine
 
+.. image:: images/arc-client5.png
+  :width: 800
+  :alt: Client Install Stage 5
+  
