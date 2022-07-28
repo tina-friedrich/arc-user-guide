@@ -2,6 +2,9 @@
 Using the ARC Graphical Interactive Nodes
 -----------------------------------------
 
+.. warning::
+   This service is currently in beta test and we welcome feedback on the provided features and applications. Be aware that as the service 
+   is under development it is likely to interruption and change.   
 
 ARC have a number of graphical interactive nodes which you can use to interact with applications which require GUI operation, such as RStudio, Jupyter Notebooks
 and ANSYS Workbench.
