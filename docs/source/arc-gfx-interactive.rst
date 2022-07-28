@@ -39,6 +39,8 @@ Step 3: Either connect to an existing desktop session if you have one, or use th
   :width: 800
   :alt: Client Install Stage 3
   
+...then use click ``Create new virtual desktop``  to complete the process.
+  
 .. image:: images/arc-client4.png
   :width: 800
   :alt: Client Install Stage 4
