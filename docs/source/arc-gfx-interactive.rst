@@ -16,4 +16,6 @@ visual display).
 Alternatively you can download the `NoMachine Enterprise Client <https://www.nomachine.com/download-enterprise#NoMachine-Enterprise-Client>`_ and install this on your
 local machine.
 
-
+.. image:: images/arc-client1.png
+  :width: 400
+  :alt: Client Install Stage 1
