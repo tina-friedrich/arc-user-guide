@@ -17,5 +17,5 @@ Alternatively you can download the `NoMachine Enterprise Client <https://www.nom
 local machine.
 
 .. image:: images/arc-client1.png
-  :width: 400
+  :width: 800
   :alt: Client Install Stage 1
