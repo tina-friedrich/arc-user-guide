@@ -9,7 +9,7 @@ Using the ARC Graphical Interactive Nodes
 ARC have a number of graphical interactive nodes which you can use to interact with applications which require GUI operation, such as RStudio, Jupyter Notebooks
 and ANSYS Workbench.
 
-In order to use these interactive nodes, you must be connected to the university network or be connected via the university VPN service. 
+In order to use these interactive nodes, you must be connected to the university network or be remotely connected via the university VPN service. 
 
 **Accessing the Graphical Interactive nodes**
 
