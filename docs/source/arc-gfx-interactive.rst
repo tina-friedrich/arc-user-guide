@@ -60,7 +60,7 @@ There are a number of predefined applications which you can find under the ``ARC
     :width: 800
     :alt: ARC Apps Menu
   
-ARC Sub-menu 
+Applications|ARC Sub-menu 
   
   .. image:: images/arc-apps2.png
     :width: 400
