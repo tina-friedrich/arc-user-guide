@@ -61,7 +61,7 @@ There are a number of predefined applications which you can find under the ``ARC
     :alt: ARC Apps Menu
   
   .. image:: images/arc-apps2.png
-    :width: 800
+    :width: 400
     :alt: ARC Apps List
 
 Clicking on these menu items will start up the appropriate version of the specified application, with any other required modules automatically loaded.
