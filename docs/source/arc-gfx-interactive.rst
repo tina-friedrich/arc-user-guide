@@ -54,7 +54,7 @@ You can use the menu bar at the bottom of the window to access applications or, 
               
   **Running applications**
   
-  There are a number of predefined applications which you can find under the ``ARC`` sub-menu, within the ``Applications`` menu on the main menu bar, see below for examples:
+  There are a number of predefined applications which you can find under the ``ARC`` sub-menu, within the ``Applications`` section of the main menu bar, see below for examples:
   
   .. image:: images/arc-apps1.png
     :width: 800
