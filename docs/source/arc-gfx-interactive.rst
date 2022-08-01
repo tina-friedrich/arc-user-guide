@@ -51,4 +51,15 @@ You can use the menu bar at the bottom of the window to access applications or, 
      module load cluster/htc
      srun -p interactive --x11 --pty /bin/bash
                 
-                
+              
+  **Running applications**
+  
+  There are a number of predefined applications which you can find under the ``Applications`` menu within the ``ARC`` sub-menu, see below for examples:
+  
+  .. image:: images/arc-apps1.png
+  :width: 800
+  :alt: ARC Apps Menu
+  
+  .. image:: images/arc-apps2.png
+  :width: 800
+  :alt: ARC Apps List
