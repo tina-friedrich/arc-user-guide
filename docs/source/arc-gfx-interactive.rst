@@ -63,3 +63,11 @@ You can use the menu bar at the bottom of the window to access applications or, 
   .. image:: images/arc-apps2.png
     :width: 800
     :alt: ARC Apps List
+
+Clicking on these menu items will start up the appropriate version of the specified application, with any other required modules automatically loaded.
+
+.. note:
+   If you need customised versions of applications or supporting modules (such as custom Anaconda virtual environments) you should load/activate these as
+   appropriate from the ``Konsole`` command window, in the same way as the ARC or HTC systems.
+   
+   
