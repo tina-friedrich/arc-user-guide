@@ -24,7 +24,8 @@ Alternatively you can download the `NoMachine Enterprise Client <https://www.nom
 local machine. See `Configuring NoMachine Client <https://arc-user-guide.readthedocs.io/en/latest/arc-nx-client.html>`_
 
   
-**Using the desktop environment**
+Using the ARC desktop environment
+=================================
 
 Once you have connected to the NoMachine server by one of the above methods you will be presented with the ARC desktop environment as shown below:
 
@@ -56,7 +57,8 @@ You can use the menu bar at the bottom of the window to access applications or, 
      srun -p interactive --x11 --pty /bin/bash
                 
               
-**Running applications**
+Running applications from the desktop
+=====================================
   
 There are a number of predefined applications which you can find under the ``ARC`` sub-menu, within the ``Applications`` section of the main menu bar, see below for examples:
   
