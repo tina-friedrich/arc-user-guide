@@ -1,6 +1,6 @@
 
-Using the ARC Graphical Interactive Nodes
------------------------------------------
+Using the ARC Graphical Nodes
+-----------------------------
 
 .. warning::
    This service is currently in beta test and we welcome feedback on the provided features and applications. Be aware that as the service 
@@ -11,7 +11,7 @@ and ANSYS Workbench.
 
 In order to use these interactive nodes, you must be connected to the university network or be remotely connected via the university VPN service. 
 
-**Accessing the Graphical Interactive nodes**
+**Accessing the Graphical nodes**
 
 You can connect directly via web browser to `nx.arc.ox.ac.uk <https://nx.arc.ox.ac.uk>`_ via the web-based client connection (which is lower quality in terms of
 visual display). See `Configuring NoMachine Web Client <https://arc-user-guide.readthedocs.io/en/latest/arc-nx-web.html>`_
@@ -38,8 +38,8 @@ You can use the menu bar at the bottom of the window to access applications or, 
   While it may look like you have your own Linux desktop to work with, the interactive nodes where you are running this desktop are 
   shared with other ARC users, and therefore it is very important that you do not run computationally demanding jobs. 
   
-  To run jobs that are more demanding than simple GUI application usage, please open a ``Konsole`` window and start an interactive X11 
-  session on an interactive compute node by following the instructions below:
+  To run applications that are more demanding, please open a ``Konsole`` window and start an interactive X11 
+  session on a compute node by following the instructions below:
               
   To run an interactive session on the ARC cluster::
   
@@ -69,7 +69,7 @@ Applications|ARC Sub-menu
 Clicking on these menu items will start up the appropriate version of the specified application, with any other required modules automatically loaded.
 
 .. note::
-   If you need customised versions of applications or supporting modules (such as custom Anaconda virtual environments) you should load/activate these as
+   If you need customised versions of applications or supporting modules (such as custom Anaconda virtual environments) you should load/activate and run these as
    appropriate from the ``Konsole`` command window, in the same way as the ARC or HTC systems.
    
    
