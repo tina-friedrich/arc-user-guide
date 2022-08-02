@@ -20,7 +20,7 @@ visual display). See `Configuring NoMachine Web Client <https://arc-user-guide.r
 Accessing the Graphical nodes via the client software
 =====================================================
 
-Alternatively you can download the `NoMachine Enterprise Client <https://www.nomachine.com/download-enterprise#NoMachine-Enterprise-Client>`_ and install this on your
+You may download the `NoMachine Enterprise Client <https://www.nomachine.com/download-enterprise#NoMachine-Enterprise-Client>`_ and install this on your
 local machine. See `Configuring NoMachine Client <https://arc-user-guide.readthedocs.io/en/latest/arc-nx-client.html>`_
 
   
