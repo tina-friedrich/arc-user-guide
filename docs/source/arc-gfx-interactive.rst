@@ -43,7 +43,7 @@ You can use the menu bar at the bottom of the window to access applications or, 
   While it may look like you have your own Linux desktop to work with, the interactive nodes where you are running this desktop are 
   shared with other ARC users, and therefore it is very important that you do not run computationally demanding jobs. 
   
-  To run applications that are more demanding, please open a ``Konsole`` window and start an interactive X11 
+  To run applications that are more demanding, please open a ``Konsole`` shell window and start an interactive X11 
   session on a compute node by following the instructions below:
               
   To run an interactive session on the ARC cluster::
