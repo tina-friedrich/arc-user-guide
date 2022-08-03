@@ -89,7 +89,15 @@ Use the ``mybalance`` command on ARC or HTC to find out how many credits you hav
  
 How do I change my password?
 ----------------------------
-Use the ``passwd`` command on the login nodes to change your password.
+Use the ``passwd`` command on the login nodes to change your password::
+
+    user@arc-login~$ passwd 
+    
+    Enter login(LDAP) password:
+    Enter new password:
+    Re-enter new password:
+
+If you need to change other things in your account (e.g. email address), this is possible - please ask the ARC team by emailing support@arc.ox.ac.uk.
 
  
 I have forgotten my password. How do I reset my password?
