@@ -16,11 +16,11 @@ Copying to the ARC systems
     [ouit0578@gateway]$ pwd
     /data/system/ouit0578/myscripts
 
-2) On your Mac or Linux PC open a terminal window and change directory to the local directory where the file(s) you want to copy are located. The command ``pwd`` will show the full path to this directory, take note of this path. For example if you have a directory named ``/local/scripts`` the path might be something like::
+2) On your Mac or Linux PC open a terminal window and change directory to the local directory where the file(s) you want to copy are located. The command ``pwd`` will show the full path to this directory, take note of this path. For example if you have a directory named ``scripts`` in your home directory the path might be something like::
 
-    $ cd /local/scripts
+    $ cd scripts
     $ pwd
-    /local/scripts
+    /home/user/scripts
  
 3) While still working on your MAC or Linux PC: to copy files, use the ``scp`` command with the format::
 
@@ -30,7 +30,7 @@ Copying to the ARC systems
 
 Continuing with the above example - to copy all the files in /local/scripts this would be::
 
-    scp /local/scripts/* ouit0578@gateway.arc.ox.ac.uk:/data/system/ouit0578/myscripts/
+    scp /home/user/scripts/* ouit0578@gateway.arc.ox.ac.uk:/data/system/ouit0578/myscripts/
 
 .. note::
    Note in the above example we are using the username ``ouit0578`` to connect to ARC via ``gateway.arc.ox.ac.uk`` with the destination ARC path. You should, of course, use your ARC username.
@@ -40,7 +40,7 @@ To copy an entire directory hierarchy use the recurse option, -r
 
 For example::
 
-    scp -r /local/scripts/* ouit0578@gateway.arc.ox.ac.uk:/data/system/ouit0578/myscripts/
+    scp -r /home/user/scripts/* ouit0578@gateway.arc.ox.ac.uk:/data/system/ouit0578/myscripts/
 
 In both of the above cases, you will be prompted to authenticate with your ARC password.
 
@@ -50,7 +50,7 @@ Copying from the ARC systems
 The reverse should be used for copying from arc. Using the methods above, take note of the source (ARC) and destination (local PC) paths. In this example we will use:
  
 ARC directory:  ``/data/system/ouit0578/mydata``
-Local PC directory: ``/local/datafromarc``
+Local PC directory: ``/home/user/datafromarc``
  
 Copying data from Mac or Linux PC
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -59,11 +59,11 @@ Once again, we must run the scp command on our local machine as we are going to 
  
 To copy files from your local PC::
  
-    scp ouit0578@gateway.arc.ox.ac.uk:/data/system/ouit0578/mydata/* /local/datafromarc/
+    scp ouit0578@gateway.arc.ox.ac.uk:/data/system/ouit0578/mydata/* /home/user/datafromarc/
     
 Again a recursive copy can be made using the -r option::
 
-    scp -r ouit0578@gateway.arc.ox.ac.uk:/data/system/ouit0578/mydata/* /local/datafromarc/
+    scp -r ouit0578@gateway.arc.ox.ac.uk:/data/system/ouit0578/mydata/* /home/user/datafromarc/
 
 In both the above cases, you will be prompted to authenticate with your ARC password.
 
