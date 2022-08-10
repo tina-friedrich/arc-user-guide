@@ -27,14 +27,13 @@ Copying to the ARC systems
     scp <source> <destination>
    
     scp local/path/filename arcuserid@gateway.arc.ox.ac.uk:/path_to_destination_directory/
+    
+.. note::
+   The **remote** side of the copy requires you to specify your ARC username followed by the ``@`` symbol, then the name of the machine you want to connect to - in this case ``gateway.arc.ox.ac.uk`` followed by a ``:`` (colon) then the remote directory path. 
 
 Continuing with the above example - to copy all the files in /local/scripts this would be::
 
     scp /home/user/scripts/* ouit0578@gateway.arc.ox.ac.uk:/data/system/ouit0578/myscripts/
-
-.. note::
-   Note in the above example we are using the username ``ouit0578`` to connect to ARC via ``gateway.arc.ox.ac.uk`` with the destination ARC path. You should, of course, use your ARC username.
-
 
 To copy an entire directory hierarchy use the recurse option, -r 
 
