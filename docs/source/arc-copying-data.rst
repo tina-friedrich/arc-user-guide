@@ -10,7 +10,9 @@ MacOS/Linux users (and other Unix like operating systems) can use rsync, sftp, o
 Copying to the ARC systems
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1) Make sure you know the full path to the destination directory on ARC - The best way to to this is to log in to ARC change to that directory and run the command 'pwd'; this will show you the full path to the directory. For example if you have created a directory ``myscripts`` in $DATA, ``pwd`` will show output like::
+1) Make sure you know the full path to the destination directory on ARC - The best way to to this is to log in to ARC, change to that directory and run the command ``pwd``; this will show you the full path to the directory. 
+
+For example if you have created a directory ``myscripts`` in $DATA, ``pwd`` will show output like::
 
     [ouit0578@gateway]$ cd $DATA/myscripts
     [ouit0578@gateway]$ pwd
