@@ -18,7 +18,7 @@ For example if you have created a directory ``myscripts`` in $DATA, ``pwd`` will
     [ouit0578@gateway]$ pwd
     /data/system/ouit0578/myscripts
 
-2) On your local Mac or Linux PC open a terminal window and change directory to the directory where the file(s) you want to copy **to** ARC are located. The command ``pwd`` will show the full path to this directory, take note of this path. For example if you have a directory named ``scripts`` in your local home directory the path may look something like::
+2) On your local Mac or Linux PC open a terminal window and change directory to the directory where the file(s) you want to copy **to** ARC are located. The command ``pwd`` will show the full path to this directory, take note of this path. For example if you have a directory named ``scripts`` in your local home directory, the path may look something like::
 
     $ cd scripts
     $ pwd
