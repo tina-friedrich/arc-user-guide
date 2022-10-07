@@ -64,7 +64,10 @@ Your job is waiting because jobs of higher priority are being scheduled first. T
 
 Your job is waiting for enough compute resource to become available.
 
- 
+**QOSGrpNodeLimit**
+
+This happens when you have specified a Quality of Service resource (normally because you are requesting Co-Investment nodes). The message indicates that all the nodes available for your QoS are currently in use. Your job will run once enough resource becomes available on your QoS.
+
 
 Why does my job fail with the error "/bin/bash^M: bad interpreter: No such file or directory"
 ---------------------------------------------------------------------------------------------
