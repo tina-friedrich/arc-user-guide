@@ -44,8 +44,39 @@ A simple example of how to do this would be::
   #
   rsync -av --exclude=input --exclude=bin ./ $DATA/myproject/
   
-This example copies directories '$DATA/myproject/input' and '$DATA/myproject/bin' into $SCRATCH (which will then contain directories 'input' and 'bin'); runs './bin/my_software'; and copies all files in the $SCRATCH directory - excluding directories 'input' and 'bin' - back to $DATA/myproject/ once the mpirun finishes.
+This example copies the directories ``$DATA/myproject/input`` and ``$DATA/myproject/bin`` into **$SCRATCH** (which will then contain directories ``input`` and ``bin``). The script then runs ``./bin/my_software``; and copies all files in the **$SCRATCH** directory - excluding directories ``input`` and ``bin`` - back to ``$DATA/myproject/`` once the ``mpirun`` finishes.
 
+The process is more straightforward if you only need to copy single input/ouput files when the application is centrally hosted, for example:
+
+  #!/bin/bash
+  #
+  # After SBATCH lines in submission script...
+  #
+  # 
+  # Load appropriate module, in this test case we are using Gaussian
+  
+  module load Gaussian/16.C.01
+
+  # Set input/output filenames
+  #
+  export INPUT_FILE=test397.com
+  export OUTPUT_FILE=test397.log
+
+  echo "copying input from $SLURM_SUBMIT_DIR/$INPUT_FILE ..."
+  
+  cd $SCRATCH || exit 1
+  cp $SLURM_SUBMIT_DIR/$INPUT_FILE ./
+
+  # Job specific application command line...
+  #
+  g16 < $INPUT_FILE > $OUTPUT_FILE
+
+  # Copy output back from $SCRATCH to job directory
+  #
+  echo "copying output back to $SLURM_SUBMIT_DIR/ ..."
+  cp $OUTPUT_FILE $SLURM_SUBMIT_DIR/
+
+ 
 If you are unable to access either of these directories, please let us know.
 
 Quota
