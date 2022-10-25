@@ -23,15 +23,25 @@ As a rule we recommend that you use your **$DATA** area to store your data, but 
 A simple example of how to do this would be::
 
   #!/bin/bash
+  #
+  # After SBATCH lines in submission script...
+  #
+  # 
   cd $SCRATCH || exit 1
-
+  # 
+  # Copy job data to $SCRATCH
+  #
   rsync -av $DATA/myproject/input ./
   rsync -av $DATA/myproject/bin ./ 
-
+  #
+  # Job specific lines...
+  #
   module load foss/2020b
 
   mpirun ./bin/my_software
-
+  #
+  # Copy data back from $SCRATCH to $DATA/myproject directory
+  #
   rsync -av --exclude=input --exclude=bin ./ $DATA/myproject/
   
 This example copies directories '$DATA/myproject/input' and '$DATA/myproject/bin' into $SCRATCH (which will then contain directories 'input' and 'bin'); runs './bin/my_software'; and copies all files in the $SCRATCH directory - excluding directories 'input' and 'bin' - back to $DATA/myproject/ once the mpirun finishes.
