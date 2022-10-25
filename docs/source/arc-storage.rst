@@ -13,6 +13,9 @@ Additionally, when you run a SLURM job, a per-job **$SCRATCH** and **$TMPDIR** f
 
 **$SCRATCH** is on a shared file system and available to all nodes in a job, if a job spans multiple nodes.
 
+Using ARC $SCRATCH storage
+--------------------------
+
 Note: Both **$SCRATCH** and **$TMPDIR** are not persistent; they will be automatically removed on job exit. It is important that your job copies all files into your $DATA area before it exits; we will not be able to recover your data if you left it on **$SCRATCH** or **$TMPDIR** once a job finished.
 
 As a rule we recommend that you use your **$DATA** area to store your data, but utilise the per job **$SCRATCH** or **$TMPDIR** area - especially for intermediate or temporary files. Generally you would copy all required input data at the start of your job and then copying results back to your **$DATA** area.
