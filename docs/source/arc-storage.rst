@@ -94,6 +94,8 @@ We can provide more detailed statements of data area quota usage to project lead
 
 Larger Data quotas (more than 5TB) are available on request as a chargeable service. Please contact ARC support for further information.
 
+If you are a user of Anaconda virtual environments and find yourself over quota in **$HOME**, please check your conda package cache size. Information on this can be found here: `Anaconda Package Cache <https://arc-software-guide.readthedocs.io/en/latest/python/anaconda_venv.html#conda-package-cache>`_
+
 Backups
 -------
 
