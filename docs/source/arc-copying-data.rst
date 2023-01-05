@@ -102,3 +102,14 @@ Use the Menu options, **Remote** | **Go To** | **Open Directory/Bookmark...** to
 .. image:: images/arc-winscp5.png
   :width: 800
   :alt: WinSCP5
+
+In the **Open Directory** selector, type in the path to your $DATA area, as found in Step 1 at the top of this page. In my case this is ``/data/system/ouit0554`` 
+
+You can click ``Add`` to save this as a bookmark for next time, or simply click ``OK`` to open this directory on ARC.
+
+.. image:: images/arc-winscp6.png
+  :width: 800
+  :alt: WinSCP6
+  
+You should now see your $DATA area on the right pane and you can drag/drop files between your local and ARC filesystems.
+
