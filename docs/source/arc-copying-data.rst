@@ -75,6 +75,8 @@ Windows users can use tools such as MobaXterm or WinSCP to copy files. Use the d
 
 We will use WinSCP in the example below, but the method used should translate well to other utilities - consult their documentation for information.
 
-
+.. image:: images/arc-winscp1.png
+  :width: 800
+  :alt: WinSCP1
 
 
