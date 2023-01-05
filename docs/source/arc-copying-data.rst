@@ -73,10 +73,22 @@ Copying to/from ARC using Graphical clients
 
 Windows users can use tools such as MobaXterm or WinSCP to copy files. Use the discovery method in step 1) above to work out the remote ARC path for the transfer.
 
-We will use WinSCP in the example below, but the method used should translate well to other utilities - consult their documentation for information.
+We will use **WinSCP** in the example below, but the method used should translate well to other utilities - consult their documentation for information.
+
+First open **WinSCP** and complete the Session fields as follows:
+
+**File Protocol:** ``SCP``
+**Host Name:** ``gateway.arc.ox.ac.uk``
+**Port Number:** ``22``
+**User Name:** Your ARC username
+**Password:** Your ARC password
 
 .. image:: images/arc-winscp1.png
   :width: 800
   :alt: WinSCP1
 
+If you wish, you can click ``Save`` to save this information for future sessions, otherwise click ``Login`` to connect...
 
+.. image:: images/arc-winscp4.png
+  :width: 800
+  :alt: WinSCP4
