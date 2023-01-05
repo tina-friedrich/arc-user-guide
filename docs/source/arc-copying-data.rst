@@ -68,12 +68,14 @@ Again a recursive copy can be made using the -r option::
 
 In both the above cases, you will be prompted to authenticate with your ARC password.
 
-Copying to/from ARC using Graphical clients
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Copying to/from ARC using Graphical File Transfer utilities
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Windows users can use tools such as MobaXterm or WinSCP to copy files. Use the discovery method in step 1) above to work out the remote ARC path for the transfer.
+Windows users can use tools such as MobaXterm or WinSCP to copy files. In this example we will use the popular **WinSCP** utility, but the method used should translate 
+well to other utilities - consult their documentation for information.
 
-We will use **WinSCP** in the example below, but the method used should translate well to other utilities - consult their documentation for information.
+If you have not already, use the discovery method in step 1) at the top of this page above to note the remote ARC path for the transfer - as you will require this 
+information later.
 
 First open **WinSCP** and complete the Session fields as follows:
 
@@ -112,4 +114,26 @@ You can click ``Add`` to save this as a bookmark for next time, or simply click 
   :alt: WinSCP6
   
 You should now see your $DATA area on the right pane and you can drag/drop files between your local and ARC filesystems.
+
+Troubleshooting Graphical File Transfers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you see an error of this type:
+
+.. image:: images/arc-winscp2.png
+  :width: 800
+  :alt: WinSCP2
+  
+ This indicates a network problem between your local machine and the ARC service. Typically this is caused by being off-campus 
+ **without** a working university VPN connection. Try restarting the VPN client.
+ 
+ If you supply the wrong username or password to the file transfer utility, you may see errors such as the following:
+ 
+ .. image:: images/arc-winscp3.png
+  :width: 800
+  :alt: WinSCP3
+
+**Access Denied** commonly means that you have made a connection to ARC, but you have supplied the wrong username/password combination. 
+Try checking these using a standard SSH connection, and if the problem persists contact [support@arc.ox.ac.uk]
+(mailto://support@arc.ox.ac.uk) for help.
 
