@@ -1,7 +1,7 @@
 Copying data to/from ARC
 ------------------------
 
-MacOS/Linux users (and other Unix like operating systems) can use rsync, sftp, or scp. These commands need to be run on your **local** machine as you can only pull files from ARC or push files to it.  
+MacOS/Linux users (and other Unix like operating systems) can use the command line utilities ``rsync``, ``sftp``, or ``scp`` directly to copy data to or from the ARC systems. These commands **must** to be run on your **local** machine as you can only pull files from ARC or push files to it.  
 
 .. note::
 
@@ -68,7 +68,13 @@ Again a recursive copy can be made using the -r option::
 
 In both the above cases, you will be prompted to authenticate with your ARC password.
 
-Copying to/from Windows clients
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Copying to/from ARC using Graphical clients
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Windows users can use tools such as MobaXterm or WinSCP to copy files. Use the discovery method in step 1) above to work out the remote ARC path for the transfer.
+
+We will use WinSCP in the example below, but the method used should translate well to other utilities - consult their documentation for information.
+
+
+
+
