@@ -102,7 +102,7 @@ The left "pane" is the local filesystem on your machine, and the right "pane" is
 Use the WinSCP menu options, **Remote** | **Go To** | **Open Directory/Bookmark...** to bring up the following dialogue box:
 
 .. image:: images/arc-winscp5.png
-  :width: 800
+  :width: 400
   :alt: WinSCP5
 
 In the **Open Directory** selector, type in the path to your $DATA area, as found in Step 1 at the top of this page. In my case this is ``/data/system/ouit0554`` 
@@ -121,7 +121,7 @@ Troubleshooting Graphical File Transfers
 If you see an error of this type:
 
 .. image:: images/arc-winscp2.png
-  :width: 800
+  :width: 400
   :alt: WinSCP2
   
 This indicates a network problem between your local machine and the ARC service. Typically this is caused by being off-campus 
@@ -130,7 +130,7 @@ This indicates a network problem between your local machine and the ARC service.
 If you supply the wrong username or password to the file transfer utility, you may see errors such as the following:
  
 .. image:: images/arc-winscp3.png
- :width: 800
+ :width: 400
  :alt: WinSCP3
 
 **Access Denied** commonly means that you have made a connection to ARC, but you have supplied the wrong username/password combination. 
