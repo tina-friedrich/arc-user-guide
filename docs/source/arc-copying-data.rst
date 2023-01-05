@@ -97,7 +97,7 @@ You should then be logged in and see the following type of display...
 
 The left "pane" is the local filesystem on your machine, and the right "pane" is the remote ARC filesystem. This defaults to your home directory on ``gateway.arc.ox.ac.uk`` which is **not** the same place as $HOME on ARC - so please do not transfer files here.
 
-Use the Menu options, **Remote** | **Go To** | **Open Directory/Bookmark...** to bring up this window:
+Use the WinSCP menu options, **Remote** | **Go To** | **Open Directory/Bookmark...** to bring up the following dialogue box:
 
 .. image:: images/arc-winscp5.png
   :width: 800
