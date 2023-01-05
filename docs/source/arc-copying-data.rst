@@ -134,6 +134,6 @@ If you see an error of this type:
   :alt: WinSCP3
 
 **Access Denied** commonly means that you have made a connection to ARC, but you have supplied the wrong username/password combination. 
-Try checking these using a standard SSH connection, and if the problem persists contact [support@arc.ox.ac.uk]
-(mailto://support@arc.ox.ac.uk) for help.
+Try checking these using a standard SSH connection, and if the problem persists contact support@arc.ox.ac.uk
+for assistance.
 
