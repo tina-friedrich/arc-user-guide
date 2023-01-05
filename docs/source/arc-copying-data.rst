@@ -124,14 +124,14 @@ If you see an error of this type:
   :width: 800
   :alt: WinSCP2
   
- This indicates a network problem between your local machine and the ARC service. Typically this is caused by being off-campus 
- **without** a working university VPN connection. Try restarting the VPN client.
+This indicates a network problem between your local machine and the ARC service. Typically this is caused by being off-campus 
+**without** a working university VPN connection. Try restarting the VPN client.
  
- If you supply the wrong username or password to the file transfer utility, you may see errors such as the following:
+If you supply the wrong username or password to the file transfer utility, you may see errors such as the following:
  
- .. image:: images/arc-winscp3.png
-  :width: 800
-  :alt: WinSCP3
+.. image:: images/arc-winscp3.png
+ :width: 800
+ :alt: WinSCP3
 
 **Access Denied** commonly means that you have made a connection to ARC, but you have supplied the wrong username/password combination. 
 Try checking these using a standard SSH connection, and if the problem persists contact support@arc.ox.ac.uk
