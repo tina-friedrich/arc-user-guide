@@ -5,7 +5,10 @@ MacOS/Linux users (and other Unix like operating systems) can use the command li
 
 .. note::
 
-    $HOME and $DATA are shared between the ARC and HTC systems, so the instructions below will work for both systems. ``gateway.arc.ox.ac.uk`` has no access to $HOME, but $DATA is available. 
+    $HOME and $DATA are shared between the ARC and HTC systems, so the instructions below will work for both systems. 
+    
+    The gateway machine ``gateway.arc.ox.ac.uk`` has no access to ARC $HOME, but the path to your ARC $DATA is available. Do not transfer data into the home directory 
+    on ``gateway.arc.ox.ac.uk`` please use your $DATA path instead.
 
 Copying to the ARC systems
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
