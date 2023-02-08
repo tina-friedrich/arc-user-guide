@@ -162,6 +162,43 @@ This would allocate 1 core on one interactive node and log you in to the system 
 
 Exiting the shell ends the job. It will also be aborted once it exceeds the time limit.
 
+Interactive MPI Jobs
+--------------------
+
+Extending the concept of interactive jobs to multi-node MPI jobs is reasonably simple. 
+
+First start a normal interactive session (as described above)::
+
+    srun -p interactive --pty /bin/bash
+
+From this session we now need to request a SLURM allocation for resources we require. In this case we are requesting 8 MPI tasks, with each task being on a different 
+node and each MPI task having access to 2 CPU cores::
+
+    salloc --ntasks=8 --ntasks-per-node=1 --cpus-per-task=2
+    salloc: CPU resource required, checking settings/requirements...
+    salloc: Granted job allocation 3968751
+    salloc: Waiting for resource configuration
+    salloc: Nodes arc-c[179,184,191,193-194,201,210,214] are ready for job
+    
+Now that the job allocation is ready (and this may take a while if your resource requirements are complex) we can load any software environments required, in this 
+example we will load the ``mpitest`` module::
+
+    module load mpitest/1.0
+    
+Now, to run the MPI application on our resource allocation all we need to do is use the ``srun`` command in place of ``mpirun`` 
+
+For example, we can simply run the standard ``mpihello`` code as follows::
+    
+    srun mpihello
+    Hello world from processor arc-c194, rank 4 out of 8 processors
+    Hello world from processor arc-c201, rank 5 out of 8 processors
+    Hello world from processor arc-c191, rank 2 out of 8 processors
+    Hello world from processor arc-c179, rank 0 out of 8 processors
+    Hello world from processor arc-c214, rank 7 out of 8 processors
+    Hello world from processor arc-c210, rank 6 out of 8 processors
+    Hello world from processor arc-c184, rank 1 out of 8 processors
+    Hello world from processor arc-c193, rank 3 out of 8 processors 
+
 Memory Resources
 ----------------
 
