@@ -58,7 +58,18 @@ The most common reason for this message is that the nodes are reserved. This may
 
 **Priority**
 
-Your job is waiting because jobs of higher priority are being scheduled first. The main reason for this will be your recent usage of the ARC systems; as more and more of your submitted jobs run on the clusters the successful running of those jobs will gradually erode the level of priority accorded by the scheduler to your next upcoming job. This is to ensure that all users of ARC's systems get a "fair share" of the resource and than no single individual or project can dominate usage of the clusters e.g. by submitting thousands of jobs. Fair-share is decided by the scheduler's fair-share algorithm and your job will run once the higher priority jobs have been scheduled and/or your job's priority increases due to its time in the queue. Please note fair-share priority is not linked to number of jobs you submitted and are queued, only the number of jobs you have sucessfully run on the systems. 
+Your job is waiting because jobs of higher priority are being scheduled first. The main reason for this will be your recent usage of the 
+ARC systems; as more and more of your submitted jobs run on the clusters the successful running of those jobs will gradually erode the 
+level of priority accorded by the scheduler to your next upcoming job. This is to ensure that all users of ARC's systems get a "fair 
+share" of the resource and than no single individual or project can dominate usage of the clusters e.g. by submitting thousands of jobs. 
+Fair-share is decided by the scheduler's fair-share algorithm and your job will run once the higher priority jobs have been scheduled 
+and/or your job's priority increases due to its time in the queue. 
+
+Fair-share decay is calculated every 5 minutes, with a half-life of 14 days. It will therefore have no effect if you have not had a 
+running job in the previous 28 days.
+
+Please note fair-share priority is not linked to number of jobs you submitted and are queued, only the number of jobs you have 
+sucessfully run on the systems. 
 
 **Resources**
 
