@@ -248,9 +248,9 @@ Alternatively you can request a GPU (--gres=gpu:1) and specify the type via a co
 
    #SBATCH --gres=gpu:1 --constraint='gpu_sku:V100'
 
-   #SBATCH --gres=gpu:1 --constraint='gpu_gen:Pascal'
+   #SBATCH --gres=gpu:1 --constraint='gpu_gen:Ampere'
 
-   #SBATCH --gres=gpu:1 --constraint='gpu_cc:3.7'
+   #SBATCH --gres=gpu:1 --constraint='gpu_cc:10.0'
 
    #SBATCH --gres=gpu:1 --constraint='gpu_mem:32GB'
 
