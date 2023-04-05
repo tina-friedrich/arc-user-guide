@@ -142,7 +142,7 @@ To request a single core for 10 minutes, with one task on the node (and one CPU 
     module purge
     module load testapp/1.0
 
-    #Calculate number of primes from 2 to 10000
+    # Calculate number of primes from 2 to 10000
     prime 2 10000
 
 Interactive Jobs
@@ -265,7 +265,7 @@ List of configured GPU related constraints
 +----------+----------------------------------------------------------------------------------------------------+
 | gpu_sku: | GPU model (P100, V100, RTX, RTX8000, A100)                                                         |
 +----------+----------------------------------------------------------------------------------------------------+
-| gpu_cc:  | CUDA compute capability                                                                            |
+| gpu_cc:  | GPU hardware compute capability                                                                    |
 +----------+----------------------------------------------------------------------------------------------------+
 | gpu_mem: | GPU memory                                                                                         |
 +----------+----------------------------------------------------------------------------------------------------+
@@ -275,7 +275,6 @@ List of configured GPU related constraints
 .. note::    
 
     Please note that co-investment GPU nodes are limited to short partition, i.e. the maximum job run time is 12 hours. No such restrictions apply to ARC owned GPUs.
-
-For details on available options/combinations, and ownership information, see the table of available GPUs.    
+    For details on available options/combinations, and ownership information, see the table of available GPUs.    
     
     
