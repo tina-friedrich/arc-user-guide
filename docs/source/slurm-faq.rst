@@ -83,6 +83,17 @@ This happens when you have specified a Quality of Service resource (normally bec
     
 ..to update your job to use **standard** Qos, this will allow your job to use the standard QoS and therefore have access to the whole cluster.
 
+**QOSMaxWallDurationPerJobLimit**
+
+This issue is typically seen by users that are members of ARC projects which have Basic or "free" quality of service. Basic QoS is typically associated with all projects where a Principal Investigator’s
+home Department is based within an MSD Department. Basic QoS allows free use at the point of access with the following scheduling attributes:
+
+  - You have a timelimit of 24 hours 
+  - You can only use one node.
+
+More details here: https://www.arc.ox.ac.uk/arc-service-level-agreements
+
+
 Why does my job fail with the error "/bin/bash^M: bad interpreter: No such file or directory"
 ---------------------------------------------------------------------------------------------
 
