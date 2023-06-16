@@ -88,8 +88,9 @@ This happens when you have specified a Quality of Service resource (normally bec
 This issue is typically seen by users that are members of ARC projects which have Basic or "free" quality of service. Basic QoS is typically associated with all projects where a Principal Investigator’s
 home Department is based within an MSD Department. Basic QoS allows free use at the point of access with the following scheduling attributes:
 
-  - You have a timelimit of 24 hours 
-  - You can only use one node.
+  - You have a *maximum* timelimit of 24 hours per job. 
+  - You can submit multiple jobs BUT only run one concurrent job on the clusters.
+  - Jobs will have a lower prioritisation than jobs submitted with Standard QoS and will therefore be scheduled around Standard and Priority QoS jobs
 
 More details here: https://www.arc.ox.ac.uk/arc-service-level-agreements
 
