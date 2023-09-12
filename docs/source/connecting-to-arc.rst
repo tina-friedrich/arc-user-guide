@@ -45,18 +45,18 @@ Connecting using ARC Graphical Nodes
    is under development it is likely to interruption and change.   
 
 ARC have a number of graphical interactive nodes which you can use to interact with applications which require GUI operation, such as RStudio, Jupyter Notebooks
-and ANSYS Workbench.
+and ANSYS Workbench. This service uses NoMachine NX for 
 
 In order to use these interactive nodes, you **must** be connected to the university network or be remotely connected via the university VPN service. 
 
 Accessing the Graphical nodes via a web browser
-===============================================
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can connect directly via web browser to `nx.arc.ox.ac.uk <https://nx.arc.ox.ac.uk>`_ via the web-based client connection (which is lower quality in terms of
 visual display). See `Configuring NoMachine Web Client <https://arc-user-guide.readthedocs.io/en/latest/arc-nx-web.html>`_
 
 Accessing the Graphical nodes via the client software
-=====================================================
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You may download the `NoMachine Enterprise Client <https://www.nomachine.com/download-enterprise#NoMachine-Enterprise-Client>`_ and install this on your
 local machine. See `Configuring NoMachine Client <https://arc-user-guide.readthedocs.io/en/latest/arc-nx-client.html>`_
@@ -65,7 +65,7 @@ local machine. See `Configuring NoMachine Client <https://arc-user-guide.readthe
 Using the ARC desktop environment
 =================================
 
-Once you have connected to the NoMachine server by one of the above methods you will be presented with the ARC desktop environment as shown below:
+Once you have connected to the NoMachine server by one of the methods described in `Connecting to ARC <https://arc-user-guide.readthedocs.io/en/latest/connecting-to-arc.html>`_, you will be presented with the ARC desktop environment as shown below:
 
 .. image:: images/arc-desktop.png
   :width: 800
@@ -96,7 +96,7 @@ You can use the menu bar at the bottom of the window to access applications or, 
                 
               
 Running applications from the desktop
-=====================================
+-------------------------------------
   
 There are a number of predefined applications which you can find under the ``ARC`` sub-menu, within the ``Applications`` section of the main menu bar, see below for examples:
   
