@@ -2,7 +2,7 @@ ARC User Guide
 ==============
 
 
-.. toctree:: 
+.. toctree::
 
    introduction
    arc-systems
