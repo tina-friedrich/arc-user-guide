@@ -1,11 +1,13 @@
 Using the ARC desktop environment
 =================================
 
-ARC have a number of graphical interactive nodes which you can use to interact with applications which require GUI operation (such as RStudio, Jupyter Notebooks and ANSYS Workbench).
+ARC provide a graphical login service, to facilitate access to GUI applications such as RStudio, Jupyter Notebooks, and ANSYS Workbench. This service uses NoMachine NX to provide a remote desktop.
 
-In order to use these interactive nodes, you must be connected to the university network or be remotely connected via the university VPN service. See  `Connecting to ARC <https://arc-user-guide.readthedocs.io/en/latest/connecting-to-arc.html>`_ for details how to connect to the graphical nodes.
+In order to use this service, you must be connected to the university network or be remotely connected via the university VPN service. See  `Connecting to ARC <https://arc-user-guide.readthedocs.io/en/latest/connecting-to-arc.html>`_ for details how to connect to the graphical login nodes.
 
-Once you have connected to the NoMachine service by one of the described methods, you will be presented with the ARC desktop environment as shown below:
+NoMachine NX allows you to detach from a session, and reconnect to it later - simply close your browser or NX client windows. Processes on the NX nodes will continue to run once you've detached. You can reconnect to a session later; your running sessions will be presented to you when you reconnect. However, exiting a session (or logging out of the desktop environent) will terminate the session, terminating all processes running within it. 
+
+Once you have connected to the NX service by one of the described methods, you will be presented with the ARC desktop environment as shown below:
 
 .. image:: images/arc-desktop.png
   :width: 800
@@ -16,10 +18,23 @@ You can use the menu bar at the bottom of the window to access applications or, 
 .. image:: images/arc-konsole.png
   :width: 800
   :alt: ARC Konsole
+
+It is possible to access the clusters from the ARC desktop environment. Open a terminal as described above, and run::
+
+    module load cluster/arc
+
+to access the 'ARC' cluster or::
+
+    module load cluster/htc
+
+for access to the 'HTC' cluster.
+
+The graphical login nodes provide fast access to the data file system; they can (and should) be used for pre- or post-processing. 
+
   
 .. note::
   While it may look like you have your own Linux desktop to work with, the interactive nodes where you are running this desktop are 
-  shpared with other ARC users, and therefore it is very important that you do not run computationally demanding jobs. 
+  shared with other ARC users, and should not be used to run computationally demanding jobs. 
   
   To run applications that are more demanding, please open a ``Konsole`` shell window and start an interactive X11 
   session on a compute node by following the instructions below:
