@@ -8,6 +8,7 @@ ARC User Guide
    arc-systems
    connecting-to-arc
    arc-copying-data
+   arc-gfx-interactive
    arc-script-basics
    job-scheduling
    arc-priority-jobs
