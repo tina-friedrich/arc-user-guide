@@ -171,7 +171,7 @@ your user ID is likely the same as your ARC (and SSO) ID. Enter your CONNECT acc
     :alt:   entering CONNECT credentials
 
 If you select 'Remember password', KDE will safe these details for you. It uses it's KDE Wallet service to safe these securely. If you have not used that before, it will guide you through the setup and let you set a master password for your wallet.
-
+thre
 Once you've entered your CONNECT credentials and hit 'enter' (or clicked 'OK'), it should connect you to your RFS share. 
 
 .. image:: images/arc-rfs4.png
@@ -191,3 +191,66 @@ You can then select one half of the split window and change what is is showing t
 .. image:: images/arc-rfs6.png
     :width: 800
     :alt:   entering CONNECT credentials
+
+
+Accessing RFS from the command line
+-----------------------------------
+
+Using the ARC rfs tool
+^^^^^^^^^^^^^^^^^^^^^^
+
+We provide a command-line tool - called 'rfs' - that allows easy interaction with RFS. It can list files on RFS; create directories on RFS; push data to RFS; and fetch data from RFS.
+
+.. image:: images/rfscli_2.png
+    :width: 800
+    :alt:   ARC RFS command line tool
+
+It can list directory contents of both the top level directory, or within directories:
+
+.. image:: images/rfscli_1.png
+    :width: 800
+    :alt:  listing files on RFS with ARC RFS client
+
+It allows to create directories on RFS, and pushing data up (both files and directories):
+
+.. image:: images/rfcli_5.png
+    :width: 800
+    :alt: creating a directory on RFS, and pushing data into it
+
+The 'push' command will work on both files and directories (directories are pushed recursively).
+
+Files and directories can also be fetched from RFS, into either the current directory:
+
+.. image:: images/rfcli_3.png
+    :width: 800
+    :alt: fetching a directory from RFS to pwd
+
+or into a specified directory:
+
+.. image:: images/rfcli_4.png
+    :width: 800
+    :alt: fetching a directory from RFS to specific local directory
+
+Paths entered can be either relative (i.e. relative to the current working directory), or full paths.
+
+Using smbclient
+^^^^^^^^^^^^^^^
+
+Ultimately, the tool to interact with RFS from the command line is smbclient. This offers many more ways to interact with RFS than the ARC provided 'rfs' tool (including deleting files). 
+
+To start a smbclient session, type
+
+``smbclient -U connect.ox.ac.uk\\$USER //connect.ox.ac.uk/RFS``
+
+and enter your connect password. This will start a session. Within smbclient, the 'help' command will give you the list of commands, and help with commands:
+
+.. image:: images/smbcli_2.png
+    :width: 800
+    :alt:   start a SMBCLIENT session
+
+An example session - looking at available files and removing a directory (and it's contents) - would be
+
+.. image:: images/smbcli_1.png
+    :width: 800
+    :alt:   smbclient - session demonstrating deleting a directory
+
