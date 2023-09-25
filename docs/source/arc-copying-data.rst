@@ -199,7 +199,8 @@ Accessing RFS from the command line
 Using the ARC rfs tool
 ^^^^^^^^^^^^^^^^^^^^^^
 
-We provide a command-line tool - called 'rfs' - that allows easy interaction with RFS. It can list files on RFS; create directories on RFS; push data to RFS; and fetch data from RFS.
+We provide a command-line tool - called 'rfs' - that allows easy interaction with RFS. It can list files on RFS; create directories on RFS; push data to RFS; and fetch data from RFS. 
+'rfs help' or 'rfs -h' explain usage and options:
 
 .. image:: images/rfscli_2.png
     :width: 800
@@ -211,7 +212,7 @@ It can list directory contents of both the top level directory, or within direct
     :width: 800
     :alt:  listing files on RFS with ARC RFS client
 
-It allows to create directories on RFS, and pushing data up (both files and directories):
+It allows to create directories on RFS, and to push data into RFS (both files and directories):
 
 .. image:: images/rfscli_5.png
     :width: 800
