@@ -213,7 +213,7 @@ It can list directory contents of both the top level directory, or within direct
 
 It allows to create directories on RFS, and pushing data up (both files and directories):
 
-.. image:: images/rfcli_5.png
+.. image:: images/rfscli_5.png
     :width: 800
     :alt: creating a directory on RFS, and pushing data into it
 
@@ -221,13 +221,13 @@ The 'push' command will work on both files and directories (directories are push
 
 Files and directories can also be fetched from RFS, into either the current directory:
 
-.. image:: images/rfcli_3.png
+.. image:: images/rfscli_3.png
     :width: 800
     :alt: fetching a directory from RFS to pwd
 
 or into a specified directory:
 
-.. image:: images/rfcli_4.png
+.. image:: images/rfscli_4.png
     :width: 800
     :alt: fetching a directory from RFS to specific local directory
 
