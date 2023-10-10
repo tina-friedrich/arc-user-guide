@@ -148,3 +148,12 @@ How can I check the availability of free compute nodes?
 -------------------------------------------------------
 
 Use the command the SLURM command ``sinfo``
+
+MPI Jobs fail when ``mpirun`` used in a loop or multiple times in a submission script
+-------------------------------------------------------------------------------------
+
+If you have a submission script which calls ``mpirun`` multiple times, there may be issues with the second and subsequent calls failing. In this case, put the following command after each ``mpirun`` command (e.g. inside the loop):
+
+``sleep 60``
+
+This delay will allow time for the previous MPI session to close down completely.
