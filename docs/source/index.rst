@@ -19,6 +19,10 @@ ARC User Guide
    general-faq
    arc-host-keys
 
+.. seealso::
+   `ARC Software Guide <https://arc-software-guide.readthedocs.io/en/latest>`_
+   Documentation for using popular application software on ARC
+
    
    
    
