@@ -140,3 +140,118 @@ If you supply the wrong username or password to the file transfer utility, you m
 Try checking these using a standard SSH connection, and if the problem persists contact support@arc.ox.ac.uk
 for assistance.
 
+Copying data from/to the RFS
+============================
+
+It is possible to access the Research File Service (RFS) from ARC. There are two main ways it can be accessed; via a graphical file browser from the `ARC desktop environment <https://arc-user-guide.readthedocs.io/en/latest/arc-gfx-interactive.html>`_, or command line (e.g. from login nodes or cluster nodes).
+
+Accessing RFS from the ARC desktop environment
+----------------------------------------------
+
+Log in to the ARC desktop environment. Open the main menu, and start the file manager application (Dolphin).
+
+.. image:: images/arc-rfs1.png
+    :width: 800
+    :alt:   starting Dolphin from the menu
+
+In Dolphin, select 'Network' from the left menu. Click on the folder named 'RFS'.
+
+.. image:: images/arc-rfs2.png
+    :width: 800
+    :alt:   opening RFS connection
+
+KDE should ask you for your username and password. This is your CONNECT account; you need to enter the username as::
+
+    connect.ox.ac.uk\USERID
+
+your user ID is likely the same as your ARC (and SSO) ID. Enter your CONNECT account password.
+
+.. image:: images/arc-rfs3.png
+    :width: 800
+    :alt:   entering CONNECT credentials
+
+If you select 'Remember password', KDE will safe these details for you. It uses it's KDE Wallet service to safe these securely. If you have not used that before, it will guide you through the setup and let you set a master password for your wallet.
+thre
+Once you've entered your CONNECT credentials and hit 'enter' (or clicked 'OK'), it should connect you to your RFS share. 
+
+.. image:: images/arc-rfs4.png
+    :width: 800
+    :alt:   entering CONNECT credentials
+
+You can interact with this from Dolphin as with a normal folder, and navigate the folder structure on RFS. You can copy files or directories in and out of the service (e.g. via drag-and-drop), and open them in applications. 
+
+Dolphin has a 'split' view that allows having multiple places (folders) open at the same time, which is useful for transferring files in and out of RFS. To split the file browser window, click on the 'Split' button in the menu bar:
+
+.. image:: images/arc-rfs5.png
+    :width: 800
+    :alt:   entering CONNECT credentials
+
+You can then select one half of the split window and change what is is showing to e.g. your Home directory, or navigate to your data folder:
+
+.. image:: images/arc-rfs6.png
+    :width: 800
+    :alt:   entering CONNECT credentials
+
+
+Accessing RFS from the command line
+-----------------------------------
+
+Using the ARC rfs tool
+^^^^^^^^^^^^^^^^^^^^^^
+
+We provide a command-line tool - called 'rfs' - that allows easy interaction with RFS. It can list files on RFS; create directories on RFS; push data to RFS; and fetch data from RFS. 
+'rfs help' or 'rfs -h' explain usage and options:
+
+.. image:: images/rfscli_2.png
+    :width: 800
+    :alt:   ARC RFS command line tool
+
+It can list directory contents of both the top level directory, or within directories:
+
+.. image:: images/rfscli_1.png
+    :width: 800
+    :alt:  listing files on RFS with ARC RFS client
+
+It allows to create directories on RFS, and to push data into RFS (both files and directories):
+
+.. image:: images/rfscli_5.png
+    :width: 800
+    :alt: creating a directory on RFS, and pushing data into it
+
+The 'push' command will work on both files and directories (directories are pushed recursively).
+
+Files and directories can also be fetched from RFS, into either the current directory:
+
+.. image:: images/rfscli_3.png
+    :width: 800
+    :alt: fetching a directory from RFS to pwd
+
+or into a specified directory:
+
+.. image:: images/rfscli_4.png
+    :width: 800
+    :alt: fetching a directory from RFS to specific local directory
+
+Paths entered can be either relative (i.e. relative to the current working directory), or full paths.
+
+Using smbclient
+^^^^^^^^^^^^^^^
+
+Ultimately, the tool to interact with RFS from the command line is smbclient. This offers many more ways to interact with RFS than the ARC provided 'rfs' tool (including deleting files). 
+
+To start a smbclient session, type
+
+``smbclient -U connect.ox.ac.uk\\$USER //connect.ox.ac.uk/RFS``
+
+and enter your connect password. This will start a session. Within smbclient, the 'help' command will give you the list of commands, and help with commands:
+
+.. image:: images/smbcli_2.png
+    :width: 800
+    :alt:   start a SMBCLIENT session
+
+An example session - looking at available files and removing a directory (and it's contents) - would be
+
+.. image:: images/smbcli_1.png
+    :width: 800
+    :alt:   smbclient - session demonstrating deleting a directory
+
