@@ -1,6 +1,9 @@
 ARC Storage (BETA Environment)
 ==============================
 
+[This page needs to be updated with the new storage info]
+
+
 Once your account has been created, you will immediately have access to two persistent storage areas:
 
 **$HOME** (/home/username) with a 15GB quota
