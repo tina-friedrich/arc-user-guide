@@ -2,20 +2,17 @@ ARC Storage (Migration)
 =======================
 
 
-A short paragraph explaining why the new storage will be faster/better?
------------------------------------------------------------------------
+Introduction
+------------
 
 Over the last year the ARC team has been working on replacing part of the storage infrastructure behind the ARC and HTC clusters. This was necessary since the current storage infrastructure is reach end of life almost full, with more projects being added regularly, and scratch storage being more and more in demand and requirements for improved performance. 
 
-Reminder about ``$HOME``, ``$DATA`` and ``$SCRATCH`` link to web page explanation
----------------------------------------------------------------------------------
-
-The new storage covers 2 of the 3 different storage facilities provided by ARC, i.e. ``$DATA`` and ``$SCRATCH``. The third, ``$HOME``, is currently not being upgraded. ``$DATA`` is the shared permanent storage available to projects' users to store research data required and/or generated but jobs run on the clusters. ``$SCRATCH`` is the temporary storage created at the beginning of the job which can be used by programs to store temporary data shared by processes during a job run. ``$SCRATCH`` space is deleted after the job is stopped. 
+The new storage replaces 2 of the 3 different storage facilities provided by ARC, i.e. ``$DATA`` and ``$SCRATCH``. The third, ``$HOME``, is unaffected. ``$DATA`` is the shared permanent storage available to projects' users to store research data required and/or generated but jobs run on the clusters. ``$SCRATCH`` is the temporary storage created at the beginning of the job which can be used by programs to store temporary data shared by processes during a job run. ``$SCRATCH`` space is deleted after the job is stopped. 
 
 More information on the different types of storage can be found on the ARC user guide at https://arc-user-guide.readthedocs.io/en/latest/arc-storage.html 
 
 New storage and ``/migration`` storage area
----------------------------------------
+-------------------------------------------
 
 We have created all projects' and users' directories on the new storage and these can now be accessed under ``/migration/$PROJECT/$USER`` Each user is responsible for copying their own data to the new location. We would advise to copy data – not move it – as moving it takes longer, plus a copy process allows to confirm the files were transferred successfully. 
 
