@@ -58,8 +58,8 @@ These can be run from an nx session, an interactive session, or submitted as a j
 
 Be careful when using a cluster job, and especially when copying in an interactive session; the time limit might interrupt your transfer before it is complete.
 
-Who is responsible for migrating the data?
-------------------------------------------
+Who is responsible for migrating my data?
+-----------------------------------------
 
 Each user is responsible for transferring their data; however, the project PI or a user appointed by the project PI is responsible for gathering progress from all project users and make the decision for when the whole project should be switched from the old storage to the new. The switch from old to new has to be done on a project basis. We cannot move users individually.
 
