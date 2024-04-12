@@ -26,6 +26,8 @@ intersphinx_mapping = {
 }
 intersphinx_disabled_domains = ['std']
 
+pygments_style = 'sphinx'
+
 templates_path = ['_templates']
 
 # -- Options for HTML output
