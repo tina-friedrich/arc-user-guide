@@ -33,9 +33,11 @@ Please contact ‘support@arc.ox.ac.uk’ if you would like your storage area sw
 How to transfer data
 --------------------
 
-There are many ways to copy files from one folder to another but not all are appropriate in this case. As mentioned above, using ``mv`` is not advisable as you do not want to remove the data from the old storage. ``cp`` is also not advisable as it is very slow. ``rsync`` is probably the best option, as it is interruptible and resumable, but may not be the fastest solution for very large trees. For very large trees, using a ``tar | tar`` solution may be faster.
+There are many ways to copy files from one folder to another but not all are appropriate in this case. As mentioned above, using ``mv`` is not advisable as you do not want to remove the data from the old storage. ``cp`` is also not advisable as it is very slow. ``rsync`` is probably the best option, as it is interruptible and resumable, and can check data integrity - however, it may not be the fastest solution for very large trees. For very large trees, using a ``tar | tar`` solution is likely faster.
 
 The rsync solution looks like the following:
+
+##### Option 1 (copying from current ``$DATA`` to the new storage area)
 
 .. code-block:: shell
 
@@ -48,6 +50,20 @@ Alternatively, using tar can be done with the following method:
 
   cd /data/<projectname>/$USER
   tar cvf - . | tar xf - -C /migration/<projectname>/$USER/ 
+
+##### Option 2 (copying from the migration area to your new ``$DATA`` are, i.e. copy post switchover)
+
+.. code-block:: shell
+
+  cd /migration/<projectname>/$USER
+  rsync –avhP . /data/<projectname>/$USER/
+
+Alternatively, using tar can be done with the following method:
+
+.. code-block:: shell
+
+  cd /migration/<projectname>/$USER
+  tar cvf - . | tar xf - -C /data/<projectname>/$USER/ 
 
 These can be run from an nx session, an interactive session, or submitted as a job on the cluster. An example submission script would look something like:
 
@@ -65,10 +81,14 @@ These can be run from an nx session, an interactive session, or submitted as a j
   # change the value of `MYPROJECT` to the project you want to migrate
   export MYPROJECT="engs-example"
 
-  cd /data/$MYPROJECT/$USER 
-  rsync -avhP . /migration/$MYPROJECT/$USER/
+  cd /migration/$MYPROJECT/$USER 
+  rsync -avhP . /data/$MYPROJECT/$USER/
 
 Be careful when using a cluster job, and especially when copying in an interactive session; the time limit might interrupt your transfer before it is complete.
+
+It is of course also possible to only transfer certain sub-directories, or (especially using rsync) exclude certain subdirectories from the copy process. 
+Please refer to the 'rsync' or 'tar' man pages for details, or ask the ARC team for assistance. 
+
 
 Who is responsible for migrating my data?
 -----------------------------------------
