@@ -14,7 +14,7 @@ The new storage covers 2 of the 3 different storage facilities provided by ARC, 
 
 More information on the different types of storage can be found on the ARC user guide at https://arc-user-guide.readthedocs.io/en/latest/arc-storage.html 
 
-New storage/``/migration`` storage area
+New storage and ``/migration`` storage area
 ---------------------------------------
 
 We have created all projects' and users' directories on the new storage and these can now be accessed under ``/migration/$PROJECT/$USER`` Each user is responsible for copying their own data to the new location. We would advise to copy data – not move it – as moving it takes longer, plus a copy process allows to confirm the files were transferred successfully. 
