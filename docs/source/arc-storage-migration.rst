@@ -26,17 +26,23 @@ How to transfer data
 
 There are many ways to copy files from one folder to another but not all are appropriate in this case. As mentioned above, using mv is not advisable as you do not want to remove the data from the old storage. ``cp`` is also not advisable as it is very slow. ``rsync`` is probably the best option, as it is interruptible and resumable, but may not be the fastest solution for very large trees. For very large trees, using a ``tar | tar`` solution may be faster.
 
-The rsync solution looks like the following::
+The rsync solution looks like the following:
+
+.. code-block:: shell
 
   cd /data/<projectname>/$USER
   rsync –avhP . /migration/<projectname>/$USER/
 
-Alternatively, using tar can be done with the following method::
+Alternatively, using tar can be done with the following method:
+
+.. code-block:: shell
 
   cd /data/<projectname>/$USER
   tar cvf - . | tar xf - -C /migration/<projectname>/$USER/ 
 
-These can be run from an nx session, an interactive session, or submitted as a job on the cluster. An example submission script would look something like::
+These can be run from an nx session, an interactive session, or submitted as a job on the cluster. An example submission script would look something like:
+
+.. code-block:: bash
 
   #!/bin/bash 
   #SBATCH --nodes=1 
