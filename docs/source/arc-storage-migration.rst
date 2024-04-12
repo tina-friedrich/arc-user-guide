@@ -10,7 +10,7 @@ Over the last year the ARC team has been working on replacing part of the storag
 Reminder about ``$HOME``, ``$DATA`` and ``$SCRATCH`` link to web page explanation
 ---------------------------------------------------------------------------------
 
-The new storage covers 2 of the 3 different storage facilities provided by ARC, i.e. DATA and SCRATCH. The third, HOME, is currently not being upgraded. DATA is the shared permanent storage available to projects' users to store research data required and/or generated but jobs run on the clusters. SCRATCH is the temporary storage created at the beginning of the job which can be used by programs to store temporary data shared by processes during a job run. SCRATCH space is deleted after the job is stopped. 
+The new storage covers 2 of the 3 different storage facilities provided by ARC, i.e. ``$DATA`` and ``$SCRATCH``. The third, ``$HOME``, is currently not being upgraded. DATA is the shared permanent storage available to projects' users to store research data required and/or generated but jobs run on the clusters. ``$SCRATCH`` is the temporary storage created at the beginning of the job which can be used by programs to store temporary data shared by processes during a job run. ``$SCRATCH`` space is deleted after the job is stopped. 
 
 More information on the different types of storage can be found on the ARC user guide at https://arc-user-guide.readthedocs.io/en/latest/arc-storage.html 
 
