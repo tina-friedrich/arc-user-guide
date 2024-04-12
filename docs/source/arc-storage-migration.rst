@@ -1,4 +1,4 @@
-ARC Storage (BETA Environment)
+ARC Storage (Migration)
 ==============================
 
 [This page needs to be updated with the new storage info]
