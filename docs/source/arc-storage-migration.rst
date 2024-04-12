@@ -19,12 +19,12 @@ New storage and ``/migration`` storage area
 
 We have created all projects' and users' directories on the new storage and these can now be accessed under ``/migration/$PROJECT/$USER`` Each user is responsible for copying their own data to the new location. We would advise to copy data – not move it – as moving it takes longer, plus a copy process allows to confirm the files were transferred successfully. 
 
-Once a project's data directory is fully migrated, we can 'switch' which area is mounted under /data/ on a per project basis. It would, likewise, be possible to mount the 'new' emtpy storage as ``/data/`` and mount the current file system under ``/migration``, which would allow for new data being produced in the correct place whilst old data continues to be transferred. Please contact ‘support@arc.ox.ac.uk’ if you would like your storage area switched, or discuss those options. 
+Once a project's data directory is fully migrated, we can 'switch' which area is mounted under ``/data/`` on a per project basis. It would, likewise, be possible to mount the 'new' emtpy storage as ``/data/`` and mount the current file system under ``/migration``, which would allow for new data being produced in the correct place whilst old data continues to be transferred. Please contact ‘support@arc.ox.ac.uk’ if you would like your storage area switched, or discuss those options. 
 
 How to transfer data
 --------------------
 
-There are many ways to copy files from one folder to another but not all are appropriate in this case. As mentioned above, using mv is not advisable as you do not want to remove the data from the old storage. ``cp`` is also not advisable as it is very slow. ``rsync`` is probably the best option, as it is interruptible and resumable, but may not be the fastest solution for very large trees. For very large trees, using a ``tar | tar`` solution may be faster.
+There are many ways to copy files from one folder to another but not all are appropriate in this case. As mentioned above, using ``mv`` is not advisable as you do not want to remove the data from the old storage. ``cp`` is also not advisable as it is very slow. ``rsync`` is probably the best option, as it is interruptible and resumable, but may not be the fastest solution for very large trees. For very large trees, using a ``tar | tar`` solution may be faster.
 
 The rsync solution looks like the following:
 
