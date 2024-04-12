@@ -19,9 +19,12 @@ We have created all projects' and users' directories on the new storage and thes
 There are two options for migration:
 
 1) You can copy the contents of your current ``$DATA`` area to the new ``/migration/$PROJECT/$USER`` storage, and once complete we will switch this to become ``$DATA``. Your old ``$DATA`` will then become available at ``/migration/$PROJECT/$USER`` and be read-only.
+
 2) We can mount the new storage as a new "empty" ``$DATA`` area and you can copy your data from ``/migration/$PROJECT/$USER`` which would allow for new data being produced in the correct place whilst old data continues to be transferred.
 
-Please contact ‘support@arc.ox.ac.uk’ if you would like your storage area switched, or discuss those options.
+[The problem here is that for option 1 - as all users would need to be fully migrated project switch, they may need to re-do the rsync - so option 2 is more preferable - AMG] 
+
+Please contact ‘support@arc.ox.ac.uk’ if you would like your storage area switched, or discuss those options. [Need to mention multiple projects]
 
 
 How to transfer data
