@@ -22,7 +22,7 @@ There are two options for migration:
 
 2) We can mount the new storage as a new "empty" ``$DATA`` area and you can copy your data from ``/migration/$PROJECT/$USER`` which would allow for new data being produced in the correct place whilst old data continues to be transferred.
 
-[The problem here is that for option 1 - as all users would need to be fully migrated project switch, they may need to re-do the rsync - so option 2 is more preferable - AMG] 
+[The problem here is that for option 1 - as all users would need to be fully migrated before project switch, if there is any delay they will need to re-do the rsync - so option 2 is more preferable - AMG] 
 
 Please contact ‘support@arc.ox.ac.uk’ if you would like your storage area switched, or discuss those options. [Need to mention multiple projects]
 
