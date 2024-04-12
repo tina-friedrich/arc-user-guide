@@ -49,13 +49,12 @@ These can be run from an nx session, an interactive session, or submitted as a j
   #SBATCH --job-name=Data_migration 
   
   module purge 
-  
-  cd /data/<projectname>/$USER 
-  
-  # choose a method of transfer (uncomment the one you want to use) 
-  #rsync -avhP . /migration/<projectname>/$USER/ 
-  #tar cvf - . | tar xf - -C /migration/<projectname>/$USER/
 
+  # change the value of `MYPROJECT` to the project you want to migrate
+  export MYPROJECT="engs-example"
+
+  cd /data/$MYPROJECT/$USER 
+  rsync -avhP . /migration/$MYPROJECT/$USER/
 
 Be careful when using a cluster job, and especially when copying in an interactive session; the time limit might interrupt your transfer before it is complete.
 
