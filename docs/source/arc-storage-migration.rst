@@ -37,7 +37,7 @@ There are many ways to copy files from one folder to another but not all are app
 
 The rsync solution looks like the following:
 
-##### Option 1 (copying from current ``$DATA`` to the new storage area)
+**Option 1 (copying from current ``$DATA`` to the new storage area)**
 
 .. code-block:: shell
 
@@ -51,7 +51,7 @@ Alternatively, using tar can be done with the following method:
   cd /data/<projectname>/$USER
   tar cvf - . | tar xf - -C /migration/<projectname>/$USER/ 
 
-##### Option 2 (copying from the migration area to your new ``$DATA`` are, i.e. copy post switchover)
+**Option 2 (copying from the migration area to your new ``$DATA`` are, i.e. copy post switchover)**
 
 .. code-block:: shell
 
