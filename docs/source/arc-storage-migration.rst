@@ -1,83 +1,69 @@
 ARC Storage (Migration)
-==============================
-
-[This page needs to be updated with the new storage info]
+=======================
 
 
-Once your account has been created, you will immediately have access to two persistent storage areas:
+A short paragraph explaining why the new storage will be faster/better?
+-----------------------------------------------------------------------
 
-**$HOME** (/home/username) with a 15GB quota
+Over the last year the ARC team has been working on replacing part of the storage infrastructure behind the ARC and HTC clusters. This was necessary since the current storage infrastructure is reach end of life almost full, with more projects being added regularly, and scratch storage being more and more in demand and requirements for improved performance. 
 
-**$DATA** (/data/projectname/username)  sharing a 5TB quota with your project colleagues
+Reminder about ``$HOME``, ``$DATA`` and ``$SCRATCH`` link to web page explanation
+---------------------------------------------------------------------------------
 
-Additionally, when you run a SLURM job, a per-job **$SCRATCH** and **$TMPDIR** for temporary data/workfiles is created. 
+The new storage covers 2 of the 3 different storage facilities provided by ARC, i.e. DATA and SCRATCH. The third, HOME, is currently not being upgraded. DATA is the shared permanent storage available to projects' users to store research data required and/or generated but jobs run on the clusters. SCRATCH is the temporary storage created at the beginning of the job which can be used by programs to store temporary data shared by processes during a job run. SCRATCH space is deleted after the job is stopped. 
 
-**$TMPDIR** is local to a compute node
+More information on the different types of storage can be found on the ARC user guide at https://arc-user-guide.readthedocs.io/en/latest/arc-storage.html 
 
-**$SCRATCH** is on a shared file system and available to all nodes in a job, if a job spans multiple nodes.
+New storage/``/migration`` storage area
+---------------------------------------
 
-Using ARC $SCRATCH storage
---------------------------
+We have created all projects' and users' directories on the new storage and these can now be accessed under ``/migration/$PROJECT/$USER`` Each user is responsible for copying their own data to the new location. We would advise to copy data – not move it – as moving it takes longer, plus a copy process allows to confirm the files were transferred successfully. 
 
-Note: Both **$SCRATCH** and **$TMPDIR** are not persistent; they will be automatically removed on job exit. It is important that your job copies all files into your $DATA area before it exits; we will not be able to recover your data if you left it on **$SCRATCH** or **$TMPDIR** once a job finished.
+Once a project's data directory is fully migrated, we can 'switch' which area is mounted under /data/ on a per project basis. It would, likewise, be possible to mount the 'new' emtpy storage as ``/data/`` and mount the current file system under ``/migration``, which would allow for new data being produced in the correct place whilst old data continues to be transferred. Please contact ‘support@arc.ox.ac.uk’ if you would like your storage area switched, or discuss those options. 
 
-As a rule we recommend that you use your **$DATA** area to store your data, but utilise the per job **$SCRATCH** or **$TMPDIR** area - especially for intermediate or temporary files. Generally you would copy all required input data at the start of your job and then copying results back to your **$DATA** area.
+How to transfer data
+--------------------
 
-A simple example of how to do this would be::
+There are many ways to copy files from one folder to another but not all are appropriate in this case. As mentioned above, using mv is not advisable as you do not want to remove the data from the old storage. ``cp`` is also not advisable as it is very slow. ``rsync`` is probably the best option, as it is interruptible and resumable, but may not be the fastest solution for very large trees. For very large trees, using a ``tar | tar`` solution may be faster.
 
-  #!/bin/bash
-  #
-  # After SBATCH lines in submission script...
-  #
-  # 
-  cd $SCRATCH || exit 1
-  # 
-  # Copy job data to $SCRATCH
-  #
-  rsync -av $DATA/myproject/input ./
-  rsync -av $DATA/myproject/bin ./ 
-  #
-  # Job specific lines...
-  #
-  module load foss/2020b
+The rsync solution looks like the following::
 
-  mpirun ./bin/my_software
-  #
-  # Copy data back from $SCRATCH to $DATA/myproject directory
-  #
-  rsync -av --exclude=input --exclude=bin ./ $DATA/myproject/
+  cd /data/<projectname>/$USER
+  rsync –avhP . /migration/<projectname>/$USER/
+
+Alternatively, using tar can be done with the following method::
+
+  cd /data/<projectname>/$USER
+  tar cvf - . | tar xf - -C /migration/<projectname>/$USER/ 
+
+These can be run from an nx session, an interactive session, or submitted as a job on the cluster. An example submission script would look something like::
+
+  #!/bin/bash 
+  #SBATCH --nodes=1 
+  #SBATCH --ntasks-per-node=1 
+  #SBATCH --cpus-per-task=2 
+  #SBATCH --partition=short 
+  #SBATCH --job-name=Data_migration 
   
-This example copies the directories ``$DATA/myproject/input`` and ``$DATA/myproject/bin`` into **$SCRATCH** (which will then contain directories ``input`` and ``bin``). The script then runs ``./bin/my_software``; and copies all files in the **$SCRATCH** directory - excluding directories ``input`` and ``bin`` - back to ``$DATA/myproject/`` once the ``mpirun`` finishes.
-
-The process is more straightforward if you only need to copy single input/ouput files when the application is centrally hosted, for example::
-
-  #!/bin/bash
-  #
-  # After SBATCH lines in submission script...
-  #
-  # 
-  # Load appropriate module, in this test case we are using Gaussian
+  module purge 
   
-  module load Gaussian/16.C.01
-
-  # Set input/output filenames
-  #
-  export INPUT_FILE=test397.com
-  export OUTPUT_FILE=test397.log
-
-  echo "copying input from $SLURM_SUBMIT_DIR/$INPUT_FILE ..."
+  cd /data/<projectname>/$USER 
   
-  cd $SCRATCH || exit 1
-  cp $SLURM_SUBMIT_DIR/$INPUT_FILE ./
+  # choose a method of transfer (uncomment the one you want to use) 
+  #rsync -avhP . /migration/<projectname>/$USER/ 
+  #tar cvf - . | tar xf - -C /migration/<projectname>/$USER/
 
-  # Job specific application command line...
-  #
-  g16 < $INPUT_FILE > $OUTPUT_FILE
 
-  # Copy output back from $SCRATCH to job directory
-  #
-  echo "copying output back to $SLURM_SUBMIT_DIR/ ..."
-  cp $OUTPUT_FILE $SLURM_SUBMIT_DIR/
+Be careful when using a cluster job, and especially when copying in an interactive session; the time limit might interrupt your transfer before it is complete.
+
+Who is responsible for migrating the data?
+------------------------------------------
+
+Each user is responsible for transferring their data; however, the project PI or a user appointed by the project PI is responsible for gathering progress from all project users and make the decision for when the whole project should be switched from the old storage to the new. The switch from old to new has to be done on a project basis. We cannot move users individually.
+
+How long will my data be available on the old storage after migration?
+----------------------------------------------------------------------
+
 
  
 If you are unable to access either of these directories, please let us know.
