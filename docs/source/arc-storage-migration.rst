@@ -14,9 +14,15 @@ More information on the different types of storage can be found on the ARC user 
 New storage and ``/migration`` storage area
 -------------------------------------------
 
-We have created all projects' and users' directories on the new storage and these can now be accessed under ``/migration/$PROJECT/$USER`` Each user is responsible for copying their own data to the new location. We would advise to copy data – not move it – as moving it takes longer, plus a copy process allows to confirm the files were transferred successfully. 
+We have created all projects' and users' directories on the new storage and these can now be accessed under ``/migration/$PROJECT/$USER`` Each user is responsible for copying their own data to the new location. We would advise to copy data – not move it – as moving it takes longer, plus a copy process allows you to confirm the files were transferred successfully. 
 
-Once a project's data directory is fully migrated, we can 'switch' which area is mounted under ``/data/`` on a per project basis. It would, likewise, be possible to mount the 'new' emtpy storage as ``/data/`` and mount the current file system under ``/migration``, which would allow for new data being produced in the correct place whilst old data continues to be transferred. Please contact ‘support@arc.ox.ac.uk’ if you would like your storage area switched, or discuss those options. 
+There are two options for migration:
+
+1) You can copy the contents of your current ``$DATA`` area to the new storage, and once complete have this mounted as ``$DATA``
+2) We can mount the new storage as a new "empty" ``$DATA`` area and you can copy your data from ``/migration/$PROJECT/$USER`` which would allow for new data being produced in the correct place whilst old data continues to be transferred.
+
+Please contact ‘support@arc.ox.ac.uk’ if you would like your storage area switched, or discuss those options.
+
 
 How to transfer data
 --------------------
