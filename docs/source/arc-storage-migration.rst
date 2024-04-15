@@ -24,8 +24,8 @@ Each user is responsible for copying their own data from the old to the new loc
 Please contact ‘support@arc.ox.ac.uk’ if you would like your storage area switched, or discuss those options.
 
 .. warning::
-  Storage areas will be migrated on a *PER PROJECT* basis, if you request an empty ``$DATA`` area on the new storage, this MUST be with the agreement of all other members of your project. As the other users in your
-  project will also get a new empty ``$DATA`` area (and this may affect any jobs they have running or queued)
+  Storage areas are migrated on a *PER PROJECT* basis, if you request an empty ``$DATA`` area on the new storage, you will be doing so for on behalf of other members of your project. All users in your
+  project will get a new empty ``$DATA`` area - so it is important to consider that this may affect any jobs they have running or queued.
 
 How to transfer data
 --------------------
