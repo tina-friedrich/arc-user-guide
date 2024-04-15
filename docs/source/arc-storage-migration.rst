@@ -30,7 +30,7 @@ Please contact ‘support@arc.ox.ac.uk’ if you would like your storage area sw
 How to transfer data
 --------------------
 
-There are many ways to copy files from one folder to another but not all are appropriate in this case. As mentioned above, using ``mv`` is not advisable as you do not want to remove the data from the old storage. ``cp`` is also not advisable as it is very slow. ``rsync`` is probably the best option, as it is interruptible and resumable, and can check data integrity - however, it may not be the fastest solution for very large trees. For very large trees, using a ``tar | tar`` solution is likely faster.
+There are many ways to copy files from one folder to another but not all are appropriate in this case. ``cp`` is not advisable as it is generally very slow. The best option is probably ``rsync``, as it is interruptible and resumable, and can check data integrity - however, it may not be the fastest solution for very large trees. For very large trees, using a ``tar | tar`` solution is likely faster.
 
 **rync commands**:
 
