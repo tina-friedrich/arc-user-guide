@@ -11,54 +11,32 @@ As a reminder - ``$DATA`` is the shared permanent storage available to projects 
 
 The new storage replaces ``$DATA`` and ``$SCRATCH`` - ``$HOME`` is unaffected.
 
-More information on the different types of storage can be found on the ARC user guide at https://arc-user-guide.readthedocs.io/en/latest/arc-storage.html 
+More information on the different types of storage can be found on the ARC user guide at https://arc-user-guide.readthedocs.io/en/latest/arc-storage.html
+
 
 Migration process
 -----------------
 
-We have created all projects' and users' directories on the new storage and these can now be accessed under ``/migration/$PROJECT/$USER``. Each user is responsible for copying their own data to the new location. We would advise to copy data – not move it – as moving it takes longer, plus a copy process allows you to confirm the files were transferred successfully. 
+Once you notify us that you are ready to start migration for your project, we will mount the new storage as a new "empty" ``$DATA`` area for your project, and your old (currrent) $DATA area read-only under ``/migration/$PROJECT/$USER``. This will allow you to - fairly quickly - copy the data you are currently working on and resume cluster activity, whilst continuing to transfer older data.
 
-There are two options for migration:
-
-1) You (and your fellow project members) can copy the contents of your current ``$DATA`` area to the new ``/migration/$PROJECT/$USER`` storage, and once complete we will switch this to become ``$DATA``. Your old ``$DATA`` will then become available at ``/migration/$PROJECT/$USER`` and be read-only.
-
-2) We can mount the new storage as a new "empty" ``$DATA`` area for a project, and you can copy your data from ``/migration/$PROJECT/$USER``. **This is the option recommended by ARC** - it allows for new data being produced in the correct place whilst old data continues to be transferred.
-
-Regardless of which option taken, the switch is *per project* - users within projects will need to co-ordinate to ensure they are all ready for the switch to be made. It will not be possible to switch per-user data directories.
-
-If you are a member of multiple projects, you will need to move all your data areas separately.
+Each user is responsible for copying their own data from the old to the new location. If you are a member of multiple projects, you will need to move all your data areas separately.
 
 Please contact ‘support@arc.ox.ac.uk’ if you would like your storage area switched, or discuss those options.
+
 
 How to transfer data
 --------------------
 
 There are many ways to copy files from one folder to another but not all are appropriate in this case. As mentioned above, using ``mv`` is not advisable as you do not want to remove the data from the old storage. ``cp`` is also not advisable as it is very slow. ``rsync`` is probably the best option, as it is interruptible and resumable, and can check data integrity - however, it may not be the fastest solution for very large trees. For very large trees, using a ``tar | tar`` solution is likely faster.
 
-The rsync solution looks like the following:
-
-**Option 1 (copying from current data area to the new storage area)**
-
-.. code-block:: shell
-
-  cd /data/<projectname>/$USER
-  rsync –avhP . /migration/<projectname>/$USER/
-
-Alternatively, using tar can be done with the following method:
-
-.. code-block:: shell
-
-  cd /data/<projectname>/$USER
-  tar cvf - . | tar xf - -C /migration/<projectname>/$USER/ 
-
-**Option 2 (copying from the migration area to your new data are, i.e. copy post switchover)**
+**rync commands**:
 
 .. code-block:: shell
 
   cd /migration/<projectname>/$USER
   rsync –avhP . /data/<projectname>/$USER/
 
-Alternatively, using tar can be done with the following method:
+**tar commands**
 
 .. code-block:: shell
 
@@ -93,11 +71,18 @@ Please refer to the 'rsync' or 'tar' man pages for details, or ask the ARC team 
 Who is responsible for migrating my data?
 -----------------------------------------
 
-Each user is responsible for transferring their data; however, the project PI or a user appointed by the project PI is responsible for gathering progress from all project users and make the decision for when the whole project should be switched from the old storage to the new. The switch from old to new has to be done on a project basis. We cannot move users individually.
+Each user is responsible for transferring their data; however, the project PI or a user appointed by the project PI is responsible for gathering progress from all project users. The switch from old to new has to be done on a project basis. We cannot move users individually.
+
+
+Migration timeline
+------------------
+
+The new storage system for project data areas is now ready to be used. Starting now, projects can request to migrate, using the below migration process.
+
+We will switch all project data areas to the 'new' storage on **14. May 2024**. If you have not migrated your data before than, after this date your data area will be the new storage system (and your old data available read-only under /migration). 
+
 
 How long will my data be available on the old storage after migration?
 ----------------------------------------------------------------------
 
-
- 
-If you are unable to access either of these directories, please let us know.
+The old storage system will be **decommissioned** on **1. August 2024**. After this date, the old data will no longer be available, and we will not be able to retrieve it.  
