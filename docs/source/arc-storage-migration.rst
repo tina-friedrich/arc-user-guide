@@ -29,7 +29,23 @@ Please contact ‘support@arc.ox.ac.uk’ if you would like your storage area sw
 .. warning::
   Storage areas are migrated on a *PER PROJECT* basis, if you request an empty ``$DATA`` area on the new storage, you will be doing so on behalf of other members of your project. All users in your   project will get a new empty ``$DATA`` area - so it is important to consider that this may affect any jobs they have running or queued.
 
-You can check the migration status of your projects with the command *project_migration_status [PROJECT]*.
+You can check the migration status of your projects with the command ``project_migration_status [PROJECT]`` For example:
+
+.. code-block:: shell
+
+    [ouit0554@nx-tsn02 ~]$ project_migration_status
+
+    Checking status of project system...
+       /data/system on login nodes... migrated to new storage.
+       /data/system on cluster nodes... migrated to new storage.
+       /migration/system/... contains 'old' data area.
+
+    All done! Project system has been migrated to the new storage system.
+
+    For help with migration your data, please see "https://arc-user-guide.readthedocs.io/en/latest/arc-storage-migration.html".
+
+    If you need further assistance with the storage migration, please email 'support@arc.ox.ac.uk'.
+
 
 How to transfer data
 --------------------
