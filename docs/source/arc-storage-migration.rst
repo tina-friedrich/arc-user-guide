@@ -29,6 +29,8 @@ Please contact ‘support@arc.ox.ac.uk’ if you would like your storage area sw
 .. warning::
   Storage areas are migrated on a *PER PROJECT* basis, if you request an empty ``$DATA`` area on the new storage, you will be doing so on behalf of other members of your project. All users in your   project will get a new empty ``$DATA`` area - so it is important to consider that this may affect any jobs they have running or queued.
 
+You can check the migration status of your projects with the command *project_migration_status [PROJECT]*.
+
 How to transfer data
 --------------------
 
