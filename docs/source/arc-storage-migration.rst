@@ -20,7 +20,7 @@ Migration process
 .. important::
   To allow us to migrate a project folder, we require a brief period in which no one tries to access the folder. This means during migration, there can be no running cluster jobs, no data copying, reading or writing of files etc. in a project folder. All users that are part of the project must log out of ARC. Queued jobs will not be a problem.
 
-Once you notify us that you are ready to start migration for your project, we will mount the new storage as a new "empty" ``$DATA`` area for your project, and your old (currrent) $DATA area read-only under ``/migration/$PROJECT/$USER``. This will allow you to - fairly quickly - copy the data you are currently working on and resume cluster activity, whilst continuing to transfer older data.
+Once you notify us that you are ready to start migration for your project, we will manually mount the new storage as a new "empty" ``$DATA`` area for your project, and your old (currrent) $DATA area read-only under ``/migration/$PROJECT/$USER``. This will allow you to - fairly quickly - copy the data you are currently working on and resume cluster activity, whilst continuing to transfer older data. Once your new ``$DATA`` area is ready we will confirm this to you.
 
 Each user is responsible for copying their own data from the old to the new location. If you are a member of multiple projects, you will need to move all your data areas separately.
 
