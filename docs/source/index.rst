@@ -13,6 +13,7 @@ ARC User Guide
    job-scheduling
    arc-priority-jobs
    arc-storage
+   arc-storage-migration
    arc-software
    slurm-reference
    slurm-faq
