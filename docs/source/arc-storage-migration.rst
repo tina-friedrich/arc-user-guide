@@ -57,7 +57,7 @@ There are many ways to copy files from one folder to another but not all are app
 .. code-block:: shell
 
   cd /migration/<projectname>/$USER
-  rsync –avhP . /data/<projectname>/$USER/
+  rsync -avhP . /data/<projectname>/$USER/
 
 **tar commands**
 
