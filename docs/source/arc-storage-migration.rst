@@ -102,7 +102,7 @@ Migration timeline
 
 The new storage system for project data areas is now ready to be used. Starting now, projects can request to migrate, using the migration process described above.
 
-We will switch all project data areas to the 'new' storage on **21st May 2024**. If you have not migrated your data before then, your ``$DATA`` area will be mounted on new storage system and appear empty. Your old data will be available *read-only* under ``/migration/$PROJECT/$USER`` 
+We will switch all project data areas to the 'new' storage on **4th June 2024**. If you have not migrated your data before then, your ``$DATA`` area will be mounted on new storage system and appear empty. Your old data will be available *read-only* under ``/migration/$PROJECT/$USER`` 
 
 
 How long will my data be available on the old storage after migration?
