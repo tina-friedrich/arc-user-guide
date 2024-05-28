@@ -1,7 +1,7 @@
 Submitting Priority Jobs
 ========================
 
-Jobs submitted to ARC cluster default to the standard service level.  To purchase priority credit see the `Requesting Credits <https://www.arc.ox.ac.uk/requesting-usage-credit>`_ page for details.  Once your project is set up with priority credits, you can check the balance of your ARC credit using the ``mybalance`` command.  You'll find now that the command reports balance for two accounts.  One account is for your standard credit.  The account with the ``-priority`` suffix is for your priority credit.
+Jobs submitted to ARC cluster default to the standard service level.  To purchase priority credit see the `ARC Accounting <https://www.arc.ox.ac.uk/arc-accounting>`_ page for details.  Once your project is set up with priority credits, you can check the balance of your ARC credit using the ``mybalance`` command.  You'll find now that the command reports balance for two accounts.  One account is for your standard credit.  The account with the ``-priority`` suffix is for your priority credit.
 
 Submit jobs with priority QoS (Quality of Service)
 --------------------------------------------------
