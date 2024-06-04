@@ -14,37 +14,21 @@ The new storage replaces ``$DATA`` and ``$SCRATCH`` data areas. Your ``$HOME`` a
 More information on the different types of storage can be found on the ARC user guide at https://arc-user-guide.readthedocs.io/en/latest/arc-storage.html
 
 
-Migration process
------------------
+Data Migration Timeline
+-----------------------
 
-.. important::
-  To allow us to migrate a project folder, we require a brief period in which no one tries to access the folder. This means during migration, there can be no running cluster jobs, no data copying, reading or writing of files etc. in a project folder. All users that are part of the project must log out of ARC. Queued jobs will not be a problem.
+All project data areas were switched to the 'new' storage on **4th June 2024**. If you had not migrated your data before then, your ``$DATA`` area will be mounted on new storage system and appear empty. Your old data will be available *read-only* under ``/migration/$PROJECT/$USER`` 
 
-Once you notify us that you are ready to start migration for your project, we will manually mount the new storage as a new "empty" ``$DATA`` area for your project, and your old (currrent) $DATA area read-only under ``/migration/$PROJECT/$USER``. This will allow you to - fairly quickly - copy the data you are currently working on and resume cluster activity, whilst continuing to transfer older data. Once your new ``$DATA`` area is ready we will confirm this to you.
+Who is responsible for migrating my data?
+-----------------------------------------
 
-Each user is responsible for copying their own data from the old to the new location. If you are a member of multiple projects, you will need to move all your data areas separately.
+Each user is responsible for transferring their data.
 
-Please contact ‘support@arc.ox.ac.uk’ if you would like your storage area switched, or discuss those options.
 
-.. warning::
-  Storage areas are migrated on a *PER PROJECT* basis, if you request an empty ``$DATA`` area on the new storage, you will be doing so on behalf of other members of your project. All users in your   project will get a new empty ``$DATA`` area - so it is important to consider that this may affect any jobs they have running or queued.
+How long will my data be available on the old storage after migration?
+----------------------------------------------------------------------
 
-You can check the migration status of your projects with the command ``project_migration_status [PROJECT]`` For example:
-
-.. code-block:: shell
-
-    [ouit0554@nx-tsn02 ~]$ project_migration_status
-
-    Checking status of project system...
-       /data/system on login nodes... migrated to new storage.
-       /data/system on cluster nodes... migrated to new storage.
-       /migration/system/... contains 'old' data area.
-
-    All done! Project system has been migrated to the new storage system.
-
-    For help with migration your data, please see "https://arc-user-guide.readthedocs.io/en/latest/arc-storage-migration.html".
-
-    If you need further assistance with the storage migration, please email 'support@arc.ox.ac.uk'.
+The old storage system will be **decommissioned** on **1st August 2024**. After this date, the old data will no longer be available, and we will *not* be able to retrieve it.  
 
 
 How to transfer data
@@ -91,21 +75,3 @@ It is of course also possible to only transfer certain sub-directories, or (espe
 Please refer to the 'rsync' or 'tar' man pages for details, or ask the ARC team for assistance. 
 
 
-Who is responsible for migrating my data?
------------------------------------------
-
-Each user is responsible for transferring their data; however, the project PI or a user appointed by the project PI is responsible for gathering progress from all project users. The switch from old to new has to be done on a project basis. We cannot move users individually.
-
-
-Migration timeline
-------------------
-
-The new storage system for project data areas is now ready to be used. Starting now, projects can request to migrate, using the migration process described above.
-
-We will switch all project data areas to the 'new' storage on **4th June 2024**. If you have not migrated your data before then, your ``$DATA`` area will be mounted on new storage system and appear empty. Your old data will be available *read-only* under ``/migration/$PROJECT/$USER`` 
-
-
-How long will my data be available on the old storage after migration?
-----------------------------------------------------------------------
-
-The old storage system will be **decommissioned** on **1st August 2024**. After this date, the old data will no longer be available, and we will *not* be able to retrieve it.  
