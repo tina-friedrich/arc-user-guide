@@ -72,7 +72,7 @@ An example submission script would look something like:
   cd /migration/$MYPROJECT/$USER 
   rsync -avhP . /data/$MYPROJECT/$USER/
 
-.. warn::
+.. warning::
   Be careful when using a cluster job, and especially when copying in an interactive session; the time limit might interrupt your transfer before it is complete.
 
 It is of course also possible to only transfer certain sub-directories, or (especially using rsync) exclude certain subdirectories from the copy process. 
