@@ -72,7 +72,8 @@ An example submission script would look something like:
   cd /migration/$MYPROJECT/$USER 
   rsync -avhP . /data/$MYPROJECT/$USER/
 
-Be careful when using a cluster job, and especially when copying in an interactive session; the time limit might interrupt your transfer before it is complete.
+.. warn::
+  Be careful when using a cluster job, and especially when copying in an interactive session; the time limit might interrupt your transfer before it is complete.
 
 It is of course also possible to only transfer certain sub-directories, or (especially using rsync) exclude certain subdirectories from the copy process. 
 Please refer to the 'rsync' or 'tar' man pages for details, or ask the ARC team for assistance. 
