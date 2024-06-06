@@ -50,7 +50,9 @@ There are many ways to copy files from one folder to another but not all are app
   cd /migration/<projectname>/$USER
   tar cvf - . | tar xf - -C /data/<projectname>/$USER/ 
 
-These can be run from an nx session, an interactive session, or submitted as a job on the cluster. An example submission script would look something like:
+The above commands can be run from an NX GUI session, an interactive session, or submitted as a job on the cluster. Please DO NOT run rsync or tar from the login nodes.
+
+An example submission script would look something like:
 
 .. code-block:: bash
 
