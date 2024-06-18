@@ -3,24 +3,26 @@ ARC Storage
 
 Once your account has been created, you will immediately have access to two persistent storage areas:
 
-**$HOME** (/home/username) with a 15GB quota
+``$HOME`` (``/home/username``) with a 15 GiB quota
 
-**$DATA** (/data/projectname/username)  sharing a 5TB quota with your project colleagues
+``$DATA`` (``/data/projectname/username``)  sharing a 5 TiB quota with your project colleagues
 
-Additionally, when you run a SLURM job, a per-job **$SCRATCH** and **$TMPDIR** for temporary data/workfiles is created. 
+Additionally, when you run a SLURM job, a per-job ``$SCRATCH`` and ``$TMPDIR`` for temporary data/workfiles is created. 
 
-**$TMPDIR** is local to a compute node
+``$TMPDIR`` is local to a compute node
 
-**$SCRATCH** is on a shared file system and available to all nodes in a job, if a job spans multiple nodes.
+``$SCRATCH`` is on a shared file system and available to all nodes in a job, if a job spans multiple nodes.
 
-Using ARC $SCRATCH storage
+Using ARC ``$SCRATCH`` storage
 --------------------------
 
-Note: Both **$SCRATCH** and **$TMPDIR** are not persistent; they will be automatically removed on job exit. It is important that your job copies all files into your $DATA area before it exits; we will not be able to recover your data if you left it on **$SCRATCH** or **$TMPDIR** once a job finished.
+Note: Both **$SCRATCH** and **$TMPDIR** are not persistent; they will be automatically removed on job exit. It is important that your job copies all files into your $DATA area before it exits; we will not be able to recover your data if you left it on ``$SCRATCH`` or ``$TMPDIR`` once a job finished.
 
-As a rule we recommend that you use your **$DATA** area to store your data, but utilise the per job **$SCRATCH** or **$TMPDIR** area - especially for intermediate or temporary files. Generally you would copy all required input data at the start of your job and then copying results back to your **$DATA** area.
+As a rule we recommend that you use your ``$DATA`` area to store your data, but utilise the per job ``$SCRATCH`` or ``$TMPDIR`` area - especially for intermediate or temporary files. Generally you would copy all required input data at the start of your job and then copying results back to your **$DATA** area.
 
-A simple example of how to do this would be::
+A simple example of how to do this would be:
+
+.. code-block:: bash
 
   #!/bin/bash
   #
@@ -44,9 +46,11 @@ A simple example of how to do this would be::
   #
   rsync -av --exclude=input --exclude=bin ./ $DATA/myproject/
   
-This example copies the directories ``$DATA/myproject/input`` and ``$DATA/myproject/bin`` into **$SCRATCH** (which will then contain directories ``input`` and ``bin``). The script then runs ``./bin/my_software``; and copies all files in the **$SCRATCH** directory - excluding directories ``input`` and ``bin`` - back to ``$DATA/myproject/`` once the ``mpirun`` finishes.
+This example copies the directories ``$DATA/myproject/input`` and ``$DATA/myproject/bin`` into ``$SCRATCH`` (which will then contain directories ``input`` and ``bin``). The script then runs ``./bin/my_software``; and copies all files in the ``$SCRATCH`` directory - excluding directories ``input`` and ``bin`` - back to ``$DATA/myproject/`` once the ``mpirun`` finishes.
 
-The process is more straightforward if you only need to copy single input/ouput files when the application is centrally hosted, for example::
+The process is more straightforward if you only need to copy single input/ouput files when the application is centrally hosted, for example:
+
+.. code-block:: bash
 
   #!/bin/bash
   #
@@ -82,9 +86,11 @@ If you are unable to access either of these directories, please let us know.
 Quota
 -----
 
-By default your **$HOME** area will have a 15GB quota while the **$DATA** area will have a 5TB quota that is shared between yourself and the other members of your project.
+By default your ``$HOME`` area will have a 15 GiB quota while the ``$DATA`` area will have a 5 TiB quota that is shared between yourself and the other members of your project.
 
-To check your quota use the command::
+To check your quota use the command:
+
+.. code-block:: shell
 
   myquota
 
@@ -92,9 +98,9 @@ This command will list both your home quota and the quota of shared project data
 
 We can provide more detailed statements of data area quota usage to project leaders on request.
 
-Larger Data quotas (more than 5TB) are available on request as a chargeable service. Please contact ARC support for further information.
+Larger Data quotas (more than 5 TiB) are available on request as a chargeable service. Please contact ARC support for further information.
 
-If you are a user of Anaconda virtual environments and find yourself over quota in **$HOME**, please check your conda package cache size. Information on this can be found here: `Anaconda Package Cache <https://arc-software-guide.readthedocs.io/en/latest/python/anaconda_venv.html#conda-package-cache>`_
+If you are a user of Anaconda virtual environments and find yourself over quota in ``$HOME``, please check your conda package cache size. Information on this can be found here: `Anaconda Package Cache <https://arc-software-guide.readthedocs.io/en/latest/python/anaconda_venv.html#conda-package-cache>`_
 
 Backups
 -------
@@ -104,15 +110,19 @@ We do NOT currently create backups of the ARC shared file system (although the f
 Snapshots
 ---------
 
-Snapshots have been configured to be generated on home directories. Snapshots provide easy access to older versions of files. This is useful if files have been accidentally deleted or overwritten. It does not, however, constitute a backup; old snapshots will not be kept indefinitely (max. two weeks for weekly snapshots).
+Snapshots have been configured to be generated on home directories as well as projects data directories. Snapshots provide easy access to older versions of files. This is useful if files have been accidentally deleted or overwritten. It does not, however, constitute a backup; old snapshots will not be kept indefinitely (max. two weeks for weekly snapshots).
 
 Within your home directory, there is a .snapshot directory which contains the hourly, daily and weekly snapshots available. 
-To list/examine the snapshots, simply 'cd' into $HOME/.snapshot and list the available directories::
+To list/examine the snapshots, simply ``cd`` into ``$HOME/.snapshot`` (and for projects data, ``cd`` into ``/data/<projectname>/.snapshot``), and list the available directories:
+
+.. code-block:: shell
 
   cd $HOME/.snapshot
   ls -1tr
 
-You will see a listing of all snapshots (reverse order, i.e. newest last)::
+You will see a listing of all snapshots (reverse order, i.e. newest last):
+
+.. code-block:: text
 
   weekly.2020-08-02_0015
   weekly.2020-07-26_0015
@@ -125,7 +135,9 @@ You will see a listing of all snapshots (reverse order, i.e. newest last)::
   hourly.2020-08-07_1205
   hourly.2020-08-07_1405
 
-To choose a particular snapshot, simply change into the relevant directory::
+To choose a particular snapshot, simply change into the relevant directory:
+
+.. code-block:: shell
 
   cd hourly.2020-08-07_1205
 
@@ -133,7 +145,9 @@ Within those directories you will essentially find a copy of your home directory
 
 If you've accidentally deleted a file in your home directory which existed earlier than the last snapshot, then you can retrieve the older copy from the snapshot. Simply find the version of the file you are after within the .snapshot structure, and copy it back into your home directory.
 
-For example - assuming you have deleted a file 'ARC-Introduction-2018-Hilary.pptx' from folder $HOME/Documents by mistake. To recover it, the steps would be::
+For example - assuming you have deleted a file 'ARC-Introduction-2018-Hilary.pptx' from folder ``$HOME/Documents`` by mistake. To recover it, the steps would be:
+
+.. code-block:: shell
 
   [$(arcus) Documents]$ pwd
   /home/ouit0622/Documents
@@ -190,4 +204,4 @@ For example - assuming you have deleted a file 'ARC-Introduction-2018-Hilary.ppt
   MATLAB
   
 Note: Snapshots do not take up space in the file system, i.e. they do not count towards your quota. If you are trying to determine where in your home directory space is used,
-you must exclude the .snapshot directory from your commands as otherwise the information would be incorrect.
+you must exclude the ``.snapshot`` directory from your commands as otherwise the information would be incorrect.
