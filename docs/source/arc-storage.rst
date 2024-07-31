@@ -28,7 +28,10 @@ A simple example of how to do this would be:
   #
   # After SBATCH lines in submission script...
   #
-  # 
+  # Use either $SCRATCH filesystem.
+  #
+  #SBATCH --constraint="[scratch:weka|scratch:gpfs]"
+  #
   cd $SCRATCH || exit 1
   # 
   # Copy job data to $SCRATCH
@@ -56,6 +59,9 @@ The process is more straightforward if you only need to copy single input/ouput 
   #
   # After SBATCH lines in submission script...
   #
+  # Use either $SCRATCH filesystem.
+  #
+  #SBATCH --constraint="[scratch:weka|scratch:gpfs]"
   # 
   # Load appropriate module, in this test case we are using Gaussian
   
@@ -82,6 +88,18 @@ The process is more straightforward if you only need to copy single input/ouput 
 
  
 If you are unable to access either of these directories, please let us know.
+
+.. note::
+  Specifying the scratch file system type is especially important if you are running a multi-node (MPI) code which utilises
+  $SCRATCH.  If you do not specify a scratch constraint, then you might be allocated nodes with different scratch file systems which would will cause problems (unless you do 
+  not use scratch within your job). 
+
+  The options are:
+
+  --constraint="[scratch:weka|scratch:gpfs]"  - Use either WEKA or GPFS scratch
+  --constraint="[scratch:weka|scratch:gpfs]"  - Use WEKA scratch ONLY
+  --constraint="[scratch:gpfs]"               - Use GPFS scratch **not recommended**
+
 
 Quota
 -----
