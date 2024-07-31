@@ -20,9 +20,7 @@ Note: Both **$SCRATCH** and **$TMPDIR** are not persistent; they will be automat
 
 As a rule we recommend that you use your ``$DATA`` area to store your data, but utilise the per job ``$SCRATCH`` or ``$TMPDIR`` area - especially for intermediate or temporary files. Generally you would copy all required input data at the start of your job and then copying results back to your **$DATA** area.
 
-A simple example of how to do this would be:
-
-.. code-block:: bash
+A simple example of how to do this would be::
 
   #!/bin/bash
   #
@@ -51,9 +49,7 @@ A simple example of how to do this would be:
   
 This example copies the directories ``$DATA/myproject/input`` and ``$DATA/myproject/bin`` into ``$SCRATCH`` (which will then contain directories ``input`` and ``bin``). The script then runs ``./bin/my_software``; and copies all files in the ``$SCRATCH`` directory - excluding directories ``input`` and ``bin`` - back to ``$DATA/myproject/`` once the ``mpirun`` finishes.
 
-The process is more straightforward if you only need to copy single input/ouput files when the application is centrally hosted, for example:
-
-.. code-block:: bash
+The process is more straightforward if you only need to copy single input/ouput files when the application is centrally hosted, for example::
 
   #!/bin/bash
   #
@@ -94,7 +90,7 @@ If you are unable to access either of these directories, please let us know.
   $SCRATCH.  If you do not specify a scratch constraint, then you might be allocated nodes with different scratch file systems which would will cause problems (unless you do 
   not use scratch within your job). 
 
-  The options are:
+  The options are::
 
   --constraint="[scratch:weka|scratch:gpfs]"  - Use either WEKA or GPFS scratch
   --constraint="[scratch:weka|scratch:gpfs]"  - Use WEKA scratch ONLY
