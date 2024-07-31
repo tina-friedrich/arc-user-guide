@@ -92,9 +92,9 @@ If you are unable to access either of these directories, please let us know.
 
   The options are::
 
-  --constraint="[scratch:weka|scratch:gpfs]"  - Use either WEKA or GPFS scratch
-  --constraint="[scratch:weka]"  - Use WEKA scratch ONLY
-  --constraint="[scratch:gpfs]"               - Use GPFS scratch **not recommended**
+  --constraint="[scratch:weka|scratch:gpfs]"   - Use either WEKA or GPFS scratch
+  --constraint="[scratch:weka]"                - Use WEKA scratch ONLY
+  --constraint="[scratch:gpfs]"                - Use GPFS scratch **not recommended**
 
 
 Quota
