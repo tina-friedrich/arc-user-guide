@@ -11,7 +11,7 @@ Additionally, when you run a SLURM job, a per-job ``$SCRATCH`` and ``$TMPDIR`` f
 
 ``$TMPDIR`` is local to a compute node
 
-``$SCRATCH`` is on a shared file system and available to all nodes in a job, if a job spans multiple nodes.
+``$SCRATCH`` is on a shared file system and available to all nodes in a job, if a job spans multiple nodes. Currently $SCRATCH is provided by two systems, the **old** GPFS system and the new, more performant WEKA Data Platform. It is therefore important to select which scratch filesystem to use.
 
 Using ARC ``$SCRATCH`` storage
 --------------------------
