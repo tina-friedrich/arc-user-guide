@@ -87,8 +87,7 @@ If you are unable to access either of these directories, please let us know.
 
 .. note::
   Specifying the scratch file system type is especially important if you are running a multi-node (MPI) code which utilises
-  $SCRATCH.  If you do not specify a scratch constraint, then you might be allocated nodes with different scratch file systems which would will cause problems (unless you do 
-  not use scratch within your job). 
+  $SCRATCH.  If you do not specify a scratch constraint, then you might be allocated nodes with different scratch file systems which will likely cause problems for your jobs, especially if you use scratch. 
 
   The options are::
 
