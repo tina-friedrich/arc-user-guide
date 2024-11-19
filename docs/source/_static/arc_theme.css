@@ -2,6 +2,18 @@
     max-width: 1200px !important;
 }
 
+.wy-side-nav-search {
+    background-color: #ffffff;
+}
+
+.wy-side-nav-search>a, .wy-side-nav-search .wy-dropdown>a {
+    color: #002147;
+}
+
+.wy-side-nav-search input[type=text]{
+    border-color: #343131;
+}
+
 /* override table width restrictions */
 @media screen and (min-width: 767px) {
 
