@@ -48,7 +48,7 @@ html_logo = 'images/arc_logo-wide-white.svg'
 # This will be found in source/_static (as defined above)
 
 html_css_files = [
-    'css/arc_theme.css',
+    '_static/css/arc_theme.css',
 ]
 
 #def setup(app):
