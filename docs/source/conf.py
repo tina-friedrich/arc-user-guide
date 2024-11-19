@@ -47,5 +47,9 @@ html_logo = 'images/arc_logo-wide-white.svg'
 # -- Add ARC theme overrides...
 # This will be found in source/_static (as defined above)
 
-def setup(app):
-    app.add_css_file('arc_theme.css')
+html_css_files = [
+    'css/arc_theme.css',
+]
+
+#def setup(app):
+#    app.add_css_file('arc_theme.css')
