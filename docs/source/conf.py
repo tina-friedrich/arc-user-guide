@@ -42,7 +42,7 @@ epub_show_urls = 'footnote'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 #html_static_path = ['_static']
-html_logo = 'images/arc_logo-wide-rgb-grad.svg'
+html_logo = 'images/arc_logo-wide-white-grad.svg'
 
 # -- Add ARC theme overrides...
 # This will be found in source/_static (as defined above)

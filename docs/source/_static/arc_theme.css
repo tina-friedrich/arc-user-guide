@@ -3,11 +3,11 @@
 }
 
 .wy-side-nav-search {
-    background-color: #ffffff;
+    background-color: #002147;
 }
 
 .wy-side-nav-search>a, .wy-side-nav-search .wy-dropdown>a {
-    color: #002147;
+    color: #fff;
 }
 
 .wy-side-nav-search input[type=text]{
