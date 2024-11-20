@@ -14,6 +14,10 @@
     color: #fff;
 }
 
+img.logo {
+    max-width: 80% !important;
+}
+
 .wy-side-nav-search input[type=text]{
     border-color: #343131;
 }
