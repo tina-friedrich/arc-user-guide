@@ -3,11 +3,11 @@
 # -- Project information
 
 project = 'ARC User Guide'
-copyright = '2021-2024'
-author = 'ARC Team'
+copyright = u'2021–2024 — The University of Oxford'
+author = 'The ARC Team'
 
-release = '0.1'
-version = '0.1.0'
+release = ''
+version = ''
 
 # -- General configuration
 
@@ -33,15 +33,13 @@ templates_path = ['_templates']
 # -- Options for HTML output
 
 html_theme = 'sphinx_rtd_theme'
+html_theme_options = {
+    'version_selector': False,
+    'language_selector': False,
+}
 
-# -- Options for EPUB output
-epub_show_urls = 'footnote'
+# -- ARC Customisations
 
-
-# Add any paths that contain custom static files (such as style sheets) here,
-# relative to this directory. They are copied after the builtin static files,
-# so a file named "default.css" will overwrite the builtin "default.css".
-#html_static_path = ['_static']
 html_logo = 'images/arc_logo-wide-white.svg'
 
 # -- Add ARC theme overrides...
@@ -51,5 +49,8 @@ html_css_files = [
     'css/arc_theme.css',
 ]
 
-#def setup(app):
-#    app.add_css_file('arc_theme.css')
+#html_show_copyright = False
+html_show_sphinx = False
+
+# -- Options for EPUB output
+epub_show_urls = 'footnote'
