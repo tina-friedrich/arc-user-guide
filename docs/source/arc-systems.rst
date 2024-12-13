@@ -47,7 +47,7 @@ All nodes have the following:
 
 - 2x Intel Platinum 8628 CPU. The Platinum 8628 is a 24 core 2.90GHz Cascade Lake CPU. Thus all nodes have 48 CPU cores per node.
 - 384GB memory
-- HDR 100 infiniband interconnect. The fabric has a 3:1 blocking factor with non-blocking islands of 44 nodes (2112 cores).
+- HDR 100 infiniband interconnect. The fabric has a 4:1 blocking factor with non-blocking islands of 44 nodes (2112 cores).
 - OS is CentOS Linux 8.1. Scheduler is SLURM.
 
 Login node for the system is 'arc-login.arc.ox.ac.uk', which allows logins from the University network range (including VPN). 
