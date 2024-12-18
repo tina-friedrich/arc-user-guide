@@ -10,12 +10,18 @@
     color: #002147;
 }
 
-.wy-side-nav-search>a, .wy-side-nav-search .wy-dropdown>a {
+img.logo {
+    max-width: 80% !important;
+}
+
+.wy-side-nav-search>a,
+.wy-side-nav-search .wy-dropdown>a {
     color: #fff;
 }
 
-img.logo {
-    max-width: 80% !important;
+.wy-side-nav-search>a:hover,
+.wy-side-nav-search .wy-dropdown>a:hover {
+    background: hsla(0,0%,100%,0);
 }
 
 .wy-side-nav-search input[type=text]{
