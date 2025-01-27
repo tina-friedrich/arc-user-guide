@@ -3,7 +3,7 @@
 # -- Project information
 
 project = 'ARC User Guide'
-copyright = u'2021–2024 — The University of Oxford'
+copyright = u'2021–%Y — The University of Oxford'
 author = 'The ARC Team'
 
 release = ''
