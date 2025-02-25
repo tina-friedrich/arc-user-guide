@@ -11,6 +11,8 @@ With a submission script called **submit.sh**, to submit this batch script, use 
 
   sbatch submit.sh
 
+You can use the ``--test-only`` flag to sbatch to validate a submit script, and to get an idea of when the job will run if submitted now.
+
 To check the status of a batch job use the command ``squeue``. If you know the job ID, ie. 12345 then use the command::
 
   squeue -j 12345
@@ -58,22 +60,15 @@ The most common reason for this message is that the nodes are reserved. This may
 
 **Priority**
 
-Your job is waiting because jobs of higher priority are being scheduled first. The main reason for this will be your recent usage of the 
-ARC systems; as more and more of your submitted jobs run on the clusters the successful running of those jobs will gradually erode the 
-level of priority accorded by the scheduler to your next upcoming job. This is to ensure that all users of ARC's systems get a "fair 
-share" of the resource and than no single individual or project can dominate usage of the clusters e.g. by submitting thousands of jobs. 
-Fair-share is decided by the scheduler's fair-share algorithm and your job will run once the higher priority jobs have been scheduled 
-and/or your job's priority increases due to its time in the queue. 
+Your job is waiting because jobs with a higher scheduling priority are in the queue ahead of it. Job priority is a fairly complicated calculation, taking in a variety of factors ranging from the size and run time of the job to a users (or accounts) recent use of the cluster. The cluster operates a "fair share" policy to ensure that all users of ARC's systems get equal access to resources. One of the main factors decreasing your job's initial scheduling priority will be your recent usage of the ARC systems; as more and more of your submitted jobs run on the clusters the successful running of those jobs will gradually erode the level of priority accorded by the scheduler to your next upcoming job. This is to ensure that all users of ARC's systems get a "fair share" of the resource and than no single individual or project can dominate usage of the clusters e.g. by submitting thousands of jobs. The scheduler's fair-share algorithm will gradually increase a waiting job's priority in the queue. A job will be scheduled once there are no jobs with a higher scheduling priority in the queue ahead of it.
 
-Fair-share decay is calculated every 5 minutes, with a half-life of 14 days. It will therefore have no effect if you have not had a 
-running job in the previous 28 days.
+Fair-share decay is calculated every 5 minutes, with a half-life of 14 days. It will therefore have no effect if you have not had a running job in the previous 28 days.
 
-Please note fair-share priority is not linked to number of jobs you submitted and are queued, only the number of jobs you have 
-sucessfully run on the systems. 
+Please note fair-share priority is not linked to number of jobs you submitted and are queued, only the number of jobs you have successfully run on the systems. 
 
 **Resources**
 
-Your job is waiting for enough compute resource to become available.
+Your job is currently top of the job queue and waiting for enough compute resource to become available. It will then start.
 
 **QOSGrpNodeLimit**
 
@@ -148,6 +143,7 @@ How can I check the availability of free compute nodes?
 -------------------------------------------------------
 
 Use the command the SLURM command ``sinfo``
+
 
 MPI Jobs fail when ``mpirun`` used in a loop or multiple times in a submission script
 -------------------------------------------------------------------------------------
