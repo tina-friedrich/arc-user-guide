@@ -171,24 +171,24 @@ All Slurm commands have extensive help through their man pages; try for example:
 Submitting jobs with the command sbatch
 ---------------------------------------
 
-Once you have a submission script ready (e.g submit.sh), the job is submitted to the execution queue with the command::
+Once you have a submission script ready (e.g ``submit.sh``), the job is submitted to the execution queue with the command::
 
   sbatch submit.sh
 
 The queueing system prints a number (the job id) almost immediately and returns control to the shell prompt.  At this point the job is in the submission queue.
 
 Once you have submitted the job, it will sit in a pending state until the resources have been allocated to your job. The length of time your job is in the pending
-state is dependent upon a number of factors including how busy the system is and what resources you are requesting. To get an idea of when your job would run, you can use the --test-only option to sbatch::
+state is dependent upon a number of factors including how busy the system is and what resources you are requesting. To get an idea of when your job would run, you can use the -``-test-only`` option to ``sbatch``::
 
 	[ouit0622@arc-login04 cluster_scripts]$ sbatch --test-only submit.sh
 	sbatch: CPU resource required, checking settings/requirements...
 	sbatch: Job 9535051 to start at 2025-02-25T16:43:59 using 96 processors on nodes arc-c[302-303] in partition devel
 
-Note that this calculation does not take all scheduling factors into account and is likely to be an upper limit (i.e. more an indication of maximum wait time). --test-only also validates your submit script.
+Note that this calculation does not take all scheduling factors into account and is likely to be an upper limit (i.e. more an indication of maximum wait time). ``--test-only`` also validates your submit script.
 
-You can monitor the progress of the job using the command squeue (see below).
+You can monitor the progress of the job using the command ``squeue`` (see below).
 
-Once the job starts to run you will see files with names such as slurm-1234.out either in the directory you submitted the job from (default behaviour) or in the directory
+Once the job starts to run you will see files with names such as ``slurm-1234.out`` either in the directory you submitted the job from (default behaviour) or in the directory
 where the script was instructed explicitly to change to. 
 
 Monitoring jobs with the command squeue
