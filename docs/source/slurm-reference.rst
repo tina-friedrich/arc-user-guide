@@ -178,7 +178,7 @@ Once you have a submission script ready (e.g ``submit.sh``), the job is submitte
 The queueing system prints a number (the job id) almost immediately and returns control to the shell prompt.  At this point the job is in the submission queue.
 
 Once you have submitted the job, it will sit in a pending state until the resources have been allocated to your job. The length of time your job is in the pending
-state is dependent upon a number of factors including how busy the system is and what resources you are requesting. To get an idea of when your job would run, you can use the -``-test-only`` option to ``sbatch``::
+state is dependent upon a number of factors including how busy the system is and what resources you are requesting. To get an idea of when your job would run, you can use the ``--test-only`` option to ``sbatch``::
 
 	[ouit0622@arc-login04 cluster_scripts]$ sbatch --test-only submit.sh
 	sbatch: CPU resource required, checking settings/requirements...
