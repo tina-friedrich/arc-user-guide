@@ -51,10 +51,10 @@ A simple example of how to do this would be:
   
 This example copies the directories ``$DATA/myproject/input`` and ``$DATA/myproject/bin`` into ``$SCRATCH`` (which will then contain directories ``input`` and ``bin``). The script then runs ``./bin/my_software``; and copies all files in the ``$SCRATCH`` directory - excluding directories ``input`` and ``bin`` - back to ``$DATA/myproject/`` once the ``mpirun`` finishes.
 
-The process is more straightforward if you only need to copy single input/ouput files when the application is centrally hosted, for example::
+The process is more straightforward if you only need to copy single input/ouput files when the application is centrally hosted, for example:
 
 .. code-block:: bash
-
+  
   #!/bin/bash
   #
   # After SBATCH lines in submission script...
@@ -66,12 +66,12 @@ The process is more straightforward if you only need to copy single input/ouput 
   # Load appropriate module, in this test case we are using Gaussian
   
   module load Gaussian/16.C.01
-
+  
   # Set input/output filenames
   #
   export INPUT_FILE=test397.com
   export OUTPUT_FILE=test397.log
-
+  
   echo "copying input from $SLURM_SUBMIT_DIR/$INPUT_FILE ..."
   
   cd $SCRATCH || exit 1
