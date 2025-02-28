@@ -163,7 +163,7 @@ If you've accidentally deleted a file in your home directory which existed earli
 
 For example - assuming you have deleted a file 'ARC-Introduction-2018-Hilary.pptx' from folder ``$HOME/Documents`` by mistake. To recover it, the steps would be:
 
-.. code-block:: shell
+.. code-block:: console
 
   [$(arcus) Documents]$ pwd
   /home/ouit0622/Documents
