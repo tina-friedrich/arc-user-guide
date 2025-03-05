@@ -85,7 +85,9 @@ The simplest case is that of a job that requires a single node (this is the smal
 Example 1: job running on a single node
 ---------------------------------------
 
-Supposing the application is called myCode and takes no command line arguments, the following submission script runs the application in a single job::
+Supposing the application is called myCode and takes no command line arguments, the following submission script runs the application in a single job:
+
+.. code-block:: bash
 
     #!/bin/bash
     # set the number of nodes
@@ -126,7 +128,9 @@ As a second example, suppose we want to run an MPI application called myMPICode 
 - the job is given the name "test123" and
 - the user should be emailed when the job starts and stops or aborts.
 
-Supposing no input needs to be specified, the following submission script runs the application in a single job::
+Supposing no input needs to be specified, the following submission script runs the application in a single job:
+
+.. code-block:: bash
 
     #!/bin/bash
     # set the number of nodes and processes per node
@@ -152,11 +156,15 @@ SLURM partitions
 
 SLURM partitions are essentially different queues that point to collections of nodes.
 
-You can specify the SLURM partition by adding the ``#SBATCH --partition=`` directive to the top of your submission script so adding::
+You can specify the SLURM partition by adding the ``#SBATCH --partition=`` directive to the top of your submission script so adding:
+
+.. code-block:: bash
 
   #SBATCH --partition=devel 
 
-will send your job to the **devel** partition. Alternatively, the partition can be supplied with the ``sbatch`` command like this::
+will send your job to the **devel** partition. Alternatively, the partition can be supplied with the ``sbatch`` command like this:
+
+.. code-block:: shell
 
   sbatch --partition=devel JOBSCRIPT.sh
   
@@ -164,31 +172,37 @@ Defining a partition on the ``sbatch`` command line takes precedence over the de
 
 You can see the current state of the partitions with the ``sinfo`` command. 
 
-All Slurm commands have extensive help through their man pages; try for example::
+All Slurm commands have extensive help through their man pages; try for example:
+
+.. code-block:: shell
 
   man sbatch
 
 Submitting jobs with the command sbatch
 ---------------------------------------
 
-Once you have a submission script ready (e.g submit.sh), the job is submitted to the execution queue with the command::
+Once you have a submission script ready (e.g ``submit.sh``), the job is submitted to the execution queue with the command:
+
+.. code-block:: shell
 
   sbatch submit.sh
 
 The queueing system prints a number (the job id) almost immediately and returns control to the shell prompt.  At this point the job is in the submission queue.
 
 Once you have submitted the job, it will sit in a pending state until the resources have been allocated to your job. The length of time your job is in the pending
-state is dependent upon a number of factors including how busy the system is and what resources you are requesting. To get an idea of when your job would run, you can use the --test-only option to sbatch::
+state is dependent upon a number of factors including how busy the system is and what resources you are requesting. To get an idea of when your job would run, you can use the ``--test-only`` option to ``sbatch``:
+
+.. code-block:: console
 
 	[ouit0622@arc-login04 cluster_scripts]$ sbatch --test-only submit.sh
 	sbatch: CPU resource required, checking settings/requirements...
 	sbatch: Job 9535051 to start at 2025-02-25T16:43:59 using 96 processors on nodes arc-c[302-303] in partition devel
 
-Note that this calculation does not take all scheduling factors into account and is likely to be an upper limit (i.e. more an indication of maximum wait time). --test-only also validates your submit script.
+Note that this calculation does not take all scheduling factors into account and is likely to be an upper limit (i.e. more an indication of maximum wait time). ``--test-only`` also validates your submit script.
 
-You can monitor the progress of the job using the command squeue (see below).
+You can monitor the progress of the job using the command ``squeue`` (see below).
 
-Once the job starts to run you will see files with names such as slurm-1234.out either in the directory you submitted the job from (default behaviour) or in the directory
+Once the job starts to run you will see files with names such as ``slurm-1234.out`` either in the directory you submitted the job from (default behaviour) or in the directory
 where the script was instructed explicitly to change to. 
 
 Monitoring jobs with the command squeue
@@ -196,7 +210,9 @@ Monitoring jobs with the command squeue
 
 squeue is the main command for monitoring the state of systems, groups of jobs or individual jobs.
 
-The command squeue prints the list of current jobs.  The list looks something like:: 
+The command squeue prints the list of current jobs.  The list looks something like:
+
+.. code-block:: text
 
   JOBID	  PARTITION   NAME      USER    ST    TIME    Nodes NODELIST(REASON)
   2497	  short       test1.14  bob     R     0.07    1     arc-c252
@@ -208,7 +224,9 @@ in the submission script) and the fourth the owner of the job.  The fifth is the
 CD=completed, F=failed). The sixth column gives the elapsed time for each particular job.  Finally, there are the number of nodes requested and the nodelist where
 the job is running (or the cause that it is not running).
 
-Some other useful squeue features include::
+Some other useful squeue features include:
+
+.. code-block:: text
 
   -u for showing the status of all the jobs of a particular user, e.g. squeue -u bob for user bob;
   -l for showing more of the  available information;
@@ -219,7 +237,9 @@ Read all the options for squeue on the Linux manual using the command ``man sque
 Deleting jobs with the command scancel
 --------------------------------------
 
-Use the scancel command to delete a job, for example::
+Use the scancel command to delete a job, for example:
+
+.. code-block:: shell
 
   scancel 1121 
   
@@ -231,7 +251,9 @@ Environment variables
 ---------------------
 
 At the time a job is launched into execution, Slurm defines multiple environment variables, which can be used from within the submission script to
-define the correct workflow of the job.  The most useful of these environment variables are the following::
+define the correct workflow of the job.  The most useful of these environment variables are the following:
+
+.. code-block:: text
 
   SLURM_SUBMIT_DIR, which points to the directory where the sbatch command is issued;
   SLURM_JOB_NODELIST, which returns the list of nodes allocated to the job;
@@ -239,7 +261,9 @@ define the correct workflow of the job.  The most useful of these environment va
 
 In most cases,``SLURM_SUBMIT_DIR`` does not have to be used, as the job goes by default to the directory where the slurm command was issued.  This behaviour of SLURM is in contrast with other schedulers, such as Torque, which goes to the home directory of the user account.  ``SLURM_SUBMIT_DIR`` can be useful in a submission script when files must be copied to/from a specific directory that is different from the directory where the slurm command was issued.
 
-``SLURM_JOB_ID`` is useful to tag job specific files and directories, typically output files or run directories.  For instance, the submission script line::
+``SLURM_JOB_ID`` is useful to tag job specific files and directories, typically output files or run directories.  For instance, the submission script line:
+
+.. code-block:: shell
 
   myApp > $SLURM_JOB_ID.out
   
@@ -251,18 +275,24 @@ Job Dependencies
 
 Job dependencies are used to defer the start of a job until the specified dependencies have been satisfied.
 
-They are specified with the --dependency option to sbatch in the format::
+They are specified with the --dependency option to sbatch in the format:
+
+.. code-block:: shell
 
   sbatch --dependency=<type:job_id[:job_id][,type:job_id[:job_id]]> ...
 
-Dependency types::
+Dependency types:
+
+.. code-block:: text
 
   after:jobid[:jobid...]	job can begin after the specified jobs have started
   afterany:jobid[:jobid...]	job can begin after the specified jobs have terminated
   afternotok:jobid[:jobid...]	job can begin after the specified jobs have failed
   afterok:jobid[:jobid...]	job can begin after the specified jobs have run to completion with an exit code of zero
 
-For example::
+For example:
+
+.. code-block:: console
 
   sbatch job1.sh
   1802051
@@ -278,7 +308,9 @@ Job arrays offer a mechanism for submitting and managing collections of similar 
 
 By submitting a single job array sbatch script, a specified number of “array-tasks” will be created based on this “master” sbatch script. 
 
-For example::
+For example:
+
+.. code-block:: bash
 
     #!/bin/bash
     #SBATCH --job-name=arrayJob
@@ -297,7 +329,9 @@ The above example uses the ``--array=1-4`` specification to create four array ta
 
 The ``%A_%a`` construct in the output and error file names is used to generate unique output and error files based on the master job ID (%A) and the array-task's ID (%a). In this fashion, each array-task will be able to write to its own output and error file.
 
-For clarity, the input and output files for the above script, if submited as jobID 1802055 would be::
+For clarity, the input and output files for the above script, if submited as jobID 1802055 would be:
+
+.. code-block:: text
 
   JobID     --output                --error	                Application Input filename
   1802055_1	arrayJob_1802055_1.out  arrayJob_1802055_1.err  input_1.txt
@@ -305,7 +339,9 @@ For clarity, the input and output files for the above script, if submited as job
   1802055_3	arrayJob_1802055_3.out	arrayJob_1802055_3.err	input_3.txt
   1802055_4	arrayJob_1802055_4.out	arrayJob_1802055_4.err	input_4.txt
 
-Note: You can specifiy the ``--array`` option on the ``sbatch`` command line instead of inside the submission script. For example if the ``--array`` option was removed from the above script and the script was named **jobArray.sh** the command would be::
+Note: You can specifiy the ``--array`` option on the ``sbatch`` command line instead of inside the submission script. For example if the ``--array`` option was removed from the above script and the script was named **jobArray.sh** the command would be:
+
+.. code-block:: shell
 
   sbatch --array=1-4 jobArray.sh
 

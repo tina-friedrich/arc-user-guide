@@ -20,15 +20,11 @@ As a rule we recommend that you use your ``$DATA`` area to store your data, but 
 
 A simple example of how to do this would be:
 
-.. code-block:: shell
+.. code-block:: bash
 
   #!/bin/bash
   #
   # After SBATCH lines in submission script...
-  #
-  # Use either $SCRATCH filesystem.
-  #
-  #SBATCH --constraint="[scratch:weka|scratch:gpfs]"
   #
   cd $SCRATCH || exit 1
   # 
@@ -51,7 +47,7 @@ This example copies the directories ``$DATA/myproject/input`` and ``$DATA/myproj
 
 The process is more straightforward if you only need to copy single input/ouput files when the application is centrally hosted, for example:
 
-.. code-block:: shell
+.. code-block:: bash
 
   #!/bin/bash
   #
@@ -60,12 +56,12 @@ The process is more straightforward if you only need to copy single input/ouput 
   # Load appropriate module, in this test case we are using Gaussian
   
   module load Gaussian/16.C.01
-
+  
   # Set input/output filenames
   #
   export INPUT_FILE=test397.com
   export OUTPUT_FILE=test397.log
-
+  
   echo "copying input from $SLURM_SUBMIT_DIR/$INPUT_FILE ..."
   
   cd $SCRATCH || exit 1
@@ -89,7 +85,7 @@ Especially if your job is long running, we would advise to regularly copy interm
 
 An example of how to do both of these from a submit script would be:
 
-.. code-block:: shell
+.. code-block:: bash
 
   #!/bin/bash
   #SBATCH --job-name=test
@@ -198,7 +194,7 @@ If you've accidentally deleted a file in your home directory which existed earli
 
 For example - assuming you have deleted a file 'ARC-Introduction-2018-Hilary.pptx' from folder ``$HOME/Documents`` by mistake. To recover it, the steps would be:
 
-.. code-block:: shell
+.. code-block:: console
 
   [$(arcus) Documents]$ pwd
   /home/ouit0622/Documents
