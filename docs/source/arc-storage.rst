@@ -11,16 +11,16 @@ Additionally, when you run a SLURM job, a per-job ``$SCRATCH`` and ``$TMPDIR`` f
 
 ``$TMPDIR`` is local to a compute node
 
-``$SCRATCH`` is on a shared file system and available to all nodes in a job, if a job spans multiple nodes. Currently $SCRATCH is provided by two systems, the **old** GPFS system and the new, more performant WEKA Data Platform. It is therefore important to select which scratch filesystem to use.
+``$SCRATCH`` is on a shared file system and available to all nodes in a job, if a job spans multiple nodes. 
 
 Using ARC ``$SCRATCH`` storage
---------------------------
-
-Note: Both **$SCRATCH** and **$TMPDIR** are not persistent; they will be automatically removed on job exit. It is important that your job copies all files into your $DATA area before it exits; we will not be able to recover your data if you left it on ``$SCRATCH`` or ``$TMPDIR`` once a job finished.
+------------------------------
 
 As a rule we recommend that you use your ``$DATA`` area to store your data, but utilise the per job ``$SCRATCH`` or ``$TMPDIR`` area - especially for intermediate or temporary files. Generally you would copy all required input data at the start of your job and then copying results back to your **$DATA** area.
 
-A simple example of how to do this would be::
+A simple example of how to do this would be:
+
+.. code-block:: shell
 
   #!/bin/bash
   #
@@ -34,8 +34,8 @@ A simple example of how to do this would be::
   # 
   # Copy job data to $SCRATCH
   #
-  rsync -av $DATA/myproject/input ./
-  rsync -av $DATA/myproject/bin ./ 
+  rsync -a $DATA/myproject/input ./
+  rsync -a $DATA/myproject/bin ./ 
   #
   # Job specific lines...
   #
@@ -45,20 +45,18 @@ A simple example of how to do this would be::
   #
   # Copy data back from $SCRATCH to $DATA/myproject directory
   #
-  rsync -av --exclude=input --exclude=bin ./ $DATA/myproject/
+  rsync -a --exclude=input --exclude=bin ./ $DATA/myproject/
   
 This example copies the directories ``$DATA/myproject/input`` and ``$DATA/myproject/bin`` into ``$SCRATCH`` (which will then contain directories ``input`` and ``bin``). The script then runs ``./bin/my_software``; and copies all files in the ``$SCRATCH`` directory - excluding directories ``input`` and ``bin`` - back to ``$DATA/myproject/`` once the ``mpirun`` finishes.
 
-The process is more straightforward if you only need to copy single input/ouput files when the application is centrally hosted, for example::
+The process is more straightforward if you only need to copy single input/ouput files when the application is centrally hosted, for example:
+
+.. code-block:: shell
 
   #!/bin/bash
   #
   # After SBATCH lines in submission script...
   #
-  # Use either $SCRATCH filesystem.
-  #
-  #SBATCH --constraint="[scratch:weka|scratch:gpfs]"
-  # 
   # Load appropriate module, in this test case we are using Gaussian
   
   module load Gaussian/16.C.01
@@ -81,18 +79,59 @@ The process is more straightforward if you only need to copy single input/ouput 
   #
   echo "copying output back to $SLURM_SUBMIT_DIR/ ..."
   cp $OUTPUT_FILE $SLURM_SUBMIT_DIR/
-
  
 If you are unable to access either of these directories, please let us know.
 
 .. note::
-  Specifying the scratch file system type is especially important if you are running a multi-node (MPI). If you do not specify a scratch constraint, then you might be allocated nodes with different scratch file systems which could cause problems for your jobs, even if you do not use $SCRATCH. (If you do use $SCRATCH, it almost certainly will.) 
+  Both **$SCRATCH** and **$TMPDIR** are not persistent; they will be automatically removed on job exit. It is important that your job copies all files into your $DATA area before it exits; we will not be able to recover your data if you left it on ``$SCRATCH`` or ``$TMPDIR`` once a job finished. 
+  
+Especially if your job is long running, we would advise to regularly copy intermediate data back to your $DATA directory. It is likely also advisable to set up your job to trap an impending timeout within your job or job script to allow you to save your work in case a job times out.    
 
-  The options are::
+An example of how to do both of these from a submit script would be:
 
-  --constraint="[scratch:weka|scratch:gpfs]"   - Use either WEKA or GPFS scratch
-  --constraint="[scratch:weka]"                - Use WEKA scratch ONLY
-  --constraint="[scratch:gpfs]"                - Use GPFS scratch **not recommended**
+.. code-block:: shell
+
+  #!/bin/bash
+  #SBATCH --job-name=test
+  #SBATCH --ntasks-per-node=1
+  #SBATCH --nodes=1
+  #SBATCH --time=00:02:00
+  #SBATCH --signal=B:SIGINT@60 # ask SLURM to send a SIGINT to the job's control script 60 seconds before a timeout
+
+  # define a function to rsync my data to it's destination
+  copy_data()
+  {
+    rsync -a --partial /scratch/ $DATA/my_job_output/
+  }
+
+  # define what to do when SLURM signals an impending job timeout
+  sig_handler()
+  {
+    echo "BATCH interrupted"
+    echo "Exiting abnormally - triggering a copy of /scratch to $DATA"
+    copy_data
+    # now kill the process; this should trigger a final copy after it exited (time permitting)
+    kill ${jobpid}
+    exit 2
+  }
+
+  trap 'sig_handler' SIGINT
+
+  ./bin/my_software > /scratch/my_jobrun_${SLURM_JOB_ID} &
+  jobpid=$!
+
+  # start a loop copying contents of /scratch/ every hour
+  while true ; do
+    copy_data
+    sleep 3600
+  done &
+
+  # wait for the original job to finish
+  wait ${jobpid}
+
+  # after the job finishes, copy the output back
+  # in case of a timeout, the job would have been killed by the trap handler
+  copy_data
 
 
 Quota
