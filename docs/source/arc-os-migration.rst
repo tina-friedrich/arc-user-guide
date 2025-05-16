@@ -41,10 +41,10 @@ Migration Timeline
 
 All nodes including login nodes and nx graphical on both ARC and HTC will be migrated to AlmaLinux 9 by the **end of July 2025**. The legacy nodes which are currently running CentOS 7.7 will be migrated to the current CentOS 8.1 OS.
 
-Who is responsible for migrating my data?
------------------------------------------
+Who is responsible for ensuring my workflow works on the new OS?
+----------------------------------------------------------------
 
-Each user is responsible for testing their workflow on the new operating system. The ARC team will be working on bringing as many modules as possible to the new OS, however, some may not be supported on the new platform. Again, please reach out with any questions or concerns.
+Each user is responsible for testing their workflow on the new operating system. The ARC team will be working on bringing as many modules as possible to the new OS, however, some may not be supported on the new platform. When this is the case, ensure you can port your workflow to the latest version of the package as possible. Again, please reach out with any questions or concerns.
 
 
 How to test my workflow.
