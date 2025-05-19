@@ -6,6 +6,7 @@ ARC User Guide
 
    introduction
    arc-systems
+   arc-os-migration
    connecting-to-arc
    arc-copying-data
    arc-gfx-interactive
@@ -13,7 +14,6 @@ ARC User Guide
    job-scheduling
    arc-priority-jobs
    arc-storage
-   arc-storage-migration
    arc-software
    slurm-reference
    slurm-faq
