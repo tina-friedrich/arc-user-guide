@@ -19,6 +19,7 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.autosectionlabel',
     "sphinx_favicon",
+    "sphinx_rtd_dark_mode",
 ]
 
 intersphinx_mapping = {
