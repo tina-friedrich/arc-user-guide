@@ -41,6 +41,9 @@ html_theme_options = {
     'language_selector': False,
 }
 
+# user starts in light mode
+default_dark_mode = False
+
 # -- ARC Customisations
 
 html_logo = 'images/arc_logo-wide-white.svg'
