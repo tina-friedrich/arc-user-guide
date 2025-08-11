@@ -78,7 +78,7 @@ The generally available partitions are:
 Throughput cluster (htc)
 ------------------------
 
-The throughput system - cluster name htc  - currently 95 worker nodes, some of which are co-investment hardware. These machines are available for general use, but may be subject to job time limits and/or may occasionally be reserved for exclusive use of the entity that purchased them. The hardware on the HTC system
+The throughput system - cluster name htc - currently 95 worker nodes, some of which are co-investment hardware. These machines are available for general use, but may be subject to job time limits and/or may occasionally be reserved for exclusive use of the entity that purchased them. The hardware on the HTC system
 is more heterogeneous than on the ARC system.
 
 49 of the nodes are GPGPU nodes. More information on how to access GPU nodes is available.
@@ -98,21 +98,21 @@ Details on the partitions are:
         | Partition   | Nodes / cores,    | Nodes                                    | Default run time | Maximum run time |
         |             | GPUs              |                                          |                  |                  |
         +=============+===================+==========================================+==================+==================+
-        | short       | | 93 / 3,716      | | htc-c[001-046]                         | 1 hour           | 12 hours         |
-        |             | - 76x V100        | | htc-g[001-006,009-018,020-038,041-052] |                  |                  |
-        |             | - 16x A100        |                                          |                  |                  |
-        |             | - 24x RTX8000     |                                          |                  |                  |
-        |             | - 12x RTXA6000    |                                          |                  |                  |
+        | short       | | 93 / 3,716      | | htc-c[001-046,048-073]                 | 1 hour           | 12 hours         |
+        |             | - 76x V100        | | htc-g[009-018]                         |                  |                  |
+        |             | - 16x A100        | | htc-g[020-038]                         |                  |                  |
+        |             | - 24x RTX8000     | | htc-g[041-043,045-055]                 |                  |                  |
+        |             | - 12x RTXA6000    | | htc-g[058-060]                         |                  |                  |
         |             | - 20x P100        |                                          |                  |                  |
         |             | - 52x Titan RTX   |                                          |                  |                  |
         +-------------+-------------------+------------------------------------------+------------------+------------------+
-        | medium      | | 61 / 2,808      | | htc-c[001-004,006-046]                 | 12 hours         | 2 days           |
-        |             | | - 48x V100      | | htc-g[009-018,044-049]                 |                  |                  |
+        | medium      | | 61 / 2,808      | | htc-c[006-046,048-073]                 | 12 hours         | 2 days           |
+        |             | | - 48x V100      | | htc-g[009-018,045-049]                 |                  |                  |
         |             | | - 16x A100      |                                          |                  |                  |
         |             | | - 24x RTX8000   |                                          |                  |                  |
         +-------------+-------------------+------------------------------------------+------------------+------------------+
-        | long        | | 61 / 2,808      | | htc-c[001-004,006-046]                 | 1 day            | unlimited        |
-        |             | | - 48x V100      | | htc-g[009-018,044-049]                 |                  |                  |
+        | long        | | 61 / 2,808      | | htc-c[006-046,048-073]                 | 1 day            | unlimited        |
+        |             | | - 48x V100      | | htc-g[009-018,045-049]                 |                  |                  |
         |             | | - 16x A100      |                                          |                  |                  |
         |             | | - 24x RTX8000   |                                          |                  |                  |
         +-------------+-------------------+------------------------------------------+------------------+------------------+
@@ -143,7 +143,7 @@ Node CPU details are:
         +----------------+-----------------------------------------------+----------------+-----------------+--------------+
         | htc-c[056-073] | AMD EPYC 9634 (Genoa), 2.25GHz                | 84             | 1.1TB           |              |
         +----------------+-----------------------------------------------+----------------+-----------------+--------------+
-        | htc-g[001-018] | Intel Platinum 8628 (Cascade Lake), 2.90GHz   | 48             | 384GB           | HDR100       |
+        | htc-g[009-018] | Intel Platinum 8628 (Cascade Lake), 2.90GHz   | 48             | 384GB           | HDR100       |
         +----------------+-----------------------------------------------+----------------+-----------------+--------------+
         | htc-g019       | AMD Epyc 7452 (Rome), 2.35GHz                 | 64             | 1TB             |              |
         +----------------+-----------------------------------------------+----------------+-----------------+--------------+
