@@ -161,7 +161,7 @@ There is a known issue with several installed versions of OpenMPI and their comm
 
   mpirun -mca pml ucx -mca btl '^uct,ofi' -mca mtl '^ofi' [MPI executable]
 
-If your application calls ``mpirun`` from a wrapper script and not directly, you can use the following environment variable settings instead::
+If your application calls ``mpirun`` from a within a wrapper script and not directly, you can use the following environment variable settings which should be added to your submission script before calling your application::
 
   export OMPI_MCA_btl='^uct,ofi'
   export OMPI_MCA_pml='ucx'
