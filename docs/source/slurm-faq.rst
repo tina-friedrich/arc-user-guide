@@ -153,3 +153,12 @@ If you have a submission script which calls ``mpirun`` multiple times, there may
 ``sleep 60``
 
 This delay will allow time for the previous MPI session to close down completely.
+
+OpenMPI Jobs fail with the error ``Failed to modify UD QP to INIT on mlx5_0: Operation not permitted``
+------------------------------------------------------------------------------------------------------
+
+In your submission script add the following environment variable definitions before the ``mpirun`` line::
+
+  export OMPI_MCA_btl='^uct,ofi'
+  export OMPI_MCA_pml='ucx'
+  export OMPI_MCA_mtl='^ofi'
