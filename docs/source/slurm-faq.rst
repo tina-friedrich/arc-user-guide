@@ -157,7 +157,11 @@ This delay will allow time for the previous MPI session to close down completely
 OpenMPI Jobs fail with the error ``Failed to modify UD QP to INIT on mlx5_0: Operation not permitted``
 ------------------------------------------------------------------------------------------------------
 
-In your submission script add the following environment variable definitions before the ``mpirun`` line::
+There is a known issue with several installed versions of OpenMPI and their communication with the underlying network interfaces. These error messages may occur sporadically and so we recommend adding the following options to the ``mpirun`` command if affected:: 
+
+  mpirun -mca pml ucx -mca btl '^uct,ofi' -mca mtl '^ofi' [MPI executable]
+
+If your application calls ``mpirun`` from a wrapper script and not directly, you can use the following environment variable settings instead::
 
   export OMPI_MCA_btl='^uct,ofi'
   export OMPI_MCA_pml='ucx'
