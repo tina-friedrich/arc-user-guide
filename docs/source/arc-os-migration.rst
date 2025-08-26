@@ -5,13 +5,7 @@ ARC/HTC Operating System Migration
 Introduction
 ------------
 
-As part of our ongoing improvements to the ARC service, we are expanding the HTC cluster with 26 new high core count, high memory nodes:
-
-   - 4 nodes with 168 CPU cores & 2.2 TB memory
-   - 4 nodes with 168 CPU cores & 1.5 TB memory
-   - 18 nodes with 84 CPU cores & 1.1 TB memory
-
-We are also also rolling out a Major OS Upgrade: Transitioning from Red Hat Enterprise 9 to Red Hat Enterprise 9. We are upgrading the cluster OS from CentOS 8 to AlmaLinux 9.
+As part of our ongoing improvements to the ARC service, we are rolling out a Major OS Upgrade: Transitioning from Red Hat Enterprise 9 to Red Hat Enterprise 9. We are upgrading the cluster OS from CentOS 8 to AlmaLinux 9.
 
 All nodes in the cluster have features that allow to specify the operating system during job submission:
 
@@ -41,7 +35,7 @@ Migration Timeline
 
 All nodes including login nodes and nx graphical on both ARC and HTC will be migrated to AlmaLinux 9 by the **end of October 2025**. The legacy nodes which are currently running CentOS 7.7 will be migrated to the current CentOS 8.1 OS.
 
-On the 1st of September 2025, Alma9 will be the default OS in the queueing system and you will need to explititly specify if you want to use a node with the older version by adding the following line in your submission script:
+On the 1st of September 2025, Alma9 will be the default OS in the queueing system and you will need to explicitly specify if you want to use a node with the older version by adding the following line in your submission script:
 
 .. code-block:: bash
 
