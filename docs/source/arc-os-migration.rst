@@ -5,7 +5,7 @@ ARC/HTC Operating System Migration
 Introduction
 ------------
 
-As part of our ongoing improvements to the ARC service, we are rolling out a Major OS Upgrade: Transitioning from Red Hat Enterprise 9 to Red Hat Enterprise 9. We are upgrading the cluster OS from CentOS 8 to AlmaLinux 9.
+As part of our ongoing improvements to the ARC service, we are rolling out a Major OS Upgrade: Transitioning from Red Hat Enterprise 8 to Red Hat Enterprise 9. We are upgrading the cluster OS from CentOS 8.1 to AlmaLinux 9.4.
 
 All nodes in the cluster have features that allow to specify the operating system during job submission:
 
