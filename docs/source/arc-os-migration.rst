@@ -24,7 +24,7 @@ New OS:
     - os_version:9.4
     - os_flavour:AlmaLinux
 
-During the transition period, jobs will default to RHEL8 unless explicitly requesting RHEL9.
+During the transition period, jobs will default to RHEL8 unless explicitly requesting RHEL9. From **1st September 2025** RHEL9 will become the default OS and RHEL8 will need to be explicitly requested.
 
 We strongly encourage users to test workloads on RHEL9-compatible nodes as soon as possible to ensure smooth migration.
 
@@ -35,7 +35,7 @@ Migration Timeline
 
 All nodes including login nodes and nx graphical on both ARC and HTC will be migrated to AlmaLinux 9 by the **end of October 2025**. The legacy nodes which are currently running CentOS 7.7 will be migrated to the current CentOS 8.1 OS.
 
-On the 1st of September 2025, Alma9 will be the default OS in the queueing system and you will need to explicitly specify if you want to use a node with the older version by adding the following line in your submission script:
+On **1st September 2025**, Alma9 will be the default OS in the queueing system and you will need to explicitly specify if you want to use a node with the older version by adding the following line in your submission script:
 
 .. code-block:: bash
 
