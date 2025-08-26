@@ -34,12 +34,18 @@ During the transition period, jobs will default to RHEL8 unless explicitly reque
 
 We strongly encourage users to test workloads on RHEL9-compatible nodes as soon as possible to ensure smooth migration.
 
-The full transition will be completed by July 2025. Please reach out with any questions or concerns.
+The full transition will be completed by October 2025. Please reach out with any questions or concerns.
 
 Migration Timeline
 ------------------
 
-All nodes including login nodes and nx graphical on both ARC and HTC will be migrated to AlmaLinux 9 by the **end of July 2025**. The legacy nodes which are currently running CentOS 7.7 will be migrated to the current CentOS 8.1 OS.
+All nodes including login nodes and nx graphical on both ARC and HTC will be migrated to AlmaLinux 9 by the **end of October 2025**. The legacy nodes which are currently running CentOS 7.7 will be migrated to the current CentOS 8.1 OS.
+
+On the 1st of September 2025, Alma9 will be the default OS in the queueing system and you will need to explititly specify if you want to use a node with the older version by adding the following line in your submission script:
+
+.. code-block:: bash
+
+   #SBATCH --contraint="os:redhat8"
 
 Who is responsible for ensuring my workflow works on the new OS?
 ----------------------------------------------------------------
