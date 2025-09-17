@@ -146,9 +146,12 @@ Copying data from/to the RFS
 .. note::
 
     RFS login is changing from CONNECT credentials to your Oxford Single Sign On (SSO) credentials.     
-    During the transition period, you will still have to use your CONNECT details - domain 'connect.ox.ac.uk', user ID your SSO ID - until you have been notified that your RFS login has been moved to SSO. Once it has been moved, you will need to use your Oxford SSO credentials (domain 'ox.ac.uk', same user ID) to connect to RFS.
+    During the transition period, you will still have to use your CONNECT details - domain 'connect.ox.ac.uk', userid your CONNECT ID (likely the same as your SSO ID) - until you have been notified that your RFS login has been moved to SSO. 
 
-It is possible to access the Research File Service (RFS) from ARC. There are two main ways it can be accessed; via a graphical file browser from the `ARC desktop environment <https://arc-user-guide.readthedocs.io/en/latest/arc-gfx-interactive.html>`_, or command line (e.g. from login nodes or cluster nodes).
+    Once your login was transitioned to SSO, you will need to use your Oxford SSO credentials (domain 'ox.ac.uk', SSO user ID) to connect to RFS.
+
+It is possible to access the Research File Service (RFS) from ARC. There are two main ways it can be accessed; via a graphical file browser from the 
+`ARC desktop environment <https://arc-user-guide.readthedocs.io/en/latest/arc-gfx-interactive.html>`_, or command line (e.g. from login nodes or cluster nodes).
 
 Accessing RFS from the ARC desktop environment
 ----------------------------------------------
@@ -183,8 +186,9 @@ Enter the respective account password.
     :width: 800
     :alt:    entering SSO credentials
 
-If you select 'Remember password', KDE will safe these details for you. It uses it's KDE Wallet service to safe these securely. If you have not used that before, it will guide you through the setup and let you set a master password for your wallet.
-thre
+If you select 'Remember password', KDE will safe these details for you. It uses it's KDE Wallet service to safe these securely. 
+If you have not used that before, it will guide you through the setup and let you set a master password for your wallet.
+
 Once you've entered your credentials and hit 'enter' (or clicked 'OK'), it should connect you to your RFS share. 
 
 .. image:: images/arc-rfs4.png
@@ -219,7 +223,9 @@ We provide a command-line tool - called 'rfs' - that allows easy interaction wit
     :width: 800
     :alt:   ARC RFS command line tool
 
-It can list directory contents of both the top level directory, or within directories:
+Note that that the command-line RFS defaults to using your *SSO ID* to log in; if you still need to use your CONNECT account, you need to add the '-C' option.
+
+The tool can list directory contents of both the top level directory, or within directories:
 
 .. image:: images/rfscli_1.png
     :width: 800
@@ -254,9 +260,9 @@ Ultimately, the tool to interact with RFS from the command line is smbclient. Th
 
 To start a smbclient session, type
 
-``smbclient -U connect.ox.ac.uk\\$USER //connect.ox.ac.uk/RFS``
+``smbclient -U ox.ac.uk\\$USER //connect.ox.ac.uk/RFS``
 
-and enter your connect password. This will start a session. Within smbclient, the 'help' command will give you the list of commands, and help with commands:
+and enter your password. This will start a session. Within smbclient, the 'help' command will give you the list of commands, and help with commands:
 
 .. image:: images/smbcli_2.png
     :width: 800
