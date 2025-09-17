@@ -6,6 +6,7 @@ ARC User Guide
 
    introduction
    arc-systems
+   arc-os-migration
    connecting-to-arc
    arc-copying-data
    arc-gfx-interactive
@@ -13,7 +14,6 @@ ARC User Guide
    job-scheduling
    arc-priority-jobs
    arc-storage
-   arc-storage-migration
    arc-software
    slurm-reference
    slurm-faq
@@ -21,8 +21,9 @@ ARC User Guide
    arc-host-keys
 
 .. seealso::
-   `ARC Software Guide <https://arc-software-guide.readthedocs.io/en/latest>`_
-   Documentation for using popular application software on ARC
+
+   | `ARC Software Guide <https://arc-software-guide.readthedocs.io/en/latest>`_  Documentation for using popular application software on ARC
+   | `ARC Module List <https://arc-module-list.readthedocs.io/>`_ List and description of application/library module on ARC
 
    
    
