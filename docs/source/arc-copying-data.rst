@@ -143,7 +143,7 @@ for assistance.
 Copying data from/to the RFS
 ============================
 
-..note::
+.. note::
 
     RFS login is changing from CONNECT credentials to your Oxford Single Sign On (SSO) credentials.     
     During the transition period, you will still have to use your CONNECT details - domain 'connect.ox.ac.uk', user ID your SSO ID - until you have been notified that your RFS login has been moved to SSO. Once it has been moved, you will need to use your Oxford SSO credentials (domain 'ox.ac.uk', same user ID) to connect to RFS.
