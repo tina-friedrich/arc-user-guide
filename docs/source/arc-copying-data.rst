@@ -262,6 +262,10 @@ To start a smbclient session, type
 
 ``smbclient -U ox.ac.uk\\$USER //connect.ox.ac.uk/RFS``
 
+or (if still using your CONNECT account)
+
+``smbclient -U connect.ox.ac.uk\\$USER //connect.ox.ac.uk/RFS``
+
 and enter your password. This will start a session. Within smbclient, the 'help' command will give you the list of commands, and help with commands:
 
 .. image:: images/smbcli_2.png
