@@ -219,7 +219,7 @@ Using the ARC rfs tool
 We provide a command-line tool - called 'rfs' - that allows easy interaction with RFS. It can list files on RFS; create directories on RFS; push data to RFS; and fetch data from RFS. 
 'rfs help' or 'rfs -h' explain usage and options:
 
-.. image:: images/rfscli_2.png
+.. image:: images/rfs-new.png
     :width: 800
     :alt:   ARC RFS command line tool
 
