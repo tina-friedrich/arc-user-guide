@@ -143,18 +143,18 @@ for assistance.
 Copying data from/to the RFS
 ============================
 
+It is possible to access the Research File Service (RFS) from ARC. There are two main ways it can be accessed; via a graphical file browser from the 
+`ARC desktop environment <https://arc-user-guide.readthedocs.io/en/latest/arc-gfx-interactive.html>`_, or command line (e.g. from login nodes or cluster nodes).
+
+Accessing RFS from the ARC desktop environment
+----------------------------------------------
+
 .. note::
 
     RFS login is changing from CONNECT credentials to your Oxford Single Sign On (SSO) credentials.     
     During the transition period, you will still have to use your CONNECT details - domain 'connect.ox.ac.uk', userid your CONNECT ID (likely the same as your SSO ID) - until you have been notified that your RFS login has been moved to SSO. 
 
     Once your login was transitioned to SSO, you will need to use your Oxford SSO credentials (domain 'ox.ac.uk', SSO user ID) to connect to RFS.
-
-It is possible to access the Research File Service (RFS) from ARC. There are two main ways it can be accessed; via a graphical file browser from the 
-`ARC desktop environment <https://arc-user-guide.readthedocs.io/en/latest/arc-gfx-interactive.html>`_, or command line (e.g. from login nodes or cluster nodes).
-
-Accessing RFS from the ARC desktop environment
-----------------------------------------------
 
 Log in to the ARC desktop environment. Open the main menu, and start the file manager application (Dolphin).
 
@@ -215,6 +215,13 @@ Accessing RFS from the command line
 
 Using the ARC rfs tool
 ^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+    RFS login is changing from CONNECT credentials to your Oxford Single Sign On (SSO) credentials.     
+    During the transition period, you will still have to use your CONNECT details - domain 'connect.ox.ac.uk', userid your CONNECT ID (likely the same as your SSO ID) - until you have been notified that your RFS login has been moved to SSO. 
+
+    Once your login was transitioned to SSO, you will need to use your Oxford SSO credentials (domain 'ox.ac.uk', SSO user ID) to connect to RFS.
 
 We provide a command-line tool - called 'rfs' - that allows easy interaction with RFS. It can list files on RFS; create directories on RFS; push data to RFS; and fetch data from RFS. 
 'rfs help' or 'rfs -h' explain usage and options:
