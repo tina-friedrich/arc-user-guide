@@ -143,6 +143,11 @@ for assistance.
 Copying data from/to the RFS
 ============================
 
+..note::
+
+    RFS login is changing from CONNECT credentials to your Oxford Single Sign On (SSO) credentials.     
+    During the transition period, you will still have to use your CONNECT details - domain 'connect.ox.ac.uk', user ID your SSO ID - until you have been notified that your RFS login has been moved to SSO. Once it has been moved, you will need to use your Oxford SSO credentials (domain 'ox.ac.uk', same user ID) to connect to RFS.
+
 It is possible to access the Research File Service (RFS) from ARC. There are two main ways it can be accessed; via a graphical file browser from the `ARC desktop environment <https://arc-user-guide.readthedocs.io/en/latest/arc-gfx-interactive.html>`_, or command line (e.g. from login nodes or cluster nodes).
 
 Accessing RFS from the ARC desktop environment
@@ -160,23 +165,31 @@ In Dolphin, select 'Network' from the left menu. Click on the folder named 'RFS'
     :width: 800
     :alt:   opening RFS connection
 
-KDE should ask you for your username and password. This is your CONNECT account; you need to enter the username as::
+KDE should ask you for your username and password. If still using your CONNECT account; you need to enter the username as::
 
     connect.ox.ac.uk\USERID
 
-your user ID is likely the same as your ARC (and SSO) ID. Enter your CONNECT account password.
+if your account has transitioned to SSO, it would be::
+
+    ox.ac.uk\USERID
+
+Enter the respective account password.
 
 .. image:: images/arc-rfs3.png
     :width: 800
     :alt:   entering CONNECT credentials
 
+.. image:: images/arc-rfs3-noconnect.png
+    :width: 800
+    :alt:    entering SSO credentials
+
 If you select 'Remember password', KDE will safe these details for you. It uses it's KDE Wallet service to safe these securely. If you have not used that before, it will guide you through the setup and let you set a master password for your wallet.
 thre
-Once you've entered your CONNECT credentials and hit 'enter' (or clicked 'OK'), it should connect you to your RFS share. 
+Once you've entered your credentials and hit 'enter' (or clicked 'OK'), it should connect you to your RFS share. 
 
 .. image:: images/arc-rfs4.png
     :width: 800
-    :alt:   entering CONNECT credentials
+    :alt:   connecting to RFS
 
 You can interact with this from Dolphin as with a normal folder, and navigate the folder structure on RFS. You can copy files or directories in and out of the service (e.g. via drag-and-drop), and open them in applications. 
 
@@ -184,13 +197,13 @@ Dolphin has a 'split' view that allows having multiple places (folders) open at 
 
 .. image:: images/arc-rfs5.png
     :width: 800
-    :alt:   entering CONNECT credentials
+    :alt:   navigating an RFS share
 
 You can then select one half of the split window and change what is is showing to e.g. your Home directory, or navigate to your data folder:
 
 .. image:: images/arc-rfs6.png
     :width: 800
-    :alt:   entering CONNECT credentials
+    :alt:   navigating an RFS share
 
 
 Accessing RFS from the command line
