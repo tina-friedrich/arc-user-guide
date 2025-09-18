@@ -129,6 +129,9 @@ An example of how to do both of these from a submit script would be:
   # in case of a timeout, the job would have been killed by the trap handler
   copy_data
 
+.. note::
+
+  Under certain circumstances - for example, if your code is using the node CPUs very efficiently, or your code is generating a lot of data to copy, or if you are using MPI - the above can have serious negative impact on code performance / code efficiency. Under those circumstances, we recommend requesting extra cores to handle the data copying - i.e. asking for more cores than you allocate for your application (at a level of 1-2 cores per node) to leave cores 'free' to handle the data moving.
 
 Quota
 -----
