@@ -78,7 +78,7 @@ Both clusters have the following time-based scheduling partitions available:
 
 Jobs in the **short** and **medium** partitions are scheduled with higher priority than those in the **long** partition; however, they will not be able to run for longer than the time allowed on those partitions.
 
-On the previous ARC clusters (ARCUS-B & ARCUS-HTC), users who wanted to submit long running jobs needed to submit the jobs to the scheduler specifying an acceptable timelimit, then once the job had started running, would request that the job's walltime be extended. One the new **arc**/**htc** clusters, this is no longer required; users can now submit jobs with longer time limits to the **long** partition. 
+We will not generally extend job runtimes; users are responsible for submitting jobs to the partition appropriate for their job, and setting appropriate job run times. 
 
 .. note::
 
@@ -86,7 +86,7 @@ On the previous ARC clusters (ARCUS-B & ARCUS-HTC), users who wanted to submit l
 
     We will no longer extend jobs.
 
-The **htc** cluster has an additional partition available named legacy. This partition contains a number of nodes which have CentOS 7.7 installed in order to maintain compatibility with some legacy commercial applications. Access to the legacy partition is restricted to users with a requirement to use legacy software and will be enabled by the ARC team for specific users when it has been demonstrated that using a more recent version of the software application is not possible.
+There is an additional 'legacy' partition available on both clusters. This partition contains a number of nodes which have CentOS 8.1 installed in order to maintain compatibility with some legacy applications. Access to the legacy partition is restricted to users with a requirement to use legacy software.
 
 Cluster selection
 ^^^^^^^^^^^^^^^^^

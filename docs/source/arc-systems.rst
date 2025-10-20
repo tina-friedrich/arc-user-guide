@@ -30,7 +30,7 @@ Operating system
 ----------------
 
 
-The ARC systems use the Linux Operating System (specifically CentOS 8) which is commonly used in HPC. We do not have any HPC systems running Windows (or MacOS). If you are unfamiliar with using Linux, please consider:
+The ARC systems use the Linux Operating System (specifically AlmaLinux 9) which is commonly used in HPC. We do not have any HPC systems running Windows (or MacOS). If you are unfamiliar with using Linux, please consider:
 
 - Finding introduction to Linux resources online (through Google/Bing/Yahoo etc).
 - Working through our brief Introduction to Linux course.
@@ -48,7 +48,7 @@ All nodes have the following:
 - 2x Intel Platinum 8628 CPU. The Platinum 8628 is a 24 core 2.90GHz Cascade Lake CPU. Thus all nodes have 48 CPU cores per node.
 - 384GB memory
 - HDR 100 infiniband interconnect. The fabric has a 4:1 blocking factor with non-blocking islands of 44 nodes (2112 cores).
-- OS is CentOS Linux 8.1. Scheduler is SLURM.
+- OS is AlmaLinux 9.4. Scheduler is SLURM.
 
 Login node for the system is 'arc-login.arc.ox.ac.uk', which allows logins from the University network range (including VPN).
 
@@ -85,7 +85,7 @@ is more heterogeneous than on the ARC system.
 
 2 of the nodes are High Memory nodes with 3TB of RAM.
 
-OS is CentOS Linux 8.1. Scheduler is SLURM.
+OS is AlmaLinux 9.4. Scheduler is SLURM.
 
 Login node for the system is 'htc-login.arc.ox.ac.uk', which allows logins from the University network range (including VPN).
 

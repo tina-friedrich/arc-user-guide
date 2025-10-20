@@ -6,7 +6,6 @@ ARC User Guide
 
    introduction
    arc-systems
-   arc-os-migration
    connecting-to-arc
    arc-copying-data
    arc-gfx-interactive
