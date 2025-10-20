@@ -86,7 +86,7 @@ On the previous ARC clusters (ARCUS-B & ARCUS-HTC), users who wanted to submit l
 
     We will no longer extend jobs.
 
-The **htc** cluster has an additional partition available named legacy. This partition contains a number of nodes which have CentOS 7.7 installed in order to maintain compatibility with some legacy commercial applications. Access to the legacy partition is restricted to users with a requirement to use legacy software and will be enabled by the ARC team for specific users when it has been demonstrated that using a more recent version of the software application is not possible.
+The **htc** cluster has an additional partition available named legacy. This partition contains a number of nodes which have CentOS 8.1 installed installed in order to maintain compatibility with some legacy applications. Access to the legacy partition is restricted to users with a requirement to use legacy software.
 
 Cluster selection
 ^^^^^^^^^^^^^^^^^
